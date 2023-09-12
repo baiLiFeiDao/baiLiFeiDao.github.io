@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>工作日志 | 百里飞刀的博客</title>
+  <title>百里飞刀的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="记录生活、工作学习笔记。">
+  <meta name="description" content="—  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —  摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工作日志">
-<meta property="og:url" content="http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="百里飞刀的博客">
+<meta property="og:url" content="http://example.com/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="百里飞刀的博客">
-<meta property="og:description" content="记录生活、工作学习笔记。">
+<meta property="og:description" content="—  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —  摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-07T08:04:21.000Z">
-<meta property="article:modified_time" content="2023-09-07T08:06:25.006Z">
+<meta property="article:published_time" content="2023-09-12T06:49:16.635Z">
+<meta property="article:modified_time" content="2023-09-07T07:45:23.858Z">
 <meta property="article:author" content="百里飞到">
-<meta property="article:tag" content="工作日志">
+<meta property="article:tag" content="读书,JAVA,支付,Web开发">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="百里飞刀的博客" type="application/atom+xml">
@@ -80,61 +80,94 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-工作笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-redis学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-07T08:04:21.000Z" itemprop="datePublished">2023-09-07</time>
+    <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-09-12T06:49:16.635Z" itemprop="datePublished">2023-09-12</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      工作日志
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>—  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —  摘要  <span id="more"></span>  正文</p>
+<h2 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存</th>
+<th>取</th>
+<th>补充</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String</td>
+<td>set runoob “菜鸟教程”</td>
+<td>get runoob</td>
+<td>二进制安全，可以包含任何数据。最大能存储512MB</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td>HMSET runoob field1 “Hello” field2 “World”</td>
+<td>HGET runoob field1</td>
+<td>键值对集合，是一个string类型的field和value的映射表。每个hash可以存储2**31-1个键值对</td>
+</tr>
+<tr>
+<td>List</td>
+<td>lpush runoob redis</td>
+<td>lrange runoob 0 10</td>
+<td>按照插入顺序排序，添加一个元素到列表的头部或者尾部</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>sadd key member</td>
+<td>smembers runoob</td>
+<td>集合中的成员数为2**32-1</td>
+</tr>
+<tr>
+<td>zset</td>
+<td>zadd key score member</td>
+<td>zrangebyscore runoob 0 1000</td>
+<td>有序集合：数据插入集合时，已经天然排序</td>
+</tr>
+</tbody></table>
+<h2 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h2><p>用于在redis服务上执行操作。要在redis服务上执行命令需要一个redis客户端。</p>
+<p>启动redis客户端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">redis -cli</span></span><br><span class="line">-----PING用于检测redis服务是否启动</span><br><span class="line">PING</span><br></pre></td></tr></table></figure>
+
+<p>在远程服务上执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">redis-cli -h 127.0.0.1 -p 6379 -a <span class="string">&quot;123456&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Redis键命令：用于管理redis的键</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/" data-id="clmfyjg8r0008tgt33453gbsi" data-title="工作日志" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clmfyjg8m0003tgt391g91nfn" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          关于放松的五个迷思
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2023/09/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">java的多线程编程</div>
     </a>
   
 </nav>

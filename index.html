@@ -80,6 +80,421 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Spring实战笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-09-12T06:49:16.637Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
+<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
+<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
+<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
+<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
+<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" data-id="clmfyjg8e0000tgt3dcvjf6g2" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-redis学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-09-12T06:49:16.635Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>—  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —  摘要
+        
+          <p class="article-more-link">
+            <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clmfyjg8m0003tgt391g91nfn" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-java的多线程编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-09-12T05:37:44.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a>►<a class="article-category-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">多线程编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">java的多线程编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
+<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
+<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
+<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
+<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
+<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="通过实现Runnable接口来创建线程"><a href="#通过实现Runnable接口来创建线程" class="headerlink" title="通过实现Runnable接口来创建线程"></a>通过实现Runnable接口来创建线程</h3><p>定义Runnable接口的实现类，并重写该接口的run()方法，</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" data-id="clmfyjg8p0006tgt3dieqecoi" data-title="java的多线程编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-学习规划" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" class="article-date">
+  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/">学习规划</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+          <p class="article-more-link">
+            <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" data-id="clmfyjg8l0002tgt306z8d4g6" data-title="学习规划" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-密码管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/">密码管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+          <p class="article-more-link">
+            <a href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" data-id="clmfyjg8s000ctgt3fl2n563o" data-title="密码管理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" rel="tag">密码管理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-要用到的一些地址" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/" class="article-date">
+  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/">工作备忘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+          <p class="article-more-link">
+            <a href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/" data-id="clmfyjg8t000dtgt3cs8b8osj" data-title="工作备忘" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" rel="tag">工作备忘</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-成长感悟" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" class="article-date">
+  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/">人生思考</a>►<a class="article-category-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/">成长</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/">成长感悟</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+          <p class="article-more-link">
+            <a href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" data-id="clmfyjg8v000gtgt3fshrcmfm" data-title="成长感悟" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" rel="tag">成长感悟</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-工作日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="article-date">
+  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">工作日志</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+          <p class="article-more-link">
+            <a href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" data-id="clmfyjg8v000htgt34e80htj3" data-title="工作日志" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-读书笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>►<a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/">摘抄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书摘抄</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p>
+<p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p>
+<p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p>
+<p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p>
+<p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p>
+<h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p>
+<p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" data-id="clmfyjg8x000ktgt3hiwpdsdv" data-title="读书摘抄" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%91%98%E6%8A%84/" rel="tag">摘抄</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-关于放松的五个迷思" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" class="article-date">
@@ -169,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" data-id="clmetm5cc0002dct3f2338fce" data-title="关于放松的五个迷思" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" data-id="clmfyjg8q0007tgt3arvs2ss8" data-title="关于放松的五个迷思" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -183,102 +598,12 @@
 
 
   
-    <article id="post-工作笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-07T08:04:21.000Z" itemprop="datePublished">2023-09-07</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/">工作日志</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/" data-id="clmetm5cb0001dct30ty70blp" data-title="工作日志" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/07/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-09-07T05:18:30.186Z" itemprop="datePublished">2023-09-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/07/hello-world/" data-id="clmetm5c00000dct37a37eliu" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -288,7 +613,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2023/">2023</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/2023/9%E6%9C%88/">9月</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/">自我</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/">放松</a></li></ul></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2023/">2023</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/2023/9%E6%9C%88/">9月</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">多线程编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/">人生思考</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/">成长</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/">自我</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/">放松</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/">摘抄</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -298,7 +623,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" rel="tag">播客笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" rel="tag">自我探寻</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" rel="tag">密码管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" rel="tag">工作备忘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" rel="tag">成长感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%98%E6%8A%84/" rel="tag">摘抄</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" rel="tag">播客笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" rel="tag">自我探寻</a></li></ul>
     </div>
   </div>
 
@@ -308,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" style="font-size: 10px;">工作日志</a> <a href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">播客笔记</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" style="font-size: 10px;">自我探寻</a>
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 10px;">学习规划</a> <a href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" style="font-size: 10px;">密码管理</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" style="font-size: 10px;">工作备忘</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" style="font-size: 20px;">工作日志</a> <a href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" style="font-size: 10px;">成长感悟</a> <a href="/tags/%E6%91%98%E6%8A%84/" style="font-size: 10px;">摘抄</a> <a href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">播客笔记</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" style="font-size: 10px;">自我探寻</a>
     </div>
   </div>
 
@@ -330,15 +655,23 @@
       <ul>
         
           <li>
-            <a href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/">关于放松的五个迷思</a>
+            <a href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/">工作日志</a>
+            <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2023/09/07/hello-world/">Hello World</a>
+            <a href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">java的多线程编程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/">学习规划</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/">密码管理</a>
           </li>
         
       </ul>

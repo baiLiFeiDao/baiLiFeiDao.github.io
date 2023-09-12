@@ -4,20 +4,23 @@
   <meta charset="utf-8">
   
   
-  <title>工作日志 | 百里飞刀的博客</title>
+  <title>java的多线程编程 | 百里飞刀的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="记录生活、工作学习笔记。">
+  <meta name="description" content="线程的定义一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU 一个线程的生命周期线程的优先级每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。 Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。 默认">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工作日志">
-<meta property="og:url" content="http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="java的多线程编程">
+<meta property="og:url" content="http://example.com/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="百里飞刀的博客">
-<meta property="og:description" content="记录生活、工作学习笔记。">
+<meta property="og:description" content="线程的定义一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU 一个线程的生命周期线程的优先级每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。 Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。 默认">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-07T08:04:21.000Z">
-<meta property="article:modified_time" content="2023-09-07T08:06:25.006Z">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg">
+<meta property="article:published_time" content="2023-09-12T05:37:44.000Z">
+<meta property="article:modified_time" content="2023-09-12T06:53:59.770Z">
 <meta property="article:author" content="百里飞到">
-<meta property="article:tag" content="工作日志">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg">
   
     <link rel="alternate" href="/atom.xml" title="百里飞刀的博客" type="application/atom+xml">
   
@@ -80,14 +83,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-工作笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-java的多线程编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-07T08:04:21.000Z" itemprop="datePublished">2023-09-07</time>
+    <a href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-09-12T05:37:44.000Z" itemprop="datePublished">2023-09-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
+    <a class="article-category-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a>►<a class="article-category-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">多线程编程</a>
   </div>
 
   </div>
@@ -98,7 +101,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      工作日志
+      java的多线程编程
     </h1>
   
 
@@ -106,15 +109,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
+<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
+<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
+<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
+<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
+<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="通过实现Runnable接口来创建线程"><a href="#通过实现Runnable接口来创建线程" class="headerlink" title="通过实现Runnable接口来创建线程"></a>通过实现Runnable接口来创建线程</h3><p>定义Runnable接口的实现类，并重写该接口的run()方法，</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/" data-id="clmfyjg8r0008tgt33453gbsi" data-title="工作日志" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" data-id="clmfyjg8p0006tgt3dieqecoi" data-title="java的多线程编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li></ul>
 
     </footer>
   </div>
@@ -122,19 +131,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          关于放松的五个迷思
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2023/09/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">学习规划</div>
     </a>
   
 </nav>
