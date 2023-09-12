@@ -1,725 +1,238 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>百里飞刀的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="记录生活、工作学习笔记。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>百里飞刀的博客 - 爱思考、爱生活</title><meta name="author" content="百里飞到"><meta name="copyright" content="百里飞到"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录生活、工作学习笔记。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="百里飞刀的博客">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="百里飞刀的博客">
 <meta property="og:description" content="记录生活、工作学习笔记。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="百里飞到">
 <meta property="article:tag" content="读书,JAVA,支付,Web开发">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '百里飞刀的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-12 15:11:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="百里飞刀的博客" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">百里飞刀的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">爱思考、爱生活</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Spring实战笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-12T06:49:16.637Z" itemprop="datePublished">2023-09-12</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
-<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
-<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
-<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
-<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
-<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="百里飞刀的博客"><span class="site-name">百里飞刀的博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">百里飞刀的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-12T06:49:16.637Z" title="发表于 2023-09-12 14:49:16">2023-09-12</time></span></div><div class="content">Spring实战笔记spring入门什么是spring应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。
+spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。
+依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。
+自动配置起源于 Spring 技术，即 自动装配 和 组件扫描。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。
+@control ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-12T06:49:16.635Z" title="发表于 2023-09-12 14:49:16">2023-09-12</time></span></div><div class="content">—  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —  摘要    正文
+Redis数据类型
 
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" data-id="clmfyks5q0001iwt32kr79m3r" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+类型
+存
+取
+补充
 
 
 
-  
-    <article id="post-redis学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-12T06:49:16.635Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>—  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —  摘要
-        
-          <p class="article-more-link">
-            <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clmfyks5z0008iwt30t0xao6x" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+String
+set runoob “菜鸟教程”
+get runoob
+二进制安全，可以包含任何数据。最大能存储512MB
 
 
-
-  
-    <article id="post-java的多线程编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2023-09-12T05:37:44.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a>►<a class="article-category-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">多线程编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">java的多线程编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
-<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
-<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
-<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
-<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
-<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="通过实现Runnable接口来创建线程"><a href="#通过实现Runnable接口来创建线程" class="headerlink" title="通过实现Runnable接口来创建线程"></a>通过实现Runnable接口来创建线程</h3><p>定义Runnable接口的实现类，并重写该接口的run()方法，</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" data-id="clmfyks5y0006iwt366l4b6gu" data-title="java的多线程编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
+Hash
+HMSET runoob field1 “Hello” field2 “World”
+HGET runoob field1
+键值对集合，是一个string类型的field和value的映射表。每个hash可以存储2**31-1个键值对
 
 
-
-  
-    <article id="post-密码管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/">密码管理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" data-id="clmfyks5t0003iwt3124gdpz6" data-title="密码管理" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" rel="tag">密码管理</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
+List
+lpush runoob redis
+lrange runoob 0 10
+按照插入顺序排序，添加一个元素到列表的头部或者尾部
 
 
-
-  
-    <article id="post-学习规划" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/">学习规划</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" data-id="clmfyks5z0007iwt31b518k0j" data-title="学习规划" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
+Set
+sadd key member
+smembers runoob
+集合中的成员数为2**32-1
 
 
-
-  
-    <article id="post-成长感悟" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/">人生思考</a>►<a class="article-category-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/">成长</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/">成长感悟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" data-id="clmfyks61000biwt30apve6nw" data-title="成长感悟" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" rel="tag">成长感悟</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-要用到的一些地址" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/">工作备忘</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/" data-id="clmfyks61000ciwt33ctt2lyl" data-title="工作备忘" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" rel="tag">工作备忘</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-工作日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2023/">2023</a>►<a class="article-category-link" href="/categories/2023/9%E6%9C%88/">9月</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">工作日志</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" data-id="clmfyks63000hiwt3b0d2f8g7" data-title="工作日志" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-读书笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T16:00:00.000Z" itemprop="datePublished">2023-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>►<a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/">摘抄</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书摘抄</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p>
-<p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p>
-<p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p>
-<p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p>
-<p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p>
-<h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p>
-<p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" data-id="clmfyks6l001riwt37unshyml" data-title="读书摘抄" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%91%98%E6%8A%84/" rel="tag">摘抄</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于放松的五个迷思" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" class="article-date">
-  <time class="dt-published" datetime="2023-09-11T05:12:33.000Z" itemprop="datePublished">2023-09-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a>►<a class="article-category-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/">自我</a>►<a class="article-category-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/">放松</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/">关于放松的五个迷思</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="关于放松的五个迷思（笔记源自：steve说334期）"><a href="#关于放松的五个迷思（笔记源自：steve说334期）" class="headerlink" title="关于放松的五个迷思（笔记源自：steve说334期）"></a>关于放松的五个迷思（笔记源自：steve说334期）</h1><h2 id="放松等于懒散？"><a href="#放松等于懒散？" class="headerlink" title="放松等于懒散？"></a>放松等于懒散？</h2><p>刻板印象：放松等于呆着什么都不做，休息</p>
-<p>可能产生的原因：农耕文化，劳作之余身体的休息是非常重要的。</p>
-<p>身体的疲惫可以用躺着消除，精神的疲惫不可以用躺着消除，而现在大多数人工作都是脑力劳动，工作的时候拥有单一刺激源，下班之后躺着发呆、刷手机，也是单一刺激源影响，大脑并不能得到放松。</p>
-<p>放松的本质：释放压力</p>
-<p>压力的本质：外部的要求和内在资源之间的关系。外部的挑战超过了自身的情绪调节范围（躺着是一种逃避，越躺着自身情绪调节就更弱，就越容易感受到压力，难以放松，恶性循环）</p>
-<p>如果放松不能通过懒散的方式，应该采用什么方式</p>
-<p>调节压力（中期压力）的有效方式：有意识提升自己的抗压能力–》有意识地把自己置于高压能力之下，相对合理地将自己的身心进行分离的时候，抗压能力就会增加</p>
-<p>举例1：当做高强度运动的时候，运动休息的间隙，感到很疲惫的时候，压力带来的管道视野很狭窄，只能看到让自己感到疲惫的事物。有意识地让自己平静下来，让自己的身与心进行隔离，有助于提升抗压能力。</p>
-<p>举例2：巴西柔术的训练一方面是身体的训练，另一方面是不断训练在高压的情况下保持冷静，思考策略</p>
-<p>举例3：管道视野：饿的时候只看到食物（把视野打开，让自己习惯以更宽的视野感受：看看盘子，看看环境）</p>
-<h2 id="放松等于放纵？"><a href="#放松等于放纵？" class="headerlink" title="放松等于放纵？"></a>放松等于放纵？</h2><p>常见的放纵放松方式：胡吃海喝、通宵玩手机、刷剧、大量购物，这些放纵放松方式可以带来短期的一些愉悦感</p>
-<p>存在问题：边际效益明显</p>
-<p>放纵训练大脑产生路径依赖，形成多巴胺劫持。</p>
-<p>在科普当中常常存在误解，多巴胺负责愉悦感。实际上，愉悦感主要是由内啡肽负责的，多巴胺负责渴望感，放纵其实就是把放松的活动聚焦在满足这些渴望上。</p>
-<p>举例：看着食物，并不真的享受这个食物本身，而是感觉吃了食物会带来愉悦感，过去的经历不断告诉大脑，只要吃就会快乐。所以看到食物就会让大脑分泌更多的多巴胺，让你渴望去吃那个食物，以至于你吃了什么，你的大脑根本不在乎。</p>
-<p>产生结果：如果一直用放纵来放松的话，容易形成一种逃避。只看到的到眼前渴望的东西，而忽略你的放松应该在身心的各个方面整体地被照顾。</p>
-<p>举例：遇见梦中情人，其他人都不存在了。</p>
-<p>存在问题：</p>
-<ul>
-<li>形成对单一事物的依赖，而边际效益递减，形成很大的负担</li>
-<li>放纵得到的奖励太容易了，满足感会降低。</li>
-</ul>
-<p>​			大脑的特性：比较偏好比较辛苦得来的快乐</p>
-<p>实操建议：</p>
-<p>尽可能避免将放松寄托在一个点上。</p>
-<p>尝试做有一定难度的事情。</p>
-<h2 id="放松等于慢下来？"><a href="#放松等于慢下来？" class="headerlink" title="放松等于慢下来？"></a>放松等于慢下来？</h2><p>慢生活，用生活方式彻底地慢，解决快节奏生活</p>
-<p>慢下来只是开始，要觉察自己紧绷的状态</p>
-<p>来源：外部压力、内源性的紧绷状态</p>
-<p>值得关注内源性的紧绷状态，比如赶飞机赶火车的时候</p>
-<p>沟通分析，来源于儿时确保生存的状态</p>
-<p>每当进入这种紧绷的状态时，就会回到儿时面对父母那种紧张、局促的状态。</p>
-<p>儿童的自我状态对成人自我状态的一种污染</p>
-<p>实操建议：</p>
-<p>当儿童自我状态来临时，要注意到这种变化，内在感受、外在表情、言行举止</p>
-<p>区分儿童自我状态和承认自我状态</p>
-<p>如果站在旁观者的角度看自己，自己是一种什么样的状态</p>
-<h2 id="放松等于自我洗脑？"><a href="#放松等于自我洗脑？" class="headerlink" title="放松等于自我洗脑？"></a>放松等于自我洗脑？</h2><p>深心灵的理念：放下期待、心怀感恩和满足</p>
-<p>存在问题：说服与自我说服是非常主观的，以及非常依赖理性思维的调节能力。但理性思维的调节作用是非常有限的，颓废-佛性-躺平-摆烂</p>
-<p>疼痛反应：</p>
-<p>压力反应：比较普适性的</p>
-<p>压力调节不仅可以通过观念上的调节，调节压力可以通过生理方式，冥想</p>
-<p>实操建议：</p>
-<p>生理叹气，刻意激活腹交感神经，心脏血流放缓，大脑</p>
-<p>延长吐气时间</p>
-<p>适用范围：突然来到的压力</p>
-<p>两次鼻子吸气，一次长吐气</p>
-<h2 id="放松等于逃离现代生活？"><a href="#放松等于逃离现代生活？" class="headerlink" title="放松等于逃离现代生活？"></a>放松等于逃离现代生活？</h2><p>在内卷和躺平之间来回横跳</p>
-<p>当今社会</p>
-<p>个人层面可以做到：</p>
-<p>这种情况往往出现在社会经历比较少的人身上</p>
-<p>不知道如何去做，欠缺经验，认知水平没有进入更高的层面</p>
-<p>意识、方法、能力缺少更高层面的东西，在年轻的时候拥有局限</p>
-<p>缺少模仿参考对象</p>
-<p>不思考做事情本身是否可以进行优化</p>
-<p>实操：</p>
-<p>要有停下来反思自己的时刻，注意压力和疲惫下的管道视野</p>
-<p>有意识寻找实操能力很强、实践经验丰富、细节上做的很出色，大胆请教</p>
-<p>社会支持网络</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" data-id="clmfyks5s0002iwt3eg6idoeu" data-title="关于放松的五个迷思" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" rel="tag">播客笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" rel="tag">自我探寻</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
+zset
+zadd key score member
+zrangebyscore  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" title="java的多线程编程">java的多线程编程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-12T05:37:44.000Z" title="发表于 2023-09-12 13:37:44">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">多线程编程</a></span></div><div class="content">线程的定义一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU
+一个线程的生命周期线程的优先级每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。
+Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。
+默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。
+具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。
+创建线程的三种方法通过实现Runnable接口来创建线程定义Runnable接口的实现类，并重写该接口的run()方法，
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" title="学习规划">学习规划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/2023/">2023</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/2023/9%E6%9C%88/">9月</a></span></div><div class="content">
+  a354929597e97e0548983d5de94304bf97693b6ca958fef7128b047555e26eaff8120c66ce7f6dd95e48f950df3134075d7930fd13ddceda8baf7c36a40cc489d22ab9a3b9fd557639ccac1c0368915648ca72b20b17d5cc6d71e24cf5ec585332aa10c21085516e6b10259694e198afaa03d7f62555a24a6b1406cb587fdedb7a7ba3697abf90c73abee6dccfc587fd99f4e825c4f4b9926fa68d2e2f907974312335d8199aafe6ef0b179c1d67d45ec4274656631bbabba78eec9780ca3056e6542666894467fe53a384037e7dbcded95488017a57432fc44039cb8d21df67f6a00de015a3acbf35bee539ac482ccbeb5eea0786263468a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" title="成长感悟">成长感悟</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/">人生思考</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/">成长</a></span></div><div class="content">
+  a354929597e97e0548983d5de94304bf97693b6ca958fef7128b047555e26eaf6bacfdd093bccb1e583379fe6a213a98555430dc71c4ec080cbb2c9969f8be466e20da973ba50861d826be9887ecc175b46f8037625a15cb324c1516eef5002989c3fd2bdffb7458cc1627670512a1d8488277dd5f05be35e2ce1c7e0eba1f08b855c8c47dbc72560836b03595e7db14ff8b162a0d525cd80ad876d0869dc53c3dc589ecc47e35596f577d4167c46d59228d5164ae83c8b6b2f9c22914bc4e4b75a5b173a4aea40576e9271fc9676cceb2811c9f6fbb967b6d87b93079b01276c237cf36beb396f790abe5261262ed76c30b0ffabdf0fa1b5 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" title="密码管理">密码管理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81/">密码</a></span></div><div class="content">
+  a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2023/">2023</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/2023/9%E6%9C%88/">9月</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">多线程编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/">人生思考</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/">成长</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/">自我</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/">放松</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/">摘抄</a></li></ul></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" rel="tag">密码管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" rel="tag">工作备忘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" rel="tag">工作日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" rel="tag">成长感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%98%E6%8A%84/" rel="tag">摘抄</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" rel="tag">播客笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" rel="tag">自我探寻</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 10px;">学习规划</a> <a href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" style="font-size: 10px;">密码管理</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" style="font-size: 10px;">工作备忘</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" style="font-size: 20px;">工作日志</a> <a href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" style="font-size: 10px;">成长感悟</a> <a href="/tags/%E6%91%98%E6%8A%84/" style="font-size: 10px;">摘抄</a> <a href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">播客笔记</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" style="font-size: 10px;">自我探寻</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">java的多线程编程</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/">密码管理</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/">学习规划</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
       
-      &copy; 2023 百里飞到<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" title="工作日志">工作日志</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/2023/">2023</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/2023/9%E6%9C%88/">9月</a></span></div><div class="content">
+  a354929597e97e0548983d5de94304bf97693b6ca958fef7128b047555e26eaf1733e04cc4c2657100c6bf3ba51f7c91f1adf19d58f1d0120a3bb1bb595b7e82e3d1ad6158008782ace8480c1ebba1ddfee20c24374cce0cfbd24ffa09559c660183f1576d676b73647890fa4eb0b850c71417b8d24eb3c727a3988937be817d6d9bbfa61f5a00af595e73d5050228a53ae5af49bebdfb1ad3642da9c076cd591b0a0d076ccb253e1db876596ffc2d0a2608e777d8c3613247840215786b18d9f6e9fe27f70129f3d4f5109c4950c3f73d64471376f910504a8094b65ed345b84a9aff6414c8c611323e68d14301bde434e95c73c32d8dabf ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="读书摘抄">读书摘抄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/">摘抄</a></span></div><div class="content">读书笔记三体在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  
+而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态
+第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 
+那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/" title="工作备忘">工作备忘</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/2023/">2023</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/2023/9%E6%9C%88/">9月</a></span></div><div class="content">
+  a354929597e97e0548983d5de94304bf9b2a8e602fd0acf4bbca888930499cf0675db2630e36fafa598289469cd3b63e907e92e1b964cc44597762c24c257e43ed42707bc44c1484568e81a687216490b28861a2d307d42bbb2342c4e87ac56665a79a6a9d1c5b391722fc2aa2acec80cd536f7868a127cdf0dba0f8b46e896b853d63a6254c33daa796596be89233cca738377107d18547fae30f8b1969c21f80c50d0339213a6d560f2fea17e48609745561a974ee417d28873b055c9a904846566aa5c2f2d743b30c7da3f7eb0faf4c3c2653127296d2b5e7be9674d0686f8807a8360fd9f8495223b3ac412cd6861f2827bc00bdad103 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/" title="关于放松的五个迷思">关于放松的五个迷思</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-11T05:12:33.000Z" title="发表于 2023-09-11 13:12:33">2023-09-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/">自我</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/">放松</a></span></div><div class="content">关于放松的五个迷思（笔记源自：steve说334期）放松等于懒散？刻板印象：放松等于呆着什么都不做，休息
+可能产生的原因：农耕文化，劳作之余身体的休息是非常重要的。
+身体的疲惫可以用躺着消除，精神的疲惫不可以用躺着消除，而现在大多数人工作都是脑力劳动，工作的时候拥有单一刺激源，下班之后躺着发呆、刷手机，也是单一刺激源影响，大脑并不能得到放松。
+放松的本质：释放压力
+压力的本质：外部的要求和内在资源之间的关系。外部的挑战超过了自身的情绪调节范围（躺着是一种逃避，越躺着自身情绪调节就更弱，就越容易感受到压力，难以放松，恶性循环）
+如果放松不能通过懒散的方式，应该采用什么方式
+调节压力（中期压力）的有效方式：有意识提升自己的抗压能力–》有意识地把自己置于高压能力之下，相对合理地将自己的身心进行分离的时候，抗压能力就会增加
+举例1：当做高强度运动的时候，运动休息的间隙，感到很疲惫的时候，压力带来的管道视野很狭窄，只能看到让自己感到疲惫的事物。有意识地让自己平静下来，让自己的身与心进行隔离，有助于提升抗压能力。
+举例2：巴西柔术的训练一方面是身体的训练，另一方面是不断训练在高压的情况下保持冷静， ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">百里飞到</div><div class="author-info__description">记录生活、工作学习笔记。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2023-09-12T06:49:16.637Z" title="发表于 2023-09-12 14:49:16">2023-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2023-09-12T06:49:16.635Z" title="发表于 2023-09-12 14:49:16">2023-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/" title="java的多线程编程">java的多线程编程</a><time datetime="2023-09-12T05:37:44.000Z" title="发表于 2023-09-12 13:37:44">2023-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" title="学习规划">学习规划</a><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" title="成长感悟">成长感悟</a><time datetime="2023-09-11T16:00:00.000Z" title="发表于 2023-09-12 00:00:00">2023-09-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2023/"><span class="card-category-list-name">2023</span><span class="card-category-list-count">4</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2023/9%E6%9C%88/"><span class="card-category-list-name">9月</span><span class="card-category-list-count">4</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">JAVA基础</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/"><span class="card-category-list-name">多线程编程</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/"><span class="card-category-list-name">人生思考</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/"><span class="card-category-list-name">成长</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AF%86%E7%A0%81/"><span class="card-category-list-name">密码</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"><span class="card-category-list-name">心理学</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/" style="font-size: 1.1em; color: #999">自我探寻</a> <a href="/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">密码管理</a> <a href="/tags/JAVA/" style="font-size: 1.1em; color: #999">JAVA</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.1em; color: #999">多线程</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" style="font-size: 1.5em; color: #99a9bf">工作日志</a> <a href="/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/" style="font-size: 1.1em; color: #999">播客笔记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/" style="font-size: 1.1em; color: #999">工作备忘</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">学习规划</a> <a href="/tags/%E6%91%98%E6%8A%84/" style="font-size: 1.1em; color: #999">摘抄</a> <a href="/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/" style="font-size: 1.1em; color: #999">成长感悟</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">12</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-09-12T07:11:49.356Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 百里飞到</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
