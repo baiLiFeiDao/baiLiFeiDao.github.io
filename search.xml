@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
-<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
-<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
-<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
-<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
-<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>java的多线程编程</title>
-    <url>/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
-<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
-<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
-<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
-<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
-<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="继承Thread类创建线程类"><a href="#继承Thread类创建线程类" class="headerlink" title="继承Thread类创建线程类"></a>继承Thread类创建线程类</h3><ul>
-<li><p>定义Thread类的子类，重写该类的run方法，run方法的方法体代表了线程要完成的任务，因此把run方法称为执行体</p>
-</li>
-<li><p>创建Thread子类的实例，即创建了线程对象</p>
-</li>
-<li><p>调用线程对象的star方法来启动该线程</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadDemo</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> Thread t;</span><br><span class="line">   <span class="keyword">private</span> String threadName;</span><br><span class="line">   </span><br><span class="line">   ThreadDemo( String name) &#123;</span><br><span class="line">      threadName = name;</span><br><span class="line">      System.out.println(<span class="string">&quot;Creating &quot;</span> +  threadName );</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Running &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Thread: &quot;</span> + threadName + <span class="string">&quot;, &quot;</span> + i);</span><br><span class="line">            <span class="comment">// 让线程睡眠一会</span></span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; interrupted.&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; exiting.&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span> <span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Starting &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">if</span> (t == <span class="literal">null</span>) &#123;</span><br><span class="line">         t = <span class="keyword">new</span> <span class="title class_">Thread</span> (<span class="built_in">this</span>, threadName);</span><br><span class="line">         t.start ();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestThread</span> &#123;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-1&quot;</span>);</span><br><span class="line">      T1.start();</span><br><span class="line">      </span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-2&quot;</span>);</span><br><span class="line">      T2.start();</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="通过Runnable接口创建线程类"><a href="#通过Runnable接口创建线程类" class="headerlink" title="通过Runnable接口创建线程类"></a>通过Runnable接口创建线程类</h3></li>
-<li><p>定义Runnable接口的实现类，重写该接口的run方法</p>
-</li>
-<li>创建Runnable实现类的实例，并以此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。</li>
-<li>调用线程对象的start()方法来启动该线程。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line"></span><br><span class="line">public class RunnableThreadTest implements Runnable &#123;</span><br><span class="line">    private int i;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">            if (i == 20) &#123;</span><br><span class="line">                RunnableThreadTest rtt = new RunnableThreadTest();</span><br><span class="line">                new Thread(rtt, &quot;新线程1&quot;).start();</span><br><span class="line">                new Thread(rtt, &quot;新线程2&quot;).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="通过Callable和Future创建线程"><a href="#通过Callable和Future创建线程" class="headerlink" title="通过Callable和Future创建线程"></a>通过Callable和Future创建线程</h3><p> (1)创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Callable</span> &#123;</span><br><span class="line">    V <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。（FutureTask是一个包装器，它通过接受Callable来创建，它同时实现了Future和Runnable接口。）</p>
-<p>（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。</p>
-<p>（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.thread;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CallableThreadTest</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;Integer&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">CallableThreadTest</span> <span class="variable">ctt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CallableThreadTest</span>();</span><br><span class="line">        FutureTask&lt;Integer&gt; ft = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(ctt);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 的循环变量i的值&quot;</span> + i);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">20</span>) &#123;</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Thread</span>(ft, <span class="string">&quot;有返回值的线程&quot;</span>).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;子线程的返回值：&quot;</span> + ft.get());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; &quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JAVA基础</category>
-        <category>多线程编程</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-        <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>1984读后感</title>
     <url>/2023/09/15/1984%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
     <content><![CDATA[<blockquote>
@@ -102,6 +52,126 @@
         <tag>读后感</tag>
         <tag>1984</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/09/07/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>—-  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —-  摘要  <span id="more"></span>  正文</p>
+<h2 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存</th>
+<th>取</th>
+<th>补充</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>set runoob “菜鸟教程”</td>
+<td>get runoob</td>
+<td>二进制安全，可以包含任何数据。最大能存储512MB</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td>HMSET runoob field1 “Hello” field2 “World”</td>
+<td>HGET runoob field1</td>
+<td>键值对集合，是一个string类型的field和value的映射表。每个hash可以存储2**31-1个键值对</td>
+</tr>
+<tr>
+<td>List</td>
+<td>lpush runoob redis</td>
+<td>lrange runoob 0 10</td>
+<td>按照插入顺序排序，添加一个元素到列表的头部或者尾部</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>sadd key member</td>
+<td>smembers runoob</td>
+<td>集合中的成员数为2**32-1</td>
+</tr>
+<tr>
+<td>zset</td>
+<td>zadd key score member</td>
+<td>zrangebyscore runoob 0 1000</td>
+<td>有序集合：数据插入集合时，已经天然排序</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h2><p>用于在redis服务上执行操作。要在redis服务上执行命令需要一个redis客户端。</p>
+<p>启动redis客户端</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">redis -cli</span></span><br><span class="line">-----PING用于检测redis服务是否启动</span><br><span class="line">PING</span><br></pre></td></tr></table></figure>
+<p>在远程服务上执行命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">redis-cli -h 127.0.0.1 -p 6379 -a <span class="string">&quot;123456&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>Redis键命令：用于管理redis的键</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java的多线程编程</title>
+    <url>/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
+<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
+<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
+<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
+<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
+<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="继承Thread类创建线程类"><a href="#继承Thread类创建线程类" class="headerlink" title="继承Thread类创建线程类"></a>继承Thread类创建线程类</h3><ul>
+<li><p>定义Thread类的子类，重写该类的run方法，run方法的方法体代表了线程要完成的任务，因此把run方法称为执行体</p>
+</li>
+<li><p>创建Thread子类的实例，即创建了线程对象</p>
+</li>
+<li><p>调用线程对象的star方法来启动该线程</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadDemo</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> Thread t;</span><br><span class="line">   <span class="keyword">private</span> String threadName;</span><br><span class="line">   </span><br><span class="line">   ThreadDemo( String name) &#123;</span><br><span class="line">      threadName = name;</span><br><span class="line">      System.out.println(<span class="string">&quot;Creating &quot;</span> +  threadName );</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Running &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Thread: &quot;</span> + threadName + <span class="string">&quot;, &quot;</span> + i);</span><br><span class="line">            <span class="comment">// 让线程睡眠一会</span></span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; interrupted.&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; exiting.&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span> <span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Starting &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">if</span> (t == <span class="literal">null</span>) &#123;</span><br><span class="line">         t = <span class="keyword">new</span> <span class="title class_">Thread</span> (<span class="built_in">this</span>, threadName);</span><br><span class="line">         t.start ();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestThread</span> &#123;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-1&quot;</span>);</span><br><span class="line">      T1.start();</span><br><span class="line">      </span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-2&quot;</span>);</span><br><span class="line">      T2.start();</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过Runnable接口创建线程类"><a href="#通过Runnable接口创建线程类" class="headerlink" title="通过Runnable接口创建线程类"></a>通过Runnable接口创建线程类</h3></li>
+<li><p>定义Runnable接口的实现类，重写该接口的run方法</p>
+</li>
+<li>创建Runnable实现类的实例，并以此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。</li>
+<li>调用线程对象的start()方法来启动该线程。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line"></span><br><span class="line">public class RunnableThreadTest implements Runnable &#123;</span><br><span class="line">    private int i;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">            if (i == 20) &#123;</span><br><span class="line">                RunnableThreadTest rtt = new RunnableThreadTest();</span><br><span class="line">                new Thread(rtt, &quot;新线程1&quot;).start();</span><br><span class="line">                new Thread(rtt, &quot;新线程2&quot;).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过Callable和Future创建线程"><a href="#通过Callable和Future创建线程" class="headerlink" title="通过Callable和Future创建线程"></a>通过Callable和Future创建线程</h3><p> (1)创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Callable</span> &#123;</span><br><span class="line">    V <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。（FutureTask是一个包装器，它通过接受Callable来创建，它同时实现了Future和Runnable接口。）</p>
+<p>（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。</p>
+<p>（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.thread;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CallableThreadTest</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;Integer&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">CallableThreadTest</span> <span class="variable">ctt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CallableThreadTest</span>();</span><br><span class="line">        FutureTask&lt;Integer&gt; ft = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(ctt);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 的循环变量i的值&quot;</span> + i);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">20</span>) &#123;</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Thread</span>(ft, <span class="string">&quot;有返回值的线程&quot;</span>).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;子线程的返回值：&quot;</span> + ft.get());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; &quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JAVA基础</category>
+        <category>多线程编程</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
+<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
+<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
+<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
+<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
+<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>个人博客搭建</title>
@@ -211,18 +281,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/09/07/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>工作日志</title>
+    <url>/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>2023</category>
+        <category>9月</category>
+      </categories>
+      <tags>
+        <tag>工作日志</tag>
+      </tags>
   </entry>
   <entry>
     <title>密码管理</title>
@@ -244,168 +312,6 @@
       </categories>
       <tags>
         <tag>密码管理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作日志</title>
-    <url>/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>2023</category>
-        <category>9月</category>
-      </categories>
-      <tags>
-        <tag>工作日志</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>—-  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —-  摘要  <span id="more"></span>  正文</p>
-<h2 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>存</th>
-<th>取</th>
-<th>补充</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>String</td>
-<td>set runoob “菜鸟教程”</td>
-<td>get runoob</td>
-<td>二进制安全，可以包含任何数据。最大能存储512MB</td>
-</tr>
-<tr>
-<td>Hash</td>
-<td>HMSET runoob field1 “Hello” field2 “World”</td>
-<td>HGET runoob field1</td>
-<td>键值对集合，是一个string类型的field和value的映射表。每个hash可以存储2**31-1个键值对</td>
-</tr>
-<tr>
-<td>List</td>
-<td>lpush runoob redis</td>
-<td>lrange runoob 0 10</td>
-<td>按照插入顺序排序，添加一个元素到列表的头部或者尾部</td>
-</tr>
-<tr>
-<td>Set</td>
-<td>sadd key member</td>
-<td>smembers runoob</td>
-<td>集合中的成员数为2**32-1</td>
-</tr>
-<tr>
-<td>zset</td>
-<td>zadd key score member</td>
-<td>zrangebyscore runoob 0 1000</td>
-<td>有序集合：数据插入集合时，已经天然排序</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h2><p>用于在redis服务上执行操作。要在redis服务上执行命令需要一个redis客户端。</p>
-<p>启动redis客户端</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">redis -cli</span></span><br><span class="line">-----PING用于检测redis服务是否启动</span><br><span class="line">PING</span><br></pre></td></tr></table></figure>
-<p>在远程服务上执行命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">redis-cli -h 127.0.0.1 -p 6379 -a <span class="string">&quot;123456&quot;</span></span></span><br></pre></td></tr></table></figure>
-<p>Redis键命令：用于管理redis的键</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>若依框架初步了解</title>
-    <url>/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>背景：接触一个新的不完整的项目，看了两三周代码，没注意到搭建好的项目是个若依框架，而给的代码只有交易部分和公众号部分，完全没有若依框架，决定自己初步了解一下若依框架。</p>
-<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>RuoYi是一款基于SpringBoot+Bootstrap的极速后台开发框架。</p>
-<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">com.ruoyi     </span><br><span class="line">├── common            // 工具类</span><br><span class="line">│       └── annotation                    // 自定义注解</span><br><span class="line">│       └── config                        // 全局配置</span><br><span class="line">│       └── constant                      // 通用常量</span><br><span class="line">│       └── core                          // 核心控制</span><br><span class="line">│       └── enums                         // 通用枚举</span><br><span class="line">│       └── exception                     // 通用异常</span><br><span class="line">│       └── json                          // JSON数据处理</span><br><span class="line">│       └── utils                         // 通用类处理</span><br><span class="line">│       └── xss                           // XSS过滤处理</span><br><span class="line">├── framework         // 框架核心</span><br><span class="line">│       └── aspectj                       // 注解实现</span><br><span class="line">│       └── config                        // 系统配置</span><br><span class="line">│       └── datasource                    // 数据权限</span><br><span class="line">│       └── interceptor                   // 拦截器</span><br><span class="line">│       └── manager                       // 异步处理</span><br><span class="line">│       └── shiro                         // 权限控制</span><br><span class="line">│       └── web                           // 前端控制</span><br><span class="line">├── ruoyi-generator   // 代码生成（不用可移除）</span><br><span class="line">├── ruoyi-quartz      // 定时任务（不用可移除）</span><br><span class="line">├── ruoyi-system      // 系统代码</span><br><span class="line">├── ruoyi-admin       // 后台服务</span><br><span class="line">├── ruoyi-xxxxxx      // 其他模块</span><br></pre></td></tr></table></figure>
-<h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="Spring-Boot框架"><a href="#Spring-Boot框架" class="headerlink" title="Spring Boot框架"></a>Spring Boot框架</h3><p>开箱即用框架，提供各种默认配置简化项目配置，更快入门spring</p>
-<p>优点</p>
-<ul>
-<li>使编码变得简单： 推荐使用注解。</li>
-<li>使配置变得简单： 自动配置、快速集成新技术能力 没有冗余代码生成和XML配置的要求</li>
-<li>使部署变得简单： 内嵌Tomcat、Jetty、Undertow等web容器，无需以war包形式部署</li>
-<li>使监控变得简单： 提供运行时的应用监控</li>
-<li>使集成变得简单： 对主流开发框架的无配置集成。</li>
-<li>使开发变得简单： 极大地提高了开发快速构建项目、部署效率。</li>
-</ul>
-<h3 id="Shiro安全控制"><a href="#Shiro安全控制" class="headerlink" title="Shiro安全控制"></a>Shiro安全控制</h3><p>Apache Shiro是Java的一个安全框架。Shiro可以帮助我们完成：认证、授权、加密、会话管理、与Web集成、缓存等。其不仅可以用在 JavaSE环境，也可以用在 JavaEE 环境。</p>
-<p>优点</p>
-<ul>
-<li>易于理解的 Java Security API</li>
-<li>简单的身份认证，支持多种数据源</li>
-<li>对角色的简单的授权，支持细粒度的授权</li>
-<li>不跟任何的框架或者容器捆绑，可以独立运行</li>
-</ul>
-<p>特性</p>
-<ul>
-<li><code>Authentication</code>身份认证/登录，验证用户是不是拥有相应的身份</li>
-<li><code>Authorization</code>授权，即验证权限，验证某个已认证的用户是否拥有某个权限，即判断用户是否能做事情 <code>SessionManagement</code>会话管理，即用户登录后就是一次会话，在没有退出之前，它的所有信息都在会话中</li>
-<li><code>Cryptography</code>加密，保护数据的安全性，如密码加密存储到数据库，而不是明文存储</li>
-<li><code>Caching</code>缓存，比如用户登录后，其用户信息，拥有的角色/权限不必每次去查，提高效率</li>
-<li><code>Concurrency</code>Shiro支持多线程应用的并发验证，即如在一个线程中开启另一个线程，能把权限自动传播过去</li>
-<li><code>Testing</code>提供测试支持</li>
-<li><code>RunAs</code>允许一个用户假装为另一个用户（如果他们允许）的身份进行访问</li>
-<li><code>RememberMe</code>记住我，这是非常常见的功能，即一次登录后，下次再来的话不用登录了</li>
-</ul>
-]]></content>
-      <categories>
-        <category>WEB框架</category>
-        <category>若依</category>
-      </categories>
-      <tags>
-        <tag>若依框架</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>成长感悟</title>
-    <url>/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="25d2e841fe00826c32a4e9a1454afbe459b0fd3b69eaf995a9aaf577ad7d342c">a354929597e97e0548983d5de94304bf97693b6ca958fef7128b047555e26eaf6bacfdd093bccb1e583379fe6a213a98555430dc71c4ec080cbb2c9969f8be466e20da973ba50861d826be9887ecc175b46f8037625a15cb324c1516eef5002989c3fd2bdffb7458cc1627670512a1d8488277dd5f05be35e2ce1c7e0eba1f08b855c8c47dbc72560836b03595e7db14ff8b162a0d525cd80ad876d0869dc53c3dc589ecc47e35596f577d4167c46d59228d5164ae83c8b6b2f9c22914bc4e4b75a5b173a4aea40576e9271fc9676cceb2811c9f6fbb967b6d87b93079b01276c237cf36beb396f790abe5261262ed76c30b0ffabdf0fa1b5d8a6691775dbeeab4b5c583436386be08b211798430385dee01a4827977a396d4a9c05fd30ad9324c893b6050617b03e15859af2e95ad658b2989152db3c1ee4ab8dbadea0fc76c0df415289bb17e3fc0d564d573efb03511ca91ca21782bd7d4f45464a424d361</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>人生思考</category>
-        <category>成长</category>
-      </categories>
-      <tags>
-        <tag>成长感悟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>若依框架中@DataScope数据权限过滤</title>
-    <url>/2023/09/15/%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/</url>
-    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>若依框架本身具有角色、部门、用户业务。</p>
-<p>在项目中，用户必须绑定一个角色，角色又必须将自身绑定到部门，角色绑定了哪些部门，就决定隶属该角色的用户能对哪些部门数据进行增删改。</p>
-<p>一般情况下，假如我们对一张表要进行查询或更新的话，需要在sql语句中，where条件语法后面 加上 dept.id = {currentDeptId} 来进行过滤，</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sys_user</span><br><span class="line"><span class="keyword">where</span> dept_id <span class="operator">=</span> &#123;currentUserDeptId&#125;</span><br></pre></td></tr></table></figure>
-<p>在若依框架中，我们只需要在Service层的方法上加入<code>@DataScope</code>注解，并分别通过deptAlias和userAlias属性，指定出部门表和用户表在sql语句中的别名是什么的话，就不需要我们手动在sql语句后面加上过滤条件了。</p>
-<h2 id="使用数据权限过滤"><a href="#使用数据权限过滤" class="headerlink" title="使用数据权限过滤"></a>使用数据权限过滤</h2><p>1.创建一个实体类，继承BaseEntity</p>
-<p><img src="https://img-blog.csdnimg.cn/34bbaf2df60344aea709c093aa3b744b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>BaseEntity实体类中，有一个类型为map,名称为params的属性</p>
-<p><img src="https://img-blog.csdnimg.cn/dc86000db3184a83838085b345bfb2bb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>2.在对应的mapper.xml文件中，对应sql语句的末尾，我们引用SysDept所继承的BaseEntity父类中的’params’属性。<br>${params.dataScope}</p>
-<p><img src="https://img-blog.csdnimg.cn/f190aaf89d7a4949913e19090f274bcb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>3.在调用Mapper层的方法，加入@DataScope注解，指定sql语句中用户表和部门表的别名</p>
-<p><img src="https://img-blog.csdnimg.cn/82e01ebc81cf45f083bbd3cc1c41001b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>4.接下来我们前端访问controller，debug然后进入到service层的这个方法，我们会惊奇的发现。SysDept所继承的BaseEntity父类的params属性，有了值。而这个值，就是数据过滤相关的sql语句。</p>
-<p><img src="https://img-blog.csdnimg.cn/3eadd1aa0d0f4ca4ba8693db9ec2b199.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>WEB框架</category>
-        <category>若依</category>
-      </categories>
-      <tags>
-        <tag>DataScope</tag>
       </tags>
   </entry>
   <entry>
@@ -484,22 +390,30 @@
       </tags>
   </entry>
   <entry>
-    <title>读书摘抄</title>
-    <url>/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p>
-<p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p>
-<p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p>
-<p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p>
-<p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p>
-<h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p>
-<p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>
+    <title>若依框架中@DataScope数据权限过滤</title>
+    <url>/2023/09/15/%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>若依框架本身具有角色、部门、用户业务。</p>
+<p>在项目中，用户必须绑定一个角色，角色又必须将自身绑定到部门，角色绑定了哪些部门，就决定隶属该角色的用户能对哪些部门数据进行增删改。</p>
+<p>一般情况下，假如我们对一张表要进行查询或更新的话，需要在sql语句中，where条件语法后面 加上 dept.id = {currentDeptId} 来进行过滤，</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sys_user</span><br><span class="line"><span class="keyword">where</span> dept_id <span class="operator">=</span> &#123;currentUserDeptId&#125;</span><br></pre></td></tr></table></figure>
+<p>在若依框架中，我们只需要在Service层的方法上加入<code>@DataScope</code>注解，并分别通过deptAlias和userAlias属性，指定出部门表和用户表在sql语句中的别名是什么的话，就不需要我们手动在sql语句后面加上过滤条件了。</p>
+<h2 id="使用数据权限过滤"><a href="#使用数据权限过滤" class="headerlink" title="使用数据权限过滤"></a>使用数据权限过滤</h2><p>1.创建一个实体类，继承BaseEntity</p>
+<p><img src="https://img-blog.csdnimg.cn/34bbaf2df60344aea709c093aa3b744b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>BaseEntity实体类中，有一个类型为map,名称为params的属性</p>
+<p><img src="https://img-blog.csdnimg.cn/dc86000db3184a83838085b345bfb2bb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>2.在对应的mapper.xml文件中，对应sql语句的末尾，我们引用SysDept所继承的BaseEntity父类中的’params’属性。<br>${params.dataScope}</p>
+<p><img src="https://img-blog.csdnimg.cn/f190aaf89d7a4949913e19090f274bcb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>3.在调用Mapper层的方法，加入@DataScope注解，指定sql语句中用户表和部门表的别名</p>
+<p><img src="https://img-blog.csdnimg.cn/82e01ebc81cf45f083bbd3cc1c41001b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>4.接下来我们前端访问controller，debug然后进入到service层的这个方法，我们会惊奇的发现。SysDept所继承的BaseEntity父类的params属性，有了值。而这个值，就是数据过滤相关的sql语句。</p>
+<p><img src="https://img-blog.csdnimg.cn/3eadd1aa0d0f4ca4ba8693db9ec2b199.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 ]]></content>
       <categories>
-        <category>读书</category>
-        <category>摘抄</category>
+        <category>WEB框架</category>
+        <category>若依</category>
       </categories>
       <tags>
-        <tag>摘抄</tag>
+        <tag>DataScope</tag>
       </tags>
   </entry>
   <entry>
@@ -523,6 +437,92 @@
       </categories>
       <tags>
         <tag>工作备忘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>若依框架初步了解</title>
+    <url>/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>背景：接触一个新的不完整的项目，看了两三周代码，没注意到搭建好的项目是个若依框架，而给的代码只有交易部分和公众号部分，完全没有若依框架，决定自己初步了解一下若依框架。</p>
+<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>RuoYi是一款基于SpringBoot+Bootstrap的极速后台开发框架。</p>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">com.ruoyi     </span><br><span class="line">├── common            // 工具类</span><br><span class="line">│       └── annotation                    // 自定义注解</span><br><span class="line">│       └── config                        // 全局配置</span><br><span class="line">│       └── constant                      // 通用常量</span><br><span class="line">│       └── core                          // 核心控制</span><br><span class="line">│       └── enums                         // 通用枚举</span><br><span class="line">│       └── exception                     // 通用异常</span><br><span class="line">│       └── json                          // JSON数据处理</span><br><span class="line">│       └── utils                         // 通用类处理</span><br><span class="line">│       └── xss                           // XSS过滤处理</span><br><span class="line">├── framework         // 框架核心</span><br><span class="line">│       └── aspectj                       // 注解实现</span><br><span class="line">│       └── config                        // 系统配置</span><br><span class="line">│       └── datasource                    // 数据权限</span><br><span class="line">│       └── interceptor                   // 拦截器</span><br><span class="line">│       └── manager                       // 异步处理</span><br><span class="line">│       └── shiro                         // 权限控制</span><br><span class="line">│       └── web                           // 前端控制</span><br><span class="line">├── ruoyi-generator   // 代码生成（不用可移除）</span><br><span class="line">├── ruoyi-quartz      // 定时任务（不用可移除）</span><br><span class="line">├── ruoyi-system      // 系统代码</span><br><span class="line">├── ruoyi-admin       // 后台服务</span><br><span class="line">├── ruoyi-xxxxxx      // 其他模块</span><br></pre></td></tr></table></figure>
+<h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="Spring-Boot框架"><a href="#Spring-Boot框架" class="headerlink" title="Spring Boot框架"></a>Spring Boot框架</h3><p>开箱即用框架，提供各种默认配置简化项目配置，更快入门spring</p>
+<p>优点</p>
+<ul>
+<li>使编码变得简单： 推荐使用注解。</li>
+<li>使配置变得简单： 自动配置、快速集成新技术能力 没有冗余代码生成和XML配置的要求</li>
+<li>使部署变得简单： 内嵌Tomcat、Jetty、Undertow等web容器，无需以war包形式部署</li>
+<li>使监控变得简单： 提供运行时的应用监控</li>
+<li>使集成变得简单： 对主流开发框架的无配置集成。</li>
+<li>使开发变得简单： 极大地提高了开发快速构建项目、部署效率。</li>
+</ul>
+<h3 id="Shiro安全控制"><a href="#Shiro安全控制" class="headerlink" title="Shiro安全控制"></a>Shiro安全控制</h3><p>Apache Shiro是Java的一个安全框架。Shiro可以帮助我们完成：认证、授权、加密、会话管理、与Web集成、缓存等。其不仅可以用在 JavaSE环境，也可以用在 JavaEE 环境。</p>
+<p>优点</p>
+<ul>
+<li>易于理解的 Java Security API</li>
+<li>简单的身份认证，支持多种数据源</li>
+<li>对角色的简单的授权，支持细粒度的授权</li>
+<li>不跟任何的框架或者容器捆绑，可以独立运行</li>
+</ul>
+<p>特性</p>
+<ul>
+<li><code>Authentication</code>身份认证/登录，验证用户是不是拥有相应的身份</li>
+<li><code>Authorization</code>授权，即验证权限，验证某个已认证的用户是否拥有某个权限，即判断用户是否能做事情 <code>SessionManagement</code>会话管理，即用户登录后就是一次会话，在没有退出之前，它的所有信息都在会话中</li>
+<li><code>Cryptography</code>加密，保护数据的安全性，如密码加密存储到数据库，而不是明文存储</li>
+<li><code>Caching</code>缓存，比如用户登录后，其用户信息，拥有的角色/权限不必每次去查，提高效率</li>
+<li><code>Concurrency</code>Shiro支持多线程应用的并发验证，即如在一个线程中开启另一个线程，能把权限自动传播过去</li>
+<li><code>Testing</code>提供测试支持</li>
+<li><code>RunAs</code>允许一个用户假装为另一个用户（如果他们允许）的身份进行访问</li>
+<li><code>RememberMe</code>记住我，这是非常常见的功能，即一次登录后，下次再来的话不用登录了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>WEB框架</category>
+        <category>若依</category>
+      </categories>
+      <tags>
+        <tag>若依框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>成长感悟</title>
+    <url>/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="25d2e841fe00826c32a4e9a1454afbe459b0fd3b69eaf995a9aaf577ad7d342c">a354929597e97e0548983d5de94304bf97693b6ca958fef7128b047555e26eaf6bacfdd093bccb1e583379fe6a213a98555430dc71c4ec080cbb2c9969f8be466e20da973ba50861d826be9887ecc175b46f8037625a15cb324c1516eef5002989c3fd2bdffb7458cc1627670512a1d8488277dd5f05be35e2ce1c7e0eba1f08b855c8c47dbc72560836b03595e7db14ff8b162a0d525cd80ad876d0869dc53c3dc589ecc47e35596f577d4167c46d59228d5164ae83c8b6b2f9c22914bc4e4b75a5b173a4aea40576e9271fc9676cceb2811c9f6fbb967b6d87b93079b01276c237cf36beb396f790abe5261262ed76c30b0ffabdf0fa1b5d8a6691775dbeeab4b5c583436386be08b211798430385dee01a4827977a396d4a9c05fd30ad9324c893b6050617b03e15859af2e95ad658b2989152db3c1ee4ab8dbadea0fc76c0df415289bb17e3fc0d564d573efb03511ca91ca21782bd7d4f45464a424d361</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>人生思考</category>
+        <category>成长</category>
+      </categories>
+      <tags>
+        <tag>成长感悟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书摘抄</title>
+    <url>/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p>
+<p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p>
+<p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p>
+<p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p>
+<p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p>
+<h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p>
+<p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>
+]]></content>
+      <categories>
+        <category>读书</category>
+        <category>摘抄</category>
+      </categories>
+      <tags>
+        <tag>摘抄</tag>
       </tags>
   </entry>
 </search>
