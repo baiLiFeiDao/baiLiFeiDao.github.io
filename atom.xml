@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>百里飞刀的博客</title>
+  
+  <subtitle>我怎么还没有超能力</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-09-19T07:36:13.135Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>百里飞刀</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring aop是什么</title>
+    <link href="http://example.com/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>http://example.com/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/</id>
+    <published>2023-09-19T07:21:07.000Z</published>
+    <updated>2023-09-19T07:36:13.135Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Spring-AOP是什么&quot;&gt;&lt;a href=&quot;#Spring-AOP是什么&quot; class=&quot;headerlink&quot; title=&quot;Spring AOP是什么&quot;&gt;&lt;/a&gt;Spring</summary>
+        
+      
+    
+    
+    
+    <category term="Spring" scheme="http://example.com/categories/Spring/"/>
+    
+    
+    <category term="spring" scheme="http://example.com/tags/spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>支付功能</title>
+    <link href="http://example.com/2023/09/19/%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/"/>
+    <id>http://example.com/2023/09/19/%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</id>
+    <published>2023-09-19T05:04:33.000Z</published>
+    <updated>2023-09-19T06:05:53.316Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    
+    <category term="第三方支付" scheme="http://example.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>卡充值流程</title>
+    <link href="http://example.com/2023/09/19/%E5%8D%A1%E5%85%85%E5%80%BC%E6%B5%81%E7%A8%8B/"/>
+    <id>http://example.com/2023/09/19/%E5%8D%A1%E5%85%85%E5%80%BC%E6%B5%81%E7%A8%8B/</id>
+    <published>2023-09-19T01:51:52.000Z</published>
+    <updated>2023-09-19T05:57:57.403Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="第三方支付" scheme="http://example.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/"/>
+    
+    <category term="代收" scheme="http://example.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/%E4%BB%A3%E6%94%B6/"/>
+    
+    
+    <category term="代收" scheme="http://example.com/tags/%E4%BB%A3%E6%94%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微服务是什么</title>
+    <link href="http://example.com/2023/09/18/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>http://example.com/2023/09/18/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%98%AF%E4%BB%80%E4%B9%88/</id>
+    <published>2023-09-18T08:59:32.000Z</published>
+    <updated>2023-09-18T09:24:00.145Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;本篇博客参考&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="http://example.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="微服务" scheme="http://example.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客搭建</title>
+    <link href="http://example.com/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://example.com/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</id>
+    <published>2023-09-18T05:50:21.000Z</published>
+    <updated>2023-09-18T05:51:25.370Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;个人博客搭建参考&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="未分类" scheme="http://example.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>若依框架中@DataScope数据权限过滤</title>
+    <link href="http://example.com/2023/09/15/%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/"/>
+    <id>http://example.com/2023/09/15/%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/</id>
+    <published>2023-09-15T09:02:10.000Z</published>
+    <updated>2023-09-18T01:20:17.693Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="WEB框架" scheme="http://example.com/categories/WEB%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="若依" scheme="http://example.com/categories/WEB%E6%A1%86%E6%9E%B6/%E8%8B%A5%E4%BE%9D/"/>
+    
+    
+    <category term="DataScope" scheme="http://example.com/tags/DataScope/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>若依框架是什么</title>
+    <link href="http://example.com/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/"/>
+    <id>http://example.com/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</id>
+    <published>2023-09-15T08:34:41.000Z</published>
+    <updated>2023-09-20T01:08:37.863Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;背景：接触一个新的不完整的项目，看了两三周代码，没注意到搭建好的项目是个若依框架，而给的代码只有交易部分，完全没有若依框架，决定自己初步了解一下若依框架。&lt;/p&gt;
+&lt;h2 id=&quot;是什么&quot;&gt;&lt;a href=&quot;#是什么&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="WEB框架" scheme="http://example.com/categories/WEB%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="若依" scheme="http://example.com/categories/WEB%E6%A1%86%E6%9E%B6/%E8%8B%A5%E4%BE%9D/"/>
+    
+    
+    <category term="若依框架" scheme="http://example.com/tags/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1984读后感</title>
+    <link href="http://example.com/2023/09/15/1984%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    <id>http://example.com/2023/09/15/1984%E8%AF%BB%E5%90%8E%E6%84%9F/</id>
+    <published>2023-09-15T03:21:35.000Z</published>
+    <updated>2023-09-15T08:33:56.533Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;必须捍卫显而易见、简单真实的东西。不言自明的一些道理是正确的，必须坚持！客观世界存在，它的规律不变。石头硬，水湿，悬空的东西掉向地球中心。他觉得他是在向奥勃良说话，也觉得他是在阐明一个重要的原理，于是写道：所谓自由就是可以说二加二等于四的自由。承认</summary>
+        
+      
+    
+    
+    
+    <category term="读后感" scheme="http://example.com/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="1984" scheme="http://example.com/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/1984/"/>
+    
+    
+    <category term="读后感" scheme="http://example.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="1984" scheme="http://example.com/tags/1984/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>支付行业的知识</title>
+    <link href="http://example.com/2023/09/14/%E6%94%AF%E4%BB%98%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%9F%A5%E8%AF%86/"/>
+    <id>http://example.com/2023/09/14/%E6%94%AF%E4%BB%98%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%9F%A5%E8%AF%86/</id>
+    <published>2023-09-14T02:45:25.000Z</published>
+    <updated>2023-09-18T01:52:11.668Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;第三方支付是指具备一定实力和信誉保障的独立机构，通过与银联或网联对接而促成交易双方进行交易的网络支付模式。国家实行准入制，企业获得央行颁发的《支付业务许可证》即成为持牌机构。支付机构分为金融支付机构（比如银行）和非金融支付机构（比如持牌第三方）。一般口头上的“持牌机构”特指</summary>
+        
+      
+    
+    
+    
+    <category term="支付" scheme="http://example.com/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    <category term="第三方支付" scheme="http://example.com/categories/%E6%94%AF%E4%BB%98/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/"/>
+    
+    <category term="基础知识" scheme="http://example.com/categories/%E6%94%AF%E4%BB%98/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="第三方支付" scheme="http://example.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-09-12T06:49:16.637Z</published>
+    <updated>2023-07-26T09:33:28.356Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Spring实战笔记&quot;&gt;&lt;a href=&quot;#Spring实战笔记&quot; class=&quot;headerlink&quot; title=&quot;Spring实战笔记&quot;&gt;&lt;/a&gt;Spring实战笔记&lt;/h1&gt;&lt;h2 id=&quot;spring入门&quot;&gt;&lt;a href=&quot;#spring入门&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/09/12/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-09-12T06:49:16.635Z</published>
+    <updated>2023-09-07T07:45:23.858Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;—-  title: redis学习笔记  date: 2020-08-27 18:21:42 # 时间  categories: # 分类  - 测试  tags: # 标签  - FastHexo  - Test —-  摘要</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java的多线程编程</title>
+    <link href="http://example.com/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/"/>
+    <id>http://example.com/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</id>
+    <published>2023-09-12T05:37:44.000Z</published>
+    <updated>2023-09-12T09:09:23.748Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;线程的定义&quot;&gt;&lt;a href=&quot;#线程的定义&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JAVA基础" scheme="http://example.com/categories/JAVA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="多线程编程" scheme="http://example.com/categories/JAVA%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="JAVA" scheme="http://example.com/tags/JAVA/"/>
+    
+    <category term="多线程" scheme="http://example.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码管理</title>
+    <link href="http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/"/>
+    <id>http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:51:05.538Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="密码" scheme="http://example.com/categories/%E5%AF%86%E7%A0%81/"/>
+    
+    
+    <category term="密码管理" scheme="http://example.com/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习规划</title>
+    <link href="http://example.com/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
+    <id>http://example.com/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-14T02:25:25.446Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
+    <category term="9月" scheme="http://example.com/categories/2023/9%E6%9C%88/"/>
+    
+    
+    <category term="学习规划" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>成长感悟</title>
+    <link href="http://example.com/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/"/>
+    <id>http://example.com/2023/09/12/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:51:05.554Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="人生思考" scheme="http://example.com/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/"/>
+    
+    <category term="成长" scheme="http://example.com/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E6%88%90%E9%95%BF/"/>
+    
+    
+    <category term="成长感悟" scheme="http://example.com/tags/%E6%88%90%E9%95%BF%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作日志</title>
+    <link href="http://example.com/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+    <id>http://example.com/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:51:05.548Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
+    <category term="9月" scheme="http://example.com/categories/2023/9%E6%9C%88/"/>
+    
+    
+    <category term="工作日志" scheme="http://example.com/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作备忘</title>
+    <link href="http://example.com/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/"/>
+    <id>http://example.com/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:53:59.780Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
+    <category term="9月" scheme="http://example.com/categories/2023/9%E6%9C%88/"/>
+    
+    
+    <category term="工作备忘" scheme="http://example.com/tags/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书摘抄</title>
+    <link href="http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:53:59.784Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;读书笔记&quot;&gt;&lt;a href=&quot;#读书笔记&quot; class=&quot;headerlink&quot; title=&quot;读书笔记&quot;&gt;&lt;/a&gt;读书笔记&lt;/h1&gt;&lt;h2 id=&quot;三体&quot;&gt;&lt;a href=&quot;#三体&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    <category term="摘抄" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/"/>
+    
+    
+    <category term="摘抄" scheme="http://example.com/tags/%E6%91%98%E6%8A%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于放松的五个迷思</title>
+    <link href="http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/"/>
+    <id>http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/</id>
+    <published>2023-09-11T05:12:33.000Z</published>
+    <updated>2023-09-11T11:46:46.974Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;关于放松的五个迷思（笔记源自：steve说334期）&quot;&gt;&lt;a href=&quot;#关于放松的五个迷思（笔记源自：steve说334期）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="心理学" scheme="http://example.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="自我" scheme="http://example.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/"/>
+    
+    <category term="放松" scheme="http://example.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/"/>
+    
+    
+    <category term="自我探寻" scheme="http://example.com/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/"/>
+    
+    <category term="播客笔记" scheme="http://example.com/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作日志</title>
+    <link href="http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-09-07T08:04:21.000Z</published>
+    <updated>2023-09-07T08:06:25.006Z</updated>
+    
+    
+    
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
+    <category term="9月" scheme="http://example.com/categories/2023/9%E6%9C%88/"/>
+    
+    
+    <category term="工作日志" scheme="http://example.com/tags/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+</feed>
