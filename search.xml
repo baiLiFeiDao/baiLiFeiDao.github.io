@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
+<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
+<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
+<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
+<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
+<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
+<pre class="line-numbers language-lang-html"><code class="language-lang-html"><img th:src="@&#123;/images/TacoCloud.png&#125;"/>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+  </entry>
+  <entry>
     <title>1984读后感</title>
     <url>/2023/09/15/1984%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
     <content><![CDATA[<blockquote>
@@ -114,6 +127,144 @@ PING
 ]]></content>
   </entry>
   <entry>
+    <title>个人博客搭建</title>
+    <url>/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>个人博客搭建参考</p>
+<p><a href="https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html">https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html</a></p>
+<p><a href="https://yunist.cn/hexo/Hexo_blog_build/">https://yunist.cn/hexo/Hexo_blog_build/</a></p>
+]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>spring aop是什么</title>
+    <url>/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<h2 id="Spring-AOP是什么"><a href="#Spring-AOP是什么" class="headerlink" title="Spring AOP是什么"></a>Spring AOP是什么</h2><p>AOP面向切面编程，是一种编程模式。将业务逻辑的各个部分进行隔离。最流行的AOP框架有两个，分别是Spring AOP和AspectJ。</p>
+<p>Spring AOP使用纯Java实现，不需要专门的编译过程和类加载器，<em>在运行期间通过代理方式向目标类植入增强的代码。</em>（这句话在说啥？？？）</p>
+<p>AspectJ 是一个基于 Java 语言的 AOP 框架，从 Spring 2.0 开始，Spring AOP 引入了对 AspectJ 的支持。AspectJ 扩展了 Java 语言，提供了一个专门的编译器，在编译时提供横向代码的植入。</p>
+<h2 id="AOP相关术语"><a href="#AOP相关术语" class="headerlink" title="AOP相关术语"></a>AOP相关术语</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joinpoint（连接点）</td>
+<td>指那些被拦截到的点，在 Spring 中，可以被动态代理拦截目标类的方法。</td>
+</tr>
+<tr>
+<td>Pointcut（切入点）</td>
+<td>指要对哪些 Joinpoint 进行拦截，即被拦截的连接点。</td>
+</tr>
+<tr>
+<td>Advice（通知）</td>
+<td>指拦截到 Joinpoint 之后要做的事情，即对切入点增强的内容。</td>
+</tr>
+<tr>
+<td>Target（目标）</td>
+<td>指代理的目标对象。</td>
+</tr>
+<tr>
+<td>Weaving（植入）</td>
+<td>指把增强代码应用到目标上，生成代理对象的过程。</td>
+</tr>
+<tr>
+<td>Proxy（代理）</td>
+<td>指生成的代理对象。</td>
+</tr>
+<tr>
+<td>Aspect（切面）</td>
+<td>切入点和通知的结合。</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于放松的五个迷思</title>
+    <url>/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/</url>
+    <content><![CDATA[<h1 id="关于放松的五个迷思（笔记源自：steve说334期）"><a href="#关于放松的五个迷思（笔记源自：steve说334期）" class="headerlink" title="关于放松的五个迷思（笔记源自：steve说334期）"></a>关于放松的五个迷思（笔记源自：steve说334期）</h1><h2 id="放松等于懒散？"><a href="#放松等于懒散？" class="headerlink" title="放松等于懒散？"></a>放松等于懒散？</h2><p>刻板印象：放松等于呆着什么都不做，休息</p>
+<p>可能产生的原因：农耕文化，劳作之余身体的休息是非常重要的。</p>
+<p>身体的疲惫可以用躺着消除，精神的疲惫不可以用躺着消除，而现在大多数人工作都是脑力劳动，工作的时候拥有单一刺激源，下班之后躺着发呆、刷手机，也是单一刺激源影响，大脑并不能得到放松。</p>
+<p>放松的本质：释放压力</p>
+<p>压力的本质：外部的要求和内在资源之间的关系。外部的挑战超过了自身的情绪调节范围（躺着是一种逃避，越躺着自身情绪调节就更弱，就越容易感受到压力，难以放松，恶性循环）</p>
+<p>如果放松不能通过懒散的方式，应该采用什么方式</p>
+<p>调节压力（中期压力）的有效方式：有意识提升自己的抗压能力—》有意识地把自己置于高压能力之下，相对合理地将自己的身心进行分离的时候，抗压能力就会增加</p>
+<p>举例1：当做高强度运动的时候，运动休息的间隙，感到很疲惫的时候，压力带来的管道视野很狭窄，只能看到让自己感到疲惫的事物。有意识地让自己平静下来，让自己的身与心进行隔离，有助于提升抗压能力。</p>
+<p>举例2：巴西柔术的训练一方面是身体的训练，另一方面是不断训练在高压的情况下保持冷静，思考策略</p>
+<p>举例3：管道视野：饿的时候只看到食物（把视野打开，让自己习惯以更宽的视野感受：看看盘子，看看环境）</p>
+<h2 id="放松等于放纵？"><a href="#放松等于放纵？" class="headerlink" title="放松等于放纵？"></a>放松等于放纵？</h2><p>常见的放纵放松方式：胡吃海喝、通宵玩手机、刷剧、大量购物，这些放纵放松方式可以带来短期的一些愉悦感</p>
+<p>存在问题：边际效益明显</p>
+<p>放纵训练大脑产生路径依赖，形成多巴胺劫持。</p>
+<p>在科普当中常常存在误解，多巴胺负责愉悦感。实际上，愉悦感主要是由内啡肽负责的，多巴胺负责渴望感，放纵其实就是把放松的活动聚焦在满足这些渴望上。</p>
+<p>举例：看着食物，并不真的享受这个食物本身，而是感觉吃了食物会带来愉悦感，过去的经历不断告诉大脑，只要吃就会快乐。所以看到食物就会让大脑分泌更多的多巴胺，让你渴望去吃那个食物，以至于你吃了什么，你的大脑根本不在乎。</p>
+<p>产生结果：如果一直用放纵来放松的话，容易形成一种逃避。只看到的到眼前渴望的东西，而忽略你的放松应该在身心的各个方面整体地被照顾。</p>
+<p>举例：遇见梦中情人，其他人都不存在了。</p>
+<p>存在问题：</p>
+<ul>
+<li>形成对单一事物的依赖，而边际效益递减，形成很大的负担</li>
+<li>放纵得到的奖励太容易了，满足感会降低。</li>
+</ul>
+<p>​            大脑的特性：比较偏好比较辛苦得来的快乐</p>
+<p>实操建议：</p>
+<p>尽可能避免将放松寄托在一个点上。</p>
+<p>尝试做有一定难度的事情。</p>
+<h2 id="放松等于慢下来？"><a href="#放松等于慢下来？" class="headerlink" title="放松等于慢下来？"></a>放松等于慢下来？</h2><p>慢生活，用生活方式彻底地慢，解决快节奏生活</p>
+<p>慢下来只是开始，要觉察自己紧绷的状态</p>
+<p>来源：外部压力、内源性的紧绷状态</p>
+<p>值得关注内源性的紧绷状态，比如赶飞机赶火车的时候</p>
+<p>沟通分析，来源于儿时确保生存的状态</p>
+<p>每当进入这种紧绷的状态时，就会回到儿时面对父母那种紧张、局促的状态。</p>
+<p>儿童的自我状态对成人自我状态的一种污染</p>
+<p>实操建议：</p>
+<p>当儿童自我状态来临时，要注意到这种变化，内在感受、外在表情、言行举止</p>
+<p>区分儿童自我状态和承认自我状态</p>
+<p>如果站在旁观者的角度看自己，自己是一种什么样的状态</p>
+<h2 id="放松等于自我洗脑？"><a href="#放松等于自我洗脑？" class="headerlink" title="放松等于自我洗脑？"></a>放松等于自我洗脑？</h2><p>深心灵的理念：放下期待、心怀感恩和满足</p>
+<p>存在问题：说服与自我说服是非常主观的，以及非常依赖理性思维的调节能力。但理性思维的调节作用是非常有限的，颓废-佛性-躺平-摆烂</p>
+<p>疼痛反应：</p>
+<p>压力反应：比较普适性的</p>
+<p>压力调节不仅可以通过观念上的调节，调节压力可以通过生理方式，冥想</p>
+<p>实操建议：</p>
+<p>生理叹气，刻意激活腹交感神经，心脏血流放缓，大脑</p>
+<p>延长吐气时间</p>
+<p>适用范围：突然来到的压力</p>
+<p>两次鼻子吸气，一次长吐气</p>
+<h2 id="放松等于逃离现代生活？"><a href="#放松等于逃离现代生活？" class="headerlink" title="放松等于逃离现代生活？"></a>放松等于逃离现代生活？</h2><p>在内卷和躺平之间来回横跳</p>
+<p>当今社会</p>
+<p>个人层面可以做到：</p>
+<p>这种情况往往出现在社会经历比较少的人身上</p>
+<p>不知道如何去做，欠缺经验，认知水平没有进入更高的层面</p>
+<p>意识、方法、能力缺少更高层面的东西，在年轻的时候拥有局限</p>
+<p>缺少模仿参考对象</p>
+<p>不思考做事情本身是否可以进行优化</p>
+<p>实操：</p>
+<p>要有停下来反思自己的时刻，注意压力和疲惫下的管道视野</p>
+<p>有意识寻找实操能力很强、实践经验丰富、细节上做的很出色，大胆请教</p>
+<p>社会支持网络</p>
+]]></content>
+      <categories>
+        <category>心理学</category>
+        <category>自我</category>
+        <category>放松</category>
+      </categories>
+      <tags>
+        <tag>自我探寻</tag>
+        <tag>播客笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2023/09/07/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -129,19 +280,6 @@ PING
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo deploy
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
-<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
-<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
-<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
-<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
-<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
-<pre class="line-numbers language-lang-html"><code class="language-lang-html"><img th:src="@&#123;/images/TacoCloud.png&#125;"/>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
   </entry>
   <entry>
@@ -283,144 +421,6 @@ public class CallableThreadTest implements Callable<Integer> &#123;
       </tags>
   </entry>
   <entry>
-    <title>spring aop是什么</title>
-    <url>/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<h2 id="Spring-AOP是什么"><a href="#Spring-AOP是什么" class="headerlink" title="Spring AOP是什么"></a>Spring AOP是什么</h2><p>AOP面向切面编程，是一种编程模式。将业务逻辑的各个部分进行隔离。最流行的AOP框架有两个，分别是Spring AOP和AspectJ。</p>
-<p>Spring AOP使用纯Java实现，不需要专门的编译过程和类加载器，<em>在运行期间通过代理方式向目标类植入增强的代码。</em>（这句话在说啥？？？）</p>
-<p>AspectJ 是一个基于 Java 语言的 AOP 框架，从 Spring 2.0 开始，Spring AOP 引入了对 AspectJ 的支持。AspectJ 扩展了 Java 语言，提供了一个专门的编译器，在编译时提供横向代码的植入。</p>
-<h2 id="AOP相关术语"><a href="#AOP相关术语" class="headerlink" title="AOP相关术语"></a>AOP相关术语</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Joinpoint（连接点）</td>
-<td>指那些被拦截到的点，在 Spring 中，可以被动态代理拦截目标类的方法。</td>
-</tr>
-<tr>
-<td>Pointcut（切入点）</td>
-<td>指要对哪些 Joinpoint 进行拦截，即被拦截的连接点。</td>
-</tr>
-<tr>
-<td>Advice（通知）</td>
-<td>指拦截到 Joinpoint 之后要做的事情，即对切入点增强的内容。</td>
-</tr>
-<tr>
-<td>Target（目标）</td>
-<td>指代理的目标对象。</td>
-</tr>
-<tr>
-<td>Weaving（植入）</td>
-<td>指把增强代码应用到目标上，生成代理对象的过程。</td>
-</tr>
-<tr>
-<td>Proxy（代理）</td>
-<td>指生成的代理对象。</td>
-</tr>
-<tr>
-<td>Aspect（切面）</td>
-<td>切入点和通知的结合。</td>
-</tr>
-</tbody>
-</table>
-</div>
-]]></content>
-      <categories>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人博客搭建</title>
-    <url>/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<p>个人博客搭建参考</p>
-<p><a href="https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html">https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html</a></p>
-<p><a href="https://yunist.cn/hexo/Hexo_blog_build/">https://yunist.cn/hexo/Hexo_blog_build/</a></p>
-]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>关于放松的五个迷思</title>
-    <url>/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/</url>
-    <content><![CDATA[<h1 id="关于放松的五个迷思（笔记源自：steve说334期）"><a href="#关于放松的五个迷思（笔记源自：steve说334期）" class="headerlink" title="关于放松的五个迷思（笔记源自：steve说334期）"></a>关于放松的五个迷思（笔记源自：steve说334期）</h1><h2 id="放松等于懒散？"><a href="#放松等于懒散？" class="headerlink" title="放松等于懒散？"></a>放松等于懒散？</h2><p>刻板印象：放松等于呆着什么都不做，休息</p>
-<p>可能产生的原因：农耕文化，劳作之余身体的休息是非常重要的。</p>
-<p>身体的疲惫可以用躺着消除，精神的疲惫不可以用躺着消除，而现在大多数人工作都是脑力劳动，工作的时候拥有单一刺激源，下班之后躺着发呆、刷手机，也是单一刺激源影响，大脑并不能得到放松。</p>
-<p>放松的本质：释放压力</p>
-<p>压力的本质：外部的要求和内在资源之间的关系。外部的挑战超过了自身的情绪调节范围（躺着是一种逃避，越躺着自身情绪调节就更弱，就越容易感受到压力，难以放松，恶性循环）</p>
-<p>如果放松不能通过懒散的方式，应该采用什么方式</p>
-<p>调节压力（中期压力）的有效方式：有意识提升自己的抗压能力—》有意识地把自己置于高压能力之下，相对合理地将自己的身心进行分离的时候，抗压能力就会增加</p>
-<p>举例1：当做高强度运动的时候，运动休息的间隙，感到很疲惫的时候，压力带来的管道视野很狭窄，只能看到让自己感到疲惫的事物。有意识地让自己平静下来，让自己的身与心进行隔离，有助于提升抗压能力。</p>
-<p>举例2：巴西柔术的训练一方面是身体的训练，另一方面是不断训练在高压的情况下保持冷静，思考策略</p>
-<p>举例3：管道视野：饿的时候只看到食物（把视野打开，让自己习惯以更宽的视野感受：看看盘子，看看环境）</p>
-<h2 id="放松等于放纵？"><a href="#放松等于放纵？" class="headerlink" title="放松等于放纵？"></a>放松等于放纵？</h2><p>常见的放纵放松方式：胡吃海喝、通宵玩手机、刷剧、大量购物，这些放纵放松方式可以带来短期的一些愉悦感</p>
-<p>存在问题：边际效益明显</p>
-<p>放纵训练大脑产生路径依赖，形成多巴胺劫持。</p>
-<p>在科普当中常常存在误解，多巴胺负责愉悦感。实际上，愉悦感主要是由内啡肽负责的，多巴胺负责渴望感，放纵其实就是把放松的活动聚焦在满足这些渴望上。</p>
-<p>举例：看着食物，并不真的享受这个食物本身，而是感觉吃了食物会带来愉悦感，过去的经历不断告诉大脑，只要吃就会快乐。所以看到食物就会让大脑分泌更多的多巴胺，让你渴望去吃那个食物，以至于你吃了什么，你的大脑根本不在乎。</p>
-<p>产生结果：如果一直用放纵来放松的话，容易形成一种逃避。只看到的到眼前渴望的东西，而忽略你的放松应该在身心的各个方面整体地被照顾。</p>
-<p>举例：遇见梦中情人，其他人都不存在了。</p>
-<p>存在问题：</p>
-<ul>
-<li>形成对单一事物的依赖，而边际效益递减，形成很大的负担</li>
-<li>放纵得到的奖励太容易了，满足感会降低。</li>
-</ul>
-<p>​            大脑的特性：比较偏好比较辛苦得来的快乐</p>
-<p>实操建议：</p>
-<p>尽可能避免将放松寄托在一个点上。</p>
-<p>尝试做有一定难度的事情。</p>
-<h2 id="放松等于慢下来？"><a href="#放松等于慢下来？" class="headerlink" title="放松等于慢下来？"></a>放松等于慢下来？</h2><p>慢生活，用生活方式彻底地慢，解决快节奏生活</p>
-<p>慢下来只是开始，要觉察自己紧绷的状态</p>
-<p>来源：外部压力、内源性的紧绷状态</p>
-<p>值得关注内源性的紧绷状态，比如赶飞机赶火车的时候</p>
-<p>沟通分析，来源于儿时确保生存的状态</p>
-<p>每当进入这种紧绷的状态时，就会回到儿时面对父母那种紧张、局促的状态。</p>
-<p>儿童的自我状态对成人自我状态的一种污染</p>
-<p>实操建议：</p>
-<p>当儿童自我状态来临时，要注意到这种变化，内在感受、外在表情、言行举止</p>
-<p>区分儿童自我状态和承认自我状态</p>
-<p>如果站在旁观者的角度看自己，自己是一种什么样的状态</p>
-<h2 id="放松等于自我洗脑？"><a href="#放松等于自我洗脑？" class="headerlink" title="放松等于自我洗脑？"></a>放松等于自我洗脑？</h2><p>深心灵的理念：放下期待、心怀感恩和满足</p>
-<p>存在问题：说服与自我说服是非常主观的，以及非常依赖理性思维的调节能力。但理性思维的调节作用是非常有限的，颓废-佛性-躺平-摆烂</p>
-<p>疼痛反应：</p>
-<p>压力反应：比较普适性的</p>
-<p>压力调节不仅可以通过观念上的调节，调节压力可以通过生理方式，冥想</p>
-<p>实操建议：</p>
-<p>生理叹气，刻意激活腹交感神经，心脏血流放缓，大脑</p>
-<p>延长吐气时间</p>
-<p>适用范围：突然来到的压力</p>
-<p>两次鼻子吸气，一次长吐气</p>
-<h2 id="放松等于逃离现代生活？"><a href="#放松等于逃离现代生活？" class="headerlink" title="放松等于逃离现代生活？"></a>放松等于逃离现代生活？</h2><p>在内卷和躺平之间来回横跳</p>
-<p>当今社会</p>
-<p>个人层面可以做到：</p>
-<p>这种情况往往出现在社会经历比较少的人身上</p>
-<p>不知道如何去做，欠缺经验，认知水平没有进入更高的层面</p>
-<p>意识、方法、能力缺少更高层面的东西，在年轻的时候拥有局限</p>
-<p>缺少模仿参考对象</p>
-<p>不思考做事情本身是否可以进行优化</p>
-<p>实操：</p>
-<p>要有停下来反思自己的时刻，注意压力和疲惫下的管道视野</p>
-<p>有意识寻找实操能力很强、实践经验丰富、细节上做的很出色，大胆请教</p>
-<p>社会支持网络</p>
-]]></content>
-      <categories>
-        <category>心理学</category>
-        <category>自我</category>
-        <category>放松</category>
-      </categories>
-      <tags>
-        <tag>自我探寻</tag>
-        <tag>播客笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>卡充值流程</title>
     <url>/2023/09/19/%E5%8D%A1%E5%85%85%E5%80%BC%E6%B5%81%E7%A8%8B/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -444,28 +444,6 @@ public class CallableThreadTest implements Callable<Integer> &#123;
       </tags>
   </entry>
   <entry>
-    <title>密码管理</title>
-    <url>/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="86d8acc2aff26182f46528ae81d73b73b3a5fe98742ffb56adef8e01645e925d">a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>密码</category>
-      </categories>
-      <tags>
-        <tag>密码管理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学习规划</title>
     <url>/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -486,18 +464,6 @@ public class CallableThreadTest implements Callable<Integer> &#123;
       </categories>
       <tags>
         <tag>学习规划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作日志</title>
-    <url>/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>2023</category>
-        <category>9月</category>
-      </categories>
-      <tags>
-        <tag>工作日志</tag>
       </tags>
   </entry>
   <entry>
@@ -536,10 +502,22 @@ public class CallableThreadTest implements Callable<Integer> &#123;
       </tags>
   </entry>
   <entry>
-    <title>支付功能</title>
-    <url>/2023/09/19/%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</url>
+    <title>工作日志</title>
+    <url>/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>2023</category>
+        <category>9月</category>
+      </categories>
+      <tags>
+        <tag>工作日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>密码管理</title>
+    <url>/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="68d4456fef2d96edcc5993a43620d6bd30a7e03e15dc6f3b37ab8aa22a216198">e9f9d1802d784cd7d6d6c65cd7b5142748c8fcc9864d9c9de0351eeaa5bc97f15646be905d85797aa8c26dbf5e99694b314ade0094857e0fad01214ed9f7bdd480ee34082fdeb046455c2853b106776eccea5db0316a75db88fb11befd6cda66732032526484ef3547882706f193926e54d09867631a9a887e0418e6184d8c511e0f18976fae4e819e893cc2e85db10587d0a3756ea6733b1c6706d7926135427e6de4cfb3ea5d6fbbfe21efed94ed4e5b272a777f2d35bc98014d4eb355a2711fc5b52d35103a86176070c83fa518b7d5a8265c60822d7c6b0258a2ee80dacd986fc5801b6d9be698b8c35a8c74ea5e107e75611deba9cb3028dbfd17fd964e862e914d382325ff32132c23e0f11ec33d5208c03b5a3f270d0ea271aaa65210e30191105a970e820a47842c139580ce280af609a9596e23f155e78ef9f158770264efdf46fa569f6506ebb3eebc69401f44ea498071860d3ed89f3e0874e31fab143b69b56c3bc98398fba6d4288993</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="86d8acc2aff26182f46528ae81d73b73b3a5fe98742ffb56adef8e01645e925d">a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -550,8 +528,11 @@ public class CallableThreadTest implements Callable<Integer> &#123;
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>密码</category>
+      </categories>
       <tags>
-        <tag>第三方支付</tag>
+        <tag>密码管理</tag>
       </tags>
   </entry>
   <entry>
@@ -578,6 +559,92 @@ public class CallableThreadTest implements Callable<Integer> &#123;
       </tags>
   </entry>
   <entry>
+    <title>支付功能</title>
+    <url>/2023/09/19/%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="68d4456fef2d96edcc5993a43620d6bd30a7e03e15dc6f3b37ab8aa22a216198">e9f9d1802d784cd7d6d6c65cd7b5142748c8fcc9864d9c9de0351eeaa5bc97f15646be905d85797aa8c26dbf5e99694b314ade0094857e0fad01214ed9f7bdd480ee34082fdeb046455c2853b106776eccea5db0316a75db88fb11befd6cda66732032526484ef3547882706f193926e54d09867631a9a887e0418e6184d8c511e0f18976fae4e819e893cc2e85db10587d0a3756ea6733b1c6706d7926135427e6de4cfb3ea5d6fbbfe21efed94ed4e5b272a777f2d35bc98014d4eb355a2711fc5b52d35103a86176070c83fa518b7d5a8265c60822d7c6b0258a2ee80dacd986fc5801b6d9be698b8c35a8c74ea5e107e75611deba9cb3028dbfd17fd964e862e914d382325ff32132c23e0f11ec33d5208c03b5a3f270d0ea271aaa65210e30191105a970e820a47842c139580ce280af609a9596e23f155e78ef9f158770264efdf46fa569f6506ebb3eebc69401f44ea498071860d3ed89f3e0874e31fab143b69b56c3bc98398fba6d4288993</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>第三方支付</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>若依框架是什么</title>
+    <url>/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>背景：接触一个新的不完整的项目，看了两三周代码，没注意到搭建好的项目是个若依框架，而给的代码只有交易部分，完全没有若依框架，决定自己初步了解一下若依框架。</p>
+<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>RuoYi是一款基于SpringBoot+Bootstrap的极速后台开发框架。</p>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><pre><code>com.ruoyi     
+├── common            // 工具类
+│       └── annotation                    // 自定义注解
+│       └── config                        // 全局配置
+│       └── constant                      // 通用常量
+│       └── core                          // 核心控制
+│       └── enums                         // 通用枚举
+│       └── exception                     // 通用异常
+│       └── json                          // JSON数据处理
+│       └── utils                         // 通用类处理
+│       └── xss                           // XSS过滤处理
+├── framework         // 框架核心
+│       └── aspectj                       // 注解实现
+│       └── config                        // 系统配置
+│       └── datasource                    // 数据权限
+│       └── interceptor                   // 拦截器
+│       └── manager                       // 异步处理
+│       └── shiro                         // 权限控制
+│       └── web                           // 前端控制
+├── ruoyi-generator   // 代码生成（不用可移除）
+├── ruoyi-quartz      // 定时任务（不用可移除）
+├── ruoyi-system      // 系统代码
+├── ruoyi-admin       // 后台服务
+├── ruoyi-xxxxxx      // 其他模块
+</code></pre><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="Spring-Boot框架"><a href="#Spring-Boot框架" class="headerlink" title="Spring Boot框架"></a>Spring Boot框架</h3><p>开箱即用框架，提供各种默认配置简化项目配置，更快入门spring</p>
+<p>优点</p>
+<ul>
+<li>使编码变得简单： 推荐使用注解。</li>
+<li>使配置变得简单： 自动配置、快速集成新技术能力 没有冗余代码生成和XML配置的要求</li>
+<li>使部署变得简单： 内嵌Tomcat、Jetty、Undertow等web容器，无需以war包形式部署</li>
+<li>使监控变得简单： 提供运行时的应用监控</li>
+<li>使集成变得简单： 对主流开发框架的无配置集成。</li>
+<li>使开发变得简单： 极大地提高了开发快速构建项目、部署效率。</li>
+</ul>
+<h3 id="Shiro安全控制"><a href="#Shiro安全控制" class="headerlink" title="Shiro安全控制"></a>Shiro安全控制</h3><p>Apache Shiro是Java的一个安全框架。Shiro可以帮助我们完成：认证、授权、加密、会话管理、与Web集成、缓存等。其不仅可以用在 JavaSE环境，也可以用在 JavaEE 环境。</p>
+<p>优点</p>
+<ul>
+<li>易于理解的 Java Security API</li>
+<li>简单的身份认证，支持多种数据源</li>
+<li>对角色的简单的授权，支持细粒度的授权</li>
+<li>不跟任何的框架或者容器捆绑，可以独立运行</li>
+</ul>
+<p>特性</p>
+<ul>
+<li><code>Authentication</code>身份认证/登录，验证用户是不是拥有相应的身份</li>
+<li><code>Authorization</code>授权，即验证权限，验证某个已认证的用户是否拥有某个权限，即判断用户是否能做事情 <code>SessionManagement</code>会话管理，即用户登录后就是一次会话，在没有退出之前，它的所有信息都在会话中</li>
+<li><code>Cryptography</code>加密，保护数据的安全性，如密码加密存储到数据库，而不是明文存储</li>
+<li><code>Caching</code>缓存，比如用户登录后，其用户信息，拥有的角色/权限不必每次去查，提高效率</li>
+<li><code>Concurrency</code>Shiro支持多线程应用的并发验证，即如在一个线程中开启另一个线程，能把权限自动传播过去</li>
+<li><code>Testing</code>提供测试支持</li>
+<li><code>RunAs</code>允许一个用户假装为另一个用户（如果他们允许）的身份进行访问</li>
+<li><code>RememberMe</code>记住我，这是非常常见的功能，即一次登录后，下次再来的话不用登录了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>WEB框架</category>
+        <category>若依</category>
+      </categories>
+      <tags>
+        <tag>若依框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>工作日志</title>
     <url>/2023/09/12/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -598,6 +665,29 @@ public class CallableThreadTest implements Callable<Integer> &#123;
       </categories>
       <tags>
         <tag>工作日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工作备忘</title>
+    <url>/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="a9650775d39ad7244d2f3c4886aa7a85a134d09cb13a228273f669f6246d8502">a354929597e97e0548983d5de94304bf9b2a8e602fd0acf4bbca888930499cf0675db2630e36fafa598289469cd3b63e907e92e1b964cc44597762c24c257e43ed42707bc44c1484568e81a687216490b28861a2d307d42bbb2342c4e87ac56665a79a6a9d1c5b391722fc2aa2acec80cd536f7868a127cdf0dba0f8b46e896b853d63a6254c33daa796596be89233cca738377107d18547fae30f8b1969c21f80c50d0339213a6d560f2fea17e48609745561a974ee417d28873b055c9a904846566aa5c2f2d743b30c7da3f7eb0faf4c3c2653127296d2b5e7be9674d0686f8807a8360fd9f8495223b3ac412cd6861f2827bc00bdad1038feea2e32b6ddba5b86ba1bcab04736f84c01c6b25bcb6c75bf963dec5d09120eb02c37cf3cfa3671e6b07bd221f20edd3120e042efab49f913c604fa43202e0f72d8184b32bead050360837658969c9084b747d8f37020ff53b14b659c5962845e88855c8014f0c2b6e910d04584959de21b77a4e3d0dbb86d1501546bfe7cf0a64926b4be4617e1f944a6165fedc2e2cd8585598b8fe5feda264075927c85493d3c86b86b6f912e995d796e1a0d01a22bedb9a9982cbd3d9ba6a842e8fc62a85d09c2be60fa405006a70fce8a20e83fb2fbbf3aa866a7bb22e8f8e87927e32c7458a4f12759cad4c758012bc0f1a7fa3e8d3a9db0c3cc60f4a004766558dc0ca039fa16416e2e574af7b7ce10f23dfa6927efe597f87daf9af35da4e197ac781126533ff2c28e4aa0ba9f8228d5313caac71c8b5d6e7702091976f8845cb8433a47a11ce2de8ef5d5d1a57eb4f64049561794de2aa10a6d657982bb7629b9b31f9bf02a87f7bc1706de9bf35a4420205ff380d19d1e17bd605c47ed9939689d4ea4a1c50f5b3afdbd4dcb803f28f226748200357eaab6fdb955aab643af34040a1c09eeeea4e4408f813df73ece469cfcb5eb7456c64656ce8b3eba790560637fb610ab860335fc5105d5ee175602f594cbfb550e2d63e55bf0987e6b8b551b40d4d4ba595d5e25720809316a28afc391791a01ec2376401a4a21d0aa11d81c8d7c6c1dd9b544c8966d8e3016a14163c928dd4f29e578562ad323d80961736a8d4def0b15b766e37fd6cda99a02d4002251dc45e8b1f1abd24c5a46bf7c7a5861bb20192df8a14a6ddd338de17bf3ba6d2ddf28b11a24df06a2f973d7428467fda0c3ebf6fc6bd40d5d65a749d0b356aabfdab2d2e7782c8a03fca3a6f68cad637cc4554c7d8100c821699578edcefdd9d0be5702e4ac44be95ba6111620342aa938d763d2337bcf67c7cb293add2e6711c6fd4c326187b01238ea23f5d9f27d0b5788a480e3250cdbb9fa071a0900ebc0543795333a8180ffd251e38949a7cb26ca501a6340a0f93c77e162368770308273e78880a3fde9dcecd3960124a41237ab0919be53e1baf1b23be6799766aadfd1530ea12002e833418661bf282473428431d5247b9c5e3134bbe5ff4bd9b6e6eb5efb9942943d0adab9e82b0114da3fb39097d419aaa34e9ae9eba407b825da25f7179b7488de2fa6d17288616875cc1e4c4c74f856d70b19916c6bce80160bad57848bfe5bc05815f684c72f59381deaf60ce9e7dc4fd72a0870c259f03c00cffc42130a68ddbba96946e70577d2e3b6c67e07687f5d38e5f7ddaf09ebd40e346873b4e9c2e5274cf8e6e317582067e4491693a7d947a9acaac635628015e131ef2643b60801805f8b6ddb6caba7ad80613c364b84ae8a5bb82e0d0c75da19cf63186ea1e13c8012e4047afa72d553b45d016be21613662197a2ac2137d881ffca6cecaf4ee454d123494dbc97f66d32437b5b79d96d330c9fa0683af6e246ee2f21883493e4c59e11e2da355bdf6aa09a65fb529563810e17ed06a520dcfef503e35cb3c566f3f2acb62fecbe70a41e453f74600221928618ce32ebdd7f3ad3bf0920d9aedfa4a7ac61a2f22c5055d4ededfa84edabcbb8c74c5e71b757ba30fd4a20dd697e19377e2411f7058ddf13cf1946ecf9036ba0c6efd9f1640a70e1c84e77a456e07539946c2f4857a5953dac29e167d2e5d522be97e113a7f127d435c995319a5829ab34ff0ce1ba1f62718cefa2ccdb0930bbc48f7e942df287995b9b82062a9bf98dfee0f57ddbcf3148e5bfa277d7c4645af540e95139a946c4019b21cef9f07f5cc328c10cdee778f0baacede54b1f3eaa0aa85d58ab3713a0c797ece24ee177713566bbc09b4af84daf4e62f5634a9002aa5fc9ceb0bd6ebdbfcb081f771f94f4388c6e4d8f6b9df595bb43e9ec2dcceb63c71c530e311484a4c84517863e8a0bf6b8c54ed5869cd79dbb0bad0977c6be7bc3c6d17437937992a067d8413fc858ad6df6cafe9adb6a55f5b224e115f96f2a446442794bcbca4c017ff3132ab8c8678b248e690441afcae7891c04276b5deddaa7011e33e85de926f04564a3c7945d3847970556ff9b426b2483ee88a5fc6b4c094d5296fe604c591a8170794fd8543f50536990f3114778555dfb61f0ab3ef1f2bdf3ddf3e58af2d4d781fdb6874fab553596757574abb2bbfc8f7c4ae8d0dcf8cea6eca362f2f75b9f8c9c3252321a7657042d0e73986b06ce647e515fccd6e6766a768fd7f970e3bf2f444a566c56a976416384c7bf0f9036cd72715a3a1d9faadc1718167a7d4c0cd73562e4e45539788ac6337130ddd0b02d144a96c8c5d0e2c9d40a8df21f32de25faf0f67fe3e6006138358d5c7bb82a3f428c4e4b65ac74ebc4bdf80c0a83d347f6246543cacfd1e0c7b4e3b7e77d582fd5e71563f67f007004effca5fd8a7e10009fde2293aa0ad4d0b8def95fccd6c64f46b306908d297eb1941272409087d007bc587da8fa87b9b0662ddd3ddaa194c7ef218553c98f0e2c2aad74af1a28f02f87cfd9489f51636d4ea2099326e5f28dfc906339bf719d08d2dd95f25e7ed461c68ffbdd64cf916b516e08c11c91273c8447cb2588319f90af155c0489c99d479eb6cfd372ebf7112766cb7218fe86eed2f8a0401fa255f73360830aaafcc99ceb741208a2a680d1633073aa159f65bf8c9e28e5d35fa63b3c9d78a84b159f30f46c439e7db75e0b73c18da8b38b97098712cc4f96c118f308663fc1949b4b5e704287f36624ada3f303adc82b9f6d0614bf77915662d363ff428a71c5fa234878b90024f6b7a5dda325ecfdd55784f3fc8dbedddcbe5152255dd1e3bc6383a55fd2c5f4391b53ef15e590b44b8196b4374446e7fd161d151d88e23ae5666bc158ea4956128ec2cc49ea88b71a4b7477f7d533dbbf302962fdbabff1c00d6aac74a32f7a8f46bf9174fd7bba55953c3e7cb0efb67151594aec5e834ae7ae534b57f225397c1f7f7b9c06f720f856846b63959b29286932ac1c1cd0f9d69188aceea9cd9906477a5c37c9785021ac980885f9b95dcc474aa98d2b37bb8a43fc8497ba3fc2db584d9c81fad94437f32de878deb85e7a478997390418a0a1aa1c7730be61d2e07e26e7807305a648562a5734cfc2a6770e09a38f994e9a5f7711659ed6ae1d13889b38470f395ff42a0afd86ba2f144cc38a2b292e32fe33997eaea124e7a07aad9d5d6922f7f2d98d9c242ff4e5a39a01a2d6af5bf05ba83114eb19acc2ed23aed32568d01b079ae17ae2482e56441ab948e48c6489b097636c0a1bb4679f083daffb73fd8849b4abc0368419fa296935244e8582b5bf5b26610674faec90bf7b450446b42e00dd078701120a7c3e2688c54f4b05da77b660c5f8101c0191c69c32967edaf4362c938f04e19a0eba36ae387c559625402f88c6a6155db584ac7d310bec237369a7df3e30143120a19aeef432cf9edd84d4b740119ca8c685f65353bf345432365bb7107055a1a4086a5661a5152a68aec10d3370ed21c1d8836f172327ffaeb9ec4e270bd3a5af6baf4d386c899b74082ef7a0be34d5289eb3c0bc0406786a9db96f68d54466fe01a5f391bc8e02dd36627fe6c3f4a9297a5a58a96cb234aca95bc14c4f14e2fae40bb51ed10415ba1f59f9645961555c4592619403e478f9e1cafc3aa5b99a6a6563b6bccd5260be48f38da46fa527384ed4d121034b54da3b3c7d4498d3240a6858ae37493a0cbc2a8721303d123ba77c9af4091528126620510c8bbe01702aba8f126bc234ad16128a6417cf8ec8bdd69b74df208d377a02c7cef2483426edaebff20aa69677f49e88ec9312870ffbb55ca7ee8a42fcdff06c458c2ffa41efcbd58252061b22cdf6e711735508ad21f2df01648d2d01530c6e7434d5fa612678cb0e94bcea3fe42c42fc504318b49043ade3e0c6e7e744f015a88035256b9670928b0cd7bc09e794a0cd0097bdb50f075cd19ec53a73948ead282492f0b39045a266ad819cdec7259978b77d2b58fdc36c12a7f1ec5a82975bf149d2d030432bac26d540e4c9c0200b9f9d902c81e075c7e72a56afc3c2a24e77e00ee75951ac372aefdd1c93b27b65292d7288b0cfe811b4c633aed2f60e03182bbec3bc151fcf1eeb9ce92073194653554fc8f7465f1015d9b6bd1c411a0c19c19b789f6deae61dae5e75a663a7c45d223e8222f5647321785cb98cefe028eba642fdc22e9a02238092663a9b57309343f8df6b1c092697471c74d3fe2e0de978a4a12710472b2f28d442b29481687b17d0067a2b09a51b38b43b07e6f32a3260a3bb594fb9aeedd5599b3a0125642e3ae0cea3d404f1c1480e61bf24b770c00337b9a68fe49e57b8a77a9d8dda3d4f86f4c647446b8d206527171aa0557b5a6a63cefb726ecc9932b3070412a7d0f89f2858636d461fe268297ad1456d12209e5d2963cc68dd90f3ba224f9c483a538ad9eb07adf4242ab46988e9c332dfbe1bd526bfc7c1ccd6eee781da0be48cb8457ba1cc4c6768dd8937050443188cd6ec657e3c34e94135e982e19cc857a3ac4babc4bfa1c06c2855939fbea421cd2de4b5b2179da14566393f120ce3fef82db9db6aef31470e2be742fa1d008c9ae2ca61d36cadf0677f20b2c55c5539bf74466195a34d931a989a578e72b7352689c8f9bcb9ba863950bba33c7b5ebc4b68dd7e7ad4c546b50ee3f6e788e1b73e3267694bdbaf94cad8a47196f85c8db8aec63b92a3a3f31a935425c95d85bed58ce1ceab8c0cd61738aeee0977082f52b039066b8a473416f0646c277c1c7e2e4ca1e345b3809f029ec432b842a1e5fb95f97ea07f3d04e847746047418b7b62a5860adb2b752b66929ea8690148d31ee52c873834ef3448e7f3eea10c5c338436c5936cfbab0ee3cb4a729dff4c9c98bdf95966e5fb8cf83f61f529d3c96e363eaa4945d95b8121bb1aadb052b060a23972f58b0b3db15ddf343ffbe2d3ef76160b03a5ebd54cc48147f664a64526748d323282137caa481880fff4b44f48325ae21d066eb80e1a31a17c6c03ad3585a620f5f4904af6794aed007360b5d3f4bf4a3eb120a8ea1a991f0b12f677249588891dbd4c524021a5281a15e688136d8c9f32a4e8bfe31869fe91a3f3a83e20b1ce810a3b8a627d02176a438e1a8ef46cfd276002ab83cc097d5b56a4f8fdb80210b8abbad04b522d565f755acc84152e2c8982fafc28cf87f15cdade4bd5825f5a0308ffc96c3a714bb35424d6ec950f638339903cbb5c1e7d2806afee695359d1acfda2705c2ff53806c6bec172315413ae97d7b3475baa2f019f5c1ffc8459b832122186052c6bdbfd7a7145aa05b8b0b918ae949c1b932cb55980d226224eae481768fc10170d98aab422c44a02232e648b5eaf1a391fdae2499d8dccda20aa59456f903b50e6232908ea0ec997efce87029ff7145b5e1d8f11e5e49de7648088734e5a193bc3c870b28f2966b74caa8a4a43d73709f42a43112c51486e89577ff4888e1b01d3f1c92f71638bb2e29dfba91bac6a66e180e5d307a53364f697bf65719bf1ebbf70f11421b36e8c620d9960b8e13efe4010c89e2bf1051313abb0bf9df46fb6d54fa429aa078051c178bd316d483ff8239e07479b2a7f1ac660241d8339d8c9a625bddc850828a4c4726f38545fa7b84cd4c44db41dc7fe5e8986f4f90fe625bffabed366579b3cc77a34628546412cf4ec5ca28d1923d10107f2be265f4a52afe7ff92b492d90df5d6cc32111eab2d85f4c76139e47a0aa8f0e22f3c011627a783d5b16c46ad425db9c16dd5b7bb5ac53abdb4f178e45cd80bbec259832ad79cc2d1b532719f53b4a76e06fb07402964ac6d25f71d3b51cbfe2b5c308553a6a97b6fcdaec3c0e444038eaf2b251b68de4a307808a29c8a77d5ab5887bc877963d64362e55019a8507480d001480622a22a5aca015f199562723d6f5a026dcd97197289ab943a588f1</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>2023</category>
+        <category>9月</category>
+      </categories>
+      <tags>
+        <tag>工作备忘</tag>
       </tags>
   </entry>
   <entry>
@@ -679,96 +769,6 @@ where dept_id = &#123;currentUserDeptId&#125;
       </categories>
       <tags>
         <tag>DataScope</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作备忘</title>
-    <url>/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="a9650775d39ad7244d2f3c4886aa7a85a134d09cb13a228273f669f6246d8502">a354929597e97e0548983d5de94304bf9b2a8e602fd0acf4bbca888930499cf0675db2630e36fafa598289469cd3b63e907e92e1b964cc44597762c24c257e43ed42707bc44c1484568e81a687216490b28861a2d307d42bbb2342c4e87ac56665a79a6a9d1c5b391722fc2aa2acec80cd536f7868a127cdf0dba0f8b46e896b853d63a6254c33daa796596be89233cca738377107d18547fae30f8b1969c21f80c50d0339213a6d560f2fea17e48609745561a974ee417d28873b055c9a904846566aa5c2f2d743b30c7da3f7eb0faf4c3c2653127296d2b5e7be9674d0686f8807a8360fd9f8495223b3ac412cd6861f2827bc00bdad1038feea2e32b6ddba5b86ba1bcab04736f84c01c6b25bcb6c75bf963dec5d09120eb02c37cf3cfa3671e6b07bd221f20edd3120e042efab49f913c604fa43202e0f72d8184b32bead050360837658969c9084b747d8f37020ff53b14b659c5962845e88855c8014f0c2b6e910d04584959de21b77a4e3d0dbb86d1501546bfe7cf0a64926b4be4617e1f944a6165fedc2e2cd8585598b8fe5feda264075927c85493d3c86b86b6f912e995d796e1a0d01a22bedb9a9982cbd3d9ba6a842e8fc62a85d09c2be60fa405006a70fce8a20e83fb2fbbf3aa866a7bb22e8f8e87927e32c7458a4f12759cad4c758012bc0f1a7fa3e8d3a9db0c3cc60f4a004766558dc0ca039fa16416e2e574af7b7ce10f23dfa6927efe597f87daf9af35da4e197ac781126533ff2c28e4aa0ba9f8228d5313caac71c8b5d6e7702091976f8845cb8433a47a11ce2de8ef5d5d1a57eb4f64049561794de2aa10a6d657982bb7629b9b31f9bf02a87f7bc1706de9bf35a4420205ff380d19d1e17bd605c47ed9939689d4ea4a1c50f5b3afdbd4dcb803f28f226748200357eaab6fdb955aab643af34040a1c09eeeea4e4408f813df73ece469cfcb5eb7456c64656ce8b3eba790560637fb610ab860335fc5105d5ee175602f594cbfb550e2d63e55bf0987e6b8b551b40d4d4ba595d5e25720809316a28afc391791a01ec2376401a4a21d0aa11d81c8d7c6c1dd9b544c8966d8e3016a14163c928dd4f29e578562ad323d80961736a8d4def0b15b766e37fd6cda99a02d4002251dc45e8b1f1abd24c5a46bf7c7a5861bb20192df8a14a6ddd338de17bf3ba6d2ddf28b11a24df06a2f973d7428467fda0c3ebf6fc6bd40d5d65a749d0b356aabfdab2d2e7782c8a03fca3a6f68cad637cc4554c7d8100c821699578edcefdd9d0be5702e4ac44be95ba6111620342aa938d763d2337bcf67c7cb293add2e6711c6fd4c326187b01238ea23f5d9f27d0b5788a480e3250cdbb9fa071a0900ebc0543795333a8180ffd251e38949a7cb26ca501a6340a0f93c77e162368770308273e78880a3fde9dcecd3960124a41237ab0919be53e1baf1b23be6799766aadfd1530ea12002e833418661bf282473428431d5247b9c5e3134bbe5ff4bd9b6e6eb5efb9942943d0adab9e82b0114da3fb39097d419aaa34e9ae9eba407b825da25f7179b7488de2fa6d17288616875cc1e4c4c74f856d70b19916c6bce80160bad57848bfe5bc05815f684c72f59381deaf60ce9e7dc4fd72a0870c259f03c00cffc42130a68ddbba96946e70577d2e3b6c67e07687f5d38e5f7ddaf09ebd40e346873b4e9c2e5274cf8e6e317582067e4491693a7d947a9acaac635628015e131ef2643b60801805f8b6ddb6caba7ad80613c364b84ae8a5bb82e0d0c75da19cf63186ea1e13c8012e4047afa72d553b45d016be21613662197a2ac2137d881ffca6cecaf4ee454d123494dbc97f66d32437b5b79d96d330c9fa0683af6e246ee2f21883493e4c59e11e2da355bdf6aa09a65fb529563810e17ed06a520dcfef503e35cb3c566f3f2acb62fecbe70a41e453f74600221928618ce32ebdd7f3ad3bf0920d9aedfa4a7ac61a2f22c5055d4ededfa84edabcbb8c74c5e71b757ba30fd4a20dd697e19377e2411f7058ddf13cf1946ecf9036ba0c6efd9f1640a70e1c84e77a456e07539946c2f4857a5953dac29e167d2e5d522be97e113a7f127d435c995319a5829ab34ff0ce1ba1f62718cefa2ccdb0930bbc48f7e942df287995b9b82062a9bf98dfee0f57ddbcf3148e5bfa277d7c4645af540e95139a946c4019b21cef9f07f5cc328c10cdee778f0baacede54b1f3eaa0aa85d58ab3713a0c797ece24ee177713566bbc09b4af84daf4e62f5634a9002aa5fc9ceb0bd6ebdbfcb081f771f94f4388c6e4d8f6b9df595bb43e9ec2dcceb63c71c530e311484a4c84517863e8a0bf6b8c54ed5869cd79dbb0bad0977c6be7bc3c6d17437937992a067d8413fc858ad6df6cafe9adb6a55f5b224e115f96f2a446442794bcbca4c017ff3132ab8c8678b248e690441afcae7891c04276b5deddaa7011e33e85de926f04564a3c7945d3847970556ff9b426b2483ee88a5fc6b4c094d5296fe604c591a8170794fd8543f50536990f3114778555dfb61f0ab3ef1f2bdf3ddf3e58af2d4d781fdb6874fab553596757574abb2bbfc8f7c4ae8d0dcf8cea6eca362f2f75b9f8c9c3252321a7657042d0e73986b06ce647e515fccd6e6766a768fd7f970e3bf2f444a566c56a976416384c7bf0f9036cd72715a3a1d9faadc1718167a7d4c0cd73562e4e45539788ac6337130ddd0b02d144a96c8c5d0e2c9d40a8df21f32de25faf0f67fe3e6006138358d5c7bb82a3f428c4e4b65ac74ebc4bdf80c0a83d347f6246543cacfd1e0c7b4e3b7e77d582fd5e71563f67f007004effca5fd8a7e10009fde2293aa0ad4d0b8def95fccd6c64f46b306908d297eb1941272409087d007bc587da8fa87b9b0662ddd3ddaa194c7ef218553c98f0e2c2aad74af1a28f02f87cfd9489f51636d4ea2099326e5f28dfc906339bf719d08d2dd95f25e7ed461c68ffbdd64cf916b516e08c11c91273c8447cb2588319f90af155c0489c99d479eb6cfd372ebf7112766cb7218fe86eed2f8a0401fa255f73360830aaafcc99ceb741208a2a680d1633073aa159f65bf8c9e28e5d35fa63b3c9d78a84b159f30f46c439e7db75e0b73c18da8b38b97098712cc4f96c118f308663fc1949b4b5e704287f36624ada3f303adc82b9f6d0614bf77915662d363ff428a71c5fa234878b90024f6b7a5dda325ecfdd55784f3fc8dbedddcbe5152255dd1e3bc6383a55fd2c5f4391b53ef15e590b44b8196b4374446e7fd161d151d88e23ae5666bc158ea4956128ec2cc49ea88b71a4b7477f7d533dbbf302962fdbabff1c00d6aac74a32f7a8f46bf9174fd7bba55953c3e7cb0efb67151594aec5e834ae7ae534b57f225397c1f7f7b9c06f720f856846b63959b29286932ac1c1cd0f9d69188aceea9cd9906477a5c37c9785021ac980885f9b95dcc474aa98d2b37bb8a43fc8497ba3fc2db584d9c81fad94437f32de878deb85e7a478997390418a0a1aa1c7730be61d2e07e26e7807305a648562a5734cfc2a6770e09a38f994e9a5f7711659ed6ae1d13889b38470f395ff42a0afd86ba2f144cc38a2b292e32fe33997eaea124e7a07aad9d5d6922f7f2d98d9c242ff4e5a39a01a2d6af5bf05ba83114eb19acc2ed23aed32568d01b079ae17ae2482e56441ab948e48c6489b097636c0a1bb4679f083daffb73fd8849b4abc0368419fa296935244e8582b5bf5b26610674faec90bf7b450446b42e00dd078701120a7c3e2688c54f4b05da77b660c5f8101c0191c69c32967edaf4362c938f04e19a0eba36ae387c559625402f88c6a6155db584ac7d310bec237369a7df3e30143120a19aeef432cf9edd84d4b740119ca8c685f65353bf345432365bb7107055a1a4086a5661a5152a68aec10d3370ed21c1d8836f172327ffaeb9ec4e270bd3a5af6baf4d386c899b74082ef7a0be34d5289eb3c0bc0406786a9db96f68d54466fe01a5f391bc8e02dd36627fe6c3f4a9297a5a58a96cb234aca95bc14c4f14e2fae40bb51ed10415ba1f59f9645961555c4592619403e478f9e1cafc3aa5b99a6a6563b6bccd5260be48f38da46fa527384ed4d121034b54da3b3c7d4498d3240a6858ae37493a0cbc2a8721303d123ba77c9af4091528126620510c8bbe01702aba8f126bc234ad16128a6417cf8ec8bdd69b74df208d377a02c7cef2483426edaebff20aa69677f49e88ec9312870ffbb55ca7ee8a42fcdff06c458c2ffa41efcbd58252061b22cdf6e711735508ad21f2df01648d2d01530c6e7434d5fa612678cb0e94bcea3fe42c42fc504318b49043ade3e0c6e7e744f015a88035256b9670928b0cd7bc09e794a0cd0097bdb50f075cd19ec53a73948ead282492f0b39045a266ad819cdec7259978b77d2b58fdc36c12a7f1ec5a82975bf149d2d030432bac26d540e4c9c0200b9f9d902c81e075c7e72a56afc3c2a24e77e00ee75951ac372aefdd1c93b27b65292d7288b0cfe811b4c633aed2f60e03182bbec3bc151fcf1eeb9ce92073194653554fc8f7465f1015d9b6bd1c411a0c19c19b789f6deae61dae5e75a663a7c45d223e8222f5647321785cb98cefe028eba642fdc22e9a02238092663a9b57309343f8df6b1c092697471c74d3fe2e0de978a4a12710472b2f28d442b29481687b17d0067a2b09a51b38b43b07e6f32a3260a3bb594fb9aeedd5599b3a0125642e3ae0cea3d404f1c1480e61bf24b770c00337b9a68fe49e57b8a77a9d8dda3d4f86f4c647446b8d206527171aa0557b5a6a63cefb726ecc9932b3070412a7d0f89f2858636d461fe268297ad1456d12209e5d2963cc68dd90f3ba224f9c483a538ad9eb07adf4242ab46988e9c332dfbe1bd526bfc7c1ccd6eee781da0be48cb8457ba1cc4c6768dd8937050443188cd6ec657e3c34e94135e982e19cc857a3ac4babc4bfa1c06c2855939fbea421cd2de4b5b2179da14566393f120ce3fef82db9db6aef31470e2be742fa1d008c9ae2ca61d36cadf0677f20b2c55c5539bf74466195a34d931a989a578e72b7352689c8f9bcb9ba863950bba33c7b5ebc4b68dd7e7ad4c546b50ee3f6e788e1b73e3267694bdbaf94cad8a47196f85c8db8aec63b92a3a3f31a935425c95d85bed58ce1ceab8c0cd61738aeee0977082f52b039066b8a473416f0646c277c1c7e2e4ca1e345b3809f029ec432b842a1e5fb95f97ea07f3d04e847746047418b7b62a5860adb2b752b66929ea8690148d31ee52c873834ef3448e7f3eea10c5c338436c5936cfbab0ee3cb4a729dff4c9c98bdf95966e5fb8cf83f61f529d3c96e363eaa4945d95b8121bb1aadb052b060a23972f58b0b3db15ddf343ffbe2d3ef76160b03a5ebd54cc48147f664a64526748d323282137caa481880fff4b44f48325ae21d066eb80e1a31a17c6c03ad3585a620f5f4904af6794aed007360b5d3f4bf4a3eb120a8ea1a991f0b12f677249588891dbd4c524021a5281a15e688136d8c9f32a4e8bfe31869fe91a3f3a83e20b1ce810a3b8a627d02176a438e1a8ef46cfd276002ab83cc097d5b56a4f8fdb80210b8abbad04b522d565f755acc84152e2c8982fafc28cf87f15cdade4bd5825f5a0308ffc96c3a714bb35424d6ec950f638339903cbb5c1e7d2806afee695359d1acfda2705c2ff53806c6bec172315413ae97d7b3475baa2f019f5c1ffc8459b832122186052c6bdbfd7a7145aa05b8b0b918ae949c1b932cb55980d226224eae481768fc10170d98aab422c44a02232e648b5eaf1a391fdae2499d8dccda20aa59456f903b50e6232908ea0ec997efce87029ff7145b5e1d8f11e5e49de7648088734e5a193bc3c870b28f2966b74caa8a4a43d73709f42a43112c51486e89577ff4888e1b01d3f1c92f71638bb2e29dfba91bac6a66e180e5d307a53364f697bf65719bf1ebbf70f11421b36e8c620d9960b8e13efe4010c89e2bf1051313abb0bf9df46fb6d54fa429aa078051c178bd316d483ff8239e07479b2a7f1ac660241d8339d8c9a625bddc850828a4c4726f38545fa7b84cd4c44db41dc7fe5e8986f4f90fe625bffabed366579b3cc77a34628546412cf4ec5ca28d1923d10107f2be265f4a52afe7ff92b492d90df5d6cc32111eab2d85f4c76139e47a0aa8f0e22f3c011627a783d5b16c46ad425db9c16dd5b7bb5ac53abdb4f178e45cd80bbec259832ad79cc2d1b532719f53b4a76e06fb07402964ac6d25f71d3b51cbfe2b5c308553a6a97b6fcdaec3c0e444038eaf2b251b68de4a307808a29c8a77d5ab5887bc877963d64362e55019a8507480d001480622a22a5aca015f199562723d6f5a026dcd97197289ab943a588f1</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>2023</category>
-        <category>9月</category>
-      </categories>
-      <tags>
-        <tag>工作备忘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>若依框架是什么</title>
-    <url>/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>背景：接触一个新的不完整的项目，看了两三周代码，没注意到搭建好的项目是个若依框架，而给的代码只有交易部分，完全没有若依框架，决定自己初步了解一下若依框架。</p>
-<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>RuoYi是一款基于SpringBoot+Bootstrap的极速后台开发框架。</p>
-<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><pre><code>com.ruoyi     
-├── common            // 工具类
-│       └── annotation                    // 自定义注解
-│       └── config                        // 全局配置
-│       └── constant                      // 通用常量
-│       └── core                          // 核心控制
-│       └── enums                         // 通用枚举
-│       └── exception                     // 通用异常
-│       └── json                          // JSON数据处理
-│       └── utils                         // 通用类处理
-│       └── xss                           // XSS过滤处理
-├── framework         // 框架核心
-│       └── aspectj                       // 注解实现
-│       └── config                        // 系统配置
-│       └── datasource                    // 数据权限
-│       └── interceptor                   // 拦截器
-│       └── manager                       // 异步处理
-│       └── shiro                         // 权限控制
-│       └── web                           // 前端控制
-├── ruoyi-generator   // 代码生成（不用可移除）
-├── ruoyi-quartz      // 定时任务（不用可移除）
-├── ruoyi-system      // 系统代码
-├── ruoyi-admin       // 后台服务
-├── ruoyi-xxxxxx      // 其他模块
-</code></pre><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="Spring-Boot框架"><a href="#Spring-Boot框架" class="headerlink" title="Spring Boot框架"></a>Spring Boot框架</h3><p>开箱即用框架，提供各种默认配置简化项目配置，更快入门spring</p>
-<p>优点</p>
-<ul>
-<li>使编码变得简单： 推荐使用注解。</li>
-<li>使配置变得简单： 自动配置、快速集成新技术能力 没有冗余代码生成和XML配置的要求</li>
-<li>使部署变得简单： 内嵌Tomcat、Jetty、Undertow等web容器，无需以war包形式部署</li>
-<li>使监控变得简单： 提供运行时的应用监控</li>
-<li>使集成变得简单： 对主流开发框架的无配置集成。</li>
-<li>使开发变得简单： 极大地提高了开发快速构建项目、部署效率。</li>
-</ul>
-<h3 id="Shiro安全控制"><a href="#Shiro安全控制" class="headerlink" title="Shiro安全控制"></a>Shiro安全控制</h3><p>Apache Shiro是Java的一个安全框架。Shiro可以帮助我们完成：认证、授权、加密、会话管理、与Web集成、缓存等。其不仅可以用在 JavaSE环境，也可以用在 JavaEE 环境。</p>
-<p>优点</p>
-<ul>
-<li>易于理解的 Java Security API</li>
-<li>简单的身份认证，支持多种数据源</li>
-<li>对角色的简单的授权，支持细粒度的授权</li>
-<li>不跟任何的框架或者容器捆绑，可以独立运行</li>
-</ul>
-<p>特性</p>
-<ul>
-<li><code>Authentication</code>身份认证/登录，验证用户是不是拥有相应的身份</li>
-<li><code>Authorization</code>授权，即验证权限，验证某个已认证的用户是否拥有某个权限，即判断用户是否能做事情 <code>SessionManagement</code>会话管理，即用户登录后就是一次会话，在没有退出之前，它的所有信息都在会话中</li>
-<li><code>Cryptography</code>加密，保护数据的安全性，如密码加密存储到数据库，而不是明文存储</li>
-<li><code>Caching</code>缓存，比如用户登录后，其用户信息，拥有的角色/权限不必每次去查，提高效率</li>
-<li><code>Concurrency</code>Shiro支持多线程应用的并发验证，即如在一个线程中开启另一个线程，能把权限自动传播过去</li>
-<li><code>Testing</code>提供测试支持</li>
-<li><code>RunAs</code>允许一个用户假装为另一个用户（如果他们允许）的身份进行访问</li>
-<li><code>RememberMe</code>记住我，这是非常常见的功能，即一次登录后，下次再来的话不用登录了</li>
-</ul>
-]]></content>
-      <categories>
-        <category>WEB框架</category>
-        <category>若依</category>
-      </categories>
-      <tags>
-        <tag>若依框架</tag>
       </tags>
   </entry>
   <entry>
