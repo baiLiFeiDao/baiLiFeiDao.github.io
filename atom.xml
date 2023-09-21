@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-09-20T07:09:24.400Z</updated>
+  <updated>2023-09-21T05:49:43.582Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>进行mybatis实战时遇到的一些错误</title>
+    <link href="http://example.com/2023/09/21/%E8%BF%9B%E8%A1%8Cmybatis%E5%AE%9E%E6%88%98%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF/"/>
+    <id>http://example.com/2023/09/21/%E8%BF%9B%E8%A1%8Cmybatis%E5%AE%9E%E6%88%98%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF/</id>
+    <published>2023-09-21T02:07:41.000Z</published>
+    <updated>2023-09-21T05:49:43.582Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天在看mybatis-plus的一些知识，我其实学知识一直很难动手实践，因为配置环境超级麻烦，各种报错，解决起来很烦，尤其是不知道怎么办的时候，但我不能总是不动手去做，不实践我永远不可能知道具体怎么做。在这里记录一下解决配置问题的有效方法。</p><h2 id="Plugin‘org-springframework-boot-spring-boot-maven-plugin-‘-not-found的解决方案"><a href="#Plugin‘org-springframework-boot-spring-boot-maven-plugin-‘-not-found的解决方案" class="headerlink" title="Plugin‘org.springframework.boot:spring-boot-maven-plugin:‘ not found的解决方案"></a>Plugin‘org.springframework.boot:spring-boot-maven-plugin:‘ not found的解决方案</h2><p>解决方法来自<a href="https://www.cnblogs.com/Cheney822/p/16487932.html，只是为了记录搬运到本博客">https://www.cnblogs.com/Cheney822/p/16487932.html，只是为了记录搬运到本博客</a></p><h3 id="方法一：清理IDEA的缓存"><a href="#方法一：清理IDEA的缓存" class="headerlink" title="方法一：清理IDEA的缓存"></a>方法一：清理IDEA的缓存</h3><blockquote><p>File -&gt; Invalidate Caches</p></blockquote><h3 id="方法二：添加版本号"><a href="#方法二：添加版本号" class="headerlink" title="方法二：添加版本号"></a>方法二：添加版本号</h3><p>先看自己当前的版本号</p><ul><li>首先打开<code>pom.xml</code>文件进行查看</li><li>Ctrl+F搜索<code>spring-boot-starter-parent</code></li><li>找到<code>&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</code>这一行。</li><li>下面一行就是版本号。</li></ul><p>然后将版本号放到报错一行的下面</p><h1 id="类文件具有错误的版本-61-0-应为-52-0-请删除该文件或确保该文件位于正确的类路径子目录中。"><a href="#类文件具有错误的版本-61-0-应为-52-0-请删除该文件或确保该文件位于正确的类路径子目录中。" class="headerlink" title="类文件具有错误的版本 61.0, 应为 52.0 请删除该文件或确保该文件位于正确的类路径子目录中。"></a>类文件具有错误的版本 61.0, 应为 52.0 请删除该文件或确保该文件位于正确的类路径子目录中。</h1><p>原因：boot3.0.0版本要求jdk17以上，自己的版本是1.8</p><p>方法：</p><p>改Project Structure的JDK版本 </p><h1 id="Mysql-80-解决忘记密码无法跳过错误-mysqld-—console-—skip-grant-tables-—shared-memory-代码无效的问题"><a href="#Mysql-80-解决忘记密码无法跳过错误-mysqld-—console-—skip-grant-tables-—shared-memory-代码无效的问题" class="headerlink" title="Mysql 80 解决忘记密码无法跳过错误 mysqld —console —skip-grant-tables —shared-memory 代码无效的问题"></a>Mysql 80 解决忘记密码无法跳过错误 mysqld —console —skip-grant-tables —shared-memory 代码无效的问题</h1><p>参考这个方法解决<a href="https://blog.csdn.net/wangzhepaohui/article/details/109685612">https://blog.csdn.net/wangzhepaohui/article/details/109685612</a></p><h1 id="Unsupported-class-file-major-version-61"><a href="#Unsupported-class-file-major-version-61" class="headerlink" title="Unsupported class file major version 61"></a>Unsupported class file major version 61</h1><p>类文件主版本61对应的Java SDK 17</p><p>下载的项目中的springboot不支持JAVA SDK17</p><p>配置环境经典的错误就是版本不兼容</p><h1 id="Maven项目pom-xml-project标签爆红解决方法"><a href="#Maven项目pom-xml-project标签爆红解决方法" class="headerlink" title="Maven项目pom.xml project标签爆红解决方法"></a>Maven项目pom.xml project标签爆红解决方法</h1><blockquote><p>‘parent.relativePath’ of POM com.hrp:springboot_jpa:1.0-SNAPSHOT (F:\IdeaCode\java-web\springboot_jpa\pom.xml) points at com.hrp:java-web instead of org.springframework.boot:spring-boot-starter-parent, please verify your project structure</p></blockquote><p>这个问题是说在project标签下的parent.relativePath标签指向的路径出现了错误，所以导致报错。</p><p>解决方法：在parent标签下，添加<strong><code>&lt;relativePath/&gt;</code></strong>即可</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;今天在看mybatis-plus的一些知识，我其实学知识一直很难动手实践，因为配置环境超级麻烦，各种报错，解决起来很烦，尤其是不知道怎么办的</summary>
+      
+    
+    
+    
+    
+    <category term="编译器报错" scheme="http://example.com/tags/%E7%BC%96%E8%AF%91%E5%99%A8%E6%8A%A5%E9%94%99/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis-plus入门</title>
@@ -329,27 +351,6 @@
   </entry>
   
   <entry>
-    <title>密码管理</title>
-    <link href="http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/"/>
-    <id>http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</id>
-    <published>2023-09-11T16:00:00.000Z</published>
-    <updated>2023-09-12T06:51:05.538Z</updated>
-    
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="86d8acc2aff26182f46528ae81d73b73b3a5fe98742ffb56adef8e01645e925d">a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-    
-    
-    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
-    
-    
-    
-    <category term="密码" scheme="http://example.com/categories/%E5%AF%86%E7%A0%81/"/>
-    
-    
-    <category term="密码管理" scheme="http://example.com/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
     <title>学习规划</title>
     <link href="http://example.com/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
     <id>http://example.com/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</id>
@@ -369,6 +370,27 @@
     
     
     <category term="学习规划" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码管理</title>
+    <link href="http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/"/>
+    <id>http://example.com/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:51:05.538Z</updated>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="86d8acc2aff26182f46528ae81d73b73b3a5fe98742ffb56adef8e01645e925d">a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    <category term="密码" scheme="http://example.com/categories/%E5%AF%86%E7%A0%81/"/>
+    
+    
+    <category term="密码管理" scheme="http://example.com/tags/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -419,32 +441,6 @@
   </entry>
   
   <entry>
-    <title>读书摘抄</title>
-    <link href="http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-09-11T16:00:00.000Z</published>
-    <updated>2023-09-12T06:53:59.784Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p><p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p><p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p><p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p><p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p><h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p><p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;读书笔记&quot;&gt;&lt;a href=&quot;#读书笔记&quot; class=&quot;headerlink&quot; title=&quot;读书笔记&quot;&gt;&lt;/a&gt;读书笔记&lt;/h1&gt;&lt;h2 id=&quot;三体&quot;&gt;&lt;a href=&quot;#三体&quot; class=&quot;headerlink&quot; title=&quot;三体&quot;&gt;&lt;/a&gt;三体&lt;/h</summary>
-      
-    
-    
-    
-    <category term="读书" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-    
-    <category term="摘抄" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/"/>
-    
-    
-    <category term="摘抄" scheme="http://example.com/tags/%E6%91%98%E6%8A%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>工作备忘</title>
     <link href="http://example.com/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/"/>
     <id>http://example.com/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/</id>
@@ -468,32 +464,28 @@
   </entry>
   
   <entry>
-    <title>关于放松的五个迷思</title>
-    <link href="http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/"/>
-    <id>http://example.com/2023/09/11/%E5%85%B3%E4%BA%8E%E6%94%BE%E6%9D%BE%E7%9A%84%E4%BA%94%E4%B8%AA%E8%BF%B7%E6%80%9D/</id>
-    <published>2023-09-11T05:12:33.000Z</published>
-    <updated>2023-09-11T11:46:46.974Z</updated>
+    <title>读书摘抄</title>
+    <link href="http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-12T06:53:59.784Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="关于放松的五个迷思（笔记源自：steve说334期）"><a href="#关于放松的五个迷思（笔记源自：steve说334期）" class="headerlink" title="关于放松的五个迷思（笔记源自：steve说334期）"></a>关于放松的五个迷思（笔记源自：steve说334期）</h1><h2 id="放松等于懒散？"><a href="#放松等于懒散？" class="headerlink" title="放松等于懒散？"></a>放松等于懒散？</h2><p>刻板印象：放松等于呆着什么都不做，休息</p><p>可能产生的原因：农耕文化，劳作之余身体的休息是非常重要的。</p><p>身体的疲惫可以用躺着消除，精神的疲惫不可以用躺着消除，而现在大多数人工作都是脑力劳动，工作的时候拥有单一刺激源，下班之后躺着发呆、刷手机，也是单一刺激源影响，大脑并不能得到放松。</p><p>放松的本质：释放压力</p><p>压力的本质：外部的要求和内在资源之间的关系。外部的挑战超过了自身的情绪调节范围（躺着是一种逃避，越躺着自身情绪调节就更弱，就越容易感受到压力，难以放松，恶性循环）</p><p>如果放松不能通过懒散的方式，应该采用什么方式</p><p>调节压力（中期压力）的有效方式：有意识提升自己的抗压能力—》有意识地把自己置于高压能力之下，相对合理地将自己的身心进行分离的时候，抗压能力就会增加</p><p>举例1：当做高强度运动的时候，运动休息的间隙，感到很疲惫的时候，压力带来的管道视野很狭窄，只能看到让自己感到疲惫的事物。有意识地让自己平静下来，让自己的身与心进行隔离，有助于提升抗压能力。</p><p>举例2：巴西柔术的训练一方面是身体的训练，另一方面是不断训练在高压的情况下保持冷静，思考策略</p><p>举例3：管道视野：饿的时候只看到食物（把视野打开，让自己习惯以更宽的视野感受：看看盘子，看看环境）</p><h2 id="放松等于放纵？"><a href="#放松等于放纵？" class="headerlink" title="放松等于放纵？"></a>放松等于放纵？</h2><p>常见的放纵放松方式：胡吃海喝、通宵玩手机、刷剧、大量购物，这些放纵放松方式可以带来短期的一些愉悦感</p><p>存在问题：边际效益明显</p><p>放纵训练大脑产生路径依赖，形成多巴胺劫持。</p><p>在科普当中常常存在误解，多巴胺负责愉悦感。实际上，愉悦感主要是由内啡肽负责的，多巴胺负责渴望感，放纵其实就是把放松的活动聚焦在满足这些渴望上。</p><p>举例：看着食物，并不真的享受这个食物本身，而是感觉吃了食物会带来愉悦感，过去的经历不断告诉大脑，只要吃就会快乐。所以看到食物就会让大脑分泌更多的多巴胺，让你渴望去吃那个食物，以至于你吃了什么，你的大脑根本不在乎。</p><p>产生结果：如果一直用放纵来放松的话，容易形成一种逃避。只看到的到眼前渴望的东西，而忽略你的放松应该在身心的各个方面整体地被照顾。</p><p>举例：遇见梦中情人，其他人都不存在了。</p><p>存在问题：</p><ul><li>形成对单一事物的依赖，而边际效益递减，形成很大的负担</li><li>放纵得到的奖励太容易了，满足感会降低。</li></ul><p>​            大脑的特性：比较偏好比较辛苦得来的快乐</p><p>实操建议：</p><p>尽可能避免将放松寄托在一个点上。</p><p>尝试做有一定难度的事情。</p><h2 id="放松等于慢下来？"><a href="#放松等于慢下来？" class="headerlink" title="放松等于慢下来？"></a>放松等于慢下来？</h2><p>慢生活，用生活方式彻底地慢，解决快节奏生活</p><p>慢下来只是开始，要觉察自己紧绷的状态</p><p>来源：外部压力、内源性的紧绷状态</p><p>值得关注内源性的紧绷状态，比如赶飞机赶火车的时候</p><p>沟通分析，来源于儿时确保生存的状态</p><p>每当进入这种紧绷的状态时，就会回到儿时面对父母那种紧张、局促的状态。</p><p>儿童的自我状态对成人自我状态的一种污染</p><p>实操建议：</p><p>当儿童自我状态来临时，要注意到这种变化，内在感受、外在表情、言行举止</p><p>区分儿童自我状态和承认自我状态</p><p>如果站在旁观者的角度看自己，自己是一种什么样的状态</p><h2 id="放松等于自我洗脑？"><a href="#放松等于自我洗脑？" class="headerlink" title="放松等于自我洗脑？"></a>放松等于自我洗脑？</h2><p>深心灵的理念：放下期待、心怀感恩和满足</p><p>存在问题：说服与自我说服是非常主观的，以及非常依赖理性思维的调节能力。但理性思维的调节作用是非常有限的，颓废-佛性-躺平-摆烂</p><p>疼痛反应：</p><p>压力反应：比较普适性的</p><p>压力调节不仅可以通过观念上的调节，调节压力可以通过生理方式，冥想</p><p>实操建议：</p><p>生理叹气，刻意激活腹交感神经，心脏血流放缓，大脑</p><p>延长吐气时间</p><p>适用范围：突然来到的压力</p><p>两次鼻子吸气，一次长吐气</p><h2 id="放松等于逃离现代生活？"><a href="#放松等于逃离现代生活？" class="headerlink" title="放松等于逃离现代生活？"></a>放松等于逃离现代生活？</h2><p>在内卷和躺平之间来回横跳</p><p>当今社会</p><p>个人层面可以做到：</p><p>这种情况往往出现在社会经历比较少的人身上</p><p>不知道如何去做，欠缺经验，认知水平没有进入更高的层面</p><p>意识、方法、能力缺少更高层面的东西，在年轻的时候拥有局限</p><p>缺少模仿参考对象</p><p>不思考做事情本身是否可以进行优化</p><p>实操：</p><p>要有停下来反思自己的时刻，注意压力和疲惫下的管道视野</p><p>有意识寻找实操能力很强、实践经验丰富、细节上做的很出色，大胆请教</p><p>社会支持网络</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p><p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p><p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p><p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p><p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p><h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p><p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;关于放松的五个迷思（笔记源自：steve说334期）&quot;&gt;&lt;a href=&quot;#关于放松的五个迷思（笔记源自：steve说334期）&quot; class=&quot;headerlink&quot; title=&quot;关于放松的五个迷思（笔记源自：steve说334期）&quot;&gt;&lt;/a&gt;关于放松的五个迷</summary>
+    <summary type="html">&lt;h1 id=&quot;读书笔记&quot;&gt;&lt;a href=&quot;#读书笔记&quot; class=&quot;headerlink&quot; title=&quot;读书笔记&quot;&gt;&lt;/a&gt;读书笔记&lt;/h1&gt;&lt;h2 id=&quot;三体&quot;&gt;&lt;a href=&quot;#三体&quot; class=&quot;headerlink&quot; title=&quot;三体&quot;&gt;&lt;/a&gt;三体&lt;/h</summary>
       
     
     
     
-    <category term="心理学" scheme="http://example.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    <category term="读书" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6/"/>
     
-    <category term="自我" scheme="http://example.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/"/>
-    
-    <category term="放松" scheme="http://example.com/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%88%91/%E6%94%BE%E6%9D%BE/"/>
+    <category term="摘抄" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6/%E6%91%98%E6%8A%84/"/>
     
     
-    <category term="自我探寻" scheme="http://example.com/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E5%AF%BB/"/>
-    
-    <category term="播客笔记" scheme="http://example.com/tags/%E6%92%AD%E5%AE%A2%E7%AC%94%E8%AE%B0/"/>
+    <category term="摘抄" scheme="http://example.com/tags/%E6%91%98%E6%8A%84/"/>
     
   </entry>
   

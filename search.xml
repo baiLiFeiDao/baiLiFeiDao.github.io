@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
-<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
-<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
-<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
-<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
-<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2023/09/07/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -24,6 +12,56 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java的多线程编程</title>
+    <url>/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
+<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
+<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
+<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
+<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
+<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="继承Thread类创建线程类"><a href="#继承Thread类创建线程类" class="headerlink" title="继承Thread类创建线程类"></a>继承Thread类创建线程类</h3><ul>
+<li><p>定义Thread类的子类，重写该类的run方法，run方法的方法体代表了线程要完成的任务，因此把run方法称为执行体</p>
+</li>
+<li><p>创建Thread子类的实例，即创建了线程对象</p>
+</li>
+<li><p>调用线程对象的star方法来启动该线程</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadDemo</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> Thread t;</span><br><span class="line">   <span class="keyword">private</span> String threadName;</span><br><span class="line">   </span><br><span class="line">   ThreadDemo( String name) &#123;</span><br><span class="line">      threadName = name;</span><br><span class="line">      System.out.println(<span class="string">&quot;Creating &quot;</span> +  threadName );</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Running &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Thread: &quot;</span> + threadName + <span class="string">&quot;, &quot;</span> + i);</span><br><span class="line">            <span class="comment">// 让线程睡眠一会</span></span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; interrupted.&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; exiting.&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span> <span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Starting &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">if</span> (t == <span class="literal">null</span>) &#123;</span><br><span class="line">         t = <span class="keyword">new</span> <span class="title class_">Thread</span> (<span class="built_in">this</span>, threadName);</span><br><span class="line">         t.start ();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestThread</span> &#123;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-1&quot;</span>);</span><br><span class="line">      T1.start();</span><br><span class="line">      </span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-2&quot;</span>);</span><br><span class="line">      T2.start();</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过Runnable接口创建线程类"><a href="#通过Runnable接口创建线程类" class="headerlink" title="通过Runnable接口创建线程类"></a>通过Runnable接口创建线程类</h3></li>
+<li><p>定义Runnable接口的实现类，重写该接口的run方法</p>
+</li>
+<li>创建Runnable实现类的实例，并以此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。</li>
+<li>调用线程对象的start()方法来启动该线程。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line"></span><br><span class="line">public class RunnableThreadTest implements Runnable &#123;</span><br><span class="line">    private int i;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">            if (i == 20) &#123;</span><br><span class="line">                RunnableThreadTest rtt = new RunnableThreadTest();</span><br><span class="line">                new Thread(rtt, &quot;新线程1&quot;).start();</span><br><span class="line">                new Thread(rtt, &quot;新线程2&quot;).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过Callable和Future创建线程"><a href="#通过Callable和Future创建线程" class="headerlink" title="通过Callable和Future创建线程"></a>通过Callable和Future创建线程</h3><p> (1)创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Callable</span> &#123;</span><br><span class="line">    V <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。（FutureTask是一个包装器，它通过接受Callable来创建，它同时实现了Future和Runnable接口。）</p>
+<p>（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。</p>
+<p>（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.thread;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CallableThreadTest</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;Integer&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">CallableThreadTest</span> <span class="variable">ctt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CallableThreadTest</span>();</span><br><span class="line">        FutureTask&lt;Integer&gt; ft = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(ctt);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 的循环变量i的值&quot;</span> + i);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">20</span>) &#123;</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Thread</span>(ft, <span class="string">&quot;有返回值的线程&quot;</span>).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;子线程的返回值：&quot;</span> + ft.get());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; &quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JAVA基础</category>
+        <category>多线程编程</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/09/12/Spring%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Spring实战笔记"><a href="#Spring实战笔记" class="headerlink" title="Spring实战笔记"></a>Spring实战笔记</h1><h2 id="spring入门"><a href="#spring入门" class="headerlink" title="spring入门"></a>spring入门</h2><h3 id="什么是spring"><a href="#什么是spring" class="headerlink" title="什么是spring"></a>什么是spring</h3><p>应用程序由很多组件组成，每个组件负责一部分功能，与其他应用程序协调以完成工作。运行应用程序时，需要以某种方式创建这些组件并相互引用。</p>
+<p>spring的核心：容器，又称spring应用程序上下文，用于创建和管理应用程序组件。这些组件（或 bean）在 Spring 应用程序上下文中连接在一起以构成一个完整的应用程序，就像将砖、灰浆、木材、钉子、管道和电线绑在一起以组成房屋，spring应用程序上下文就是仓库。</p>
+<p>依赖注入：将bean连接在一起。依赖项注入的应用程序不是由组件自身创建和维护它们依赖的其他 bean 的生命周期，而是依赖于单独的实体（容器）来创建和维护所有组件，并将这些组件注入需要它们的 bean。通常通过构造函数参数或属性访问器方法完成此操作。</p>
+<p>自动配置起源于 Spring 技术，即 <em>自动装配</em> 和 <em>组件扫描</em>。借助组件扫描，Spring 可以自动从应用程序的类路径中发现组件，并将其创建为 Spring 应用程序上下文中的 bean。通过自动装配，Spring 会自动将组件与它们依赖的其他 bean 一起注入。</p>
+<p>@controller注解：将该类识别为组件扫描的组件。当spring的组件扫描发现它时，会在spring应用程序上下文中创建一个实例作为bean。</p>
+<p>唯一值得注意的代码行是显示 Taco Cloud 标志的 <code>&lt;img&gt;</code> 标记。它使用一个 Thymeleaf 的 <code>th:src</code> 属性和一个 <code>@&#123;…&#125;</code> 表达式引用具有上下文相对路径的图片。除去这些，它只是一个 Hello World 页面</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -77,6 +115,60 @@
       <tags>
         <tag>读后感</tag>
         <tag>1984</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring aop是什么</title>
+    <url>/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<h2 id="Spring-AOP是什么"><a href="#Spring-AOP是什么" class="headerlink" title="Spring AOP是什么"></a>Spring AOP是什么</h2><p>AOP面向切面编程，是一种编程模式。将业务逻辑的各个部分进行隔离。最流行的AOP框架有两个，分别是Spring AOP和AspectJ。</p>
+<p>Spring AOP使用纯Java实现，不需要专门的编译过程和类加载器，<em>在运行期间通过代理方式向目标类植入增强的代码。</em>（这句话在说啥？？？）</p>
+<p>AspectJ 是一个基于 Java 语言的 AOP 框架，从 Spring 2.0 开始，Spring AOP 引入了对 AspectJ 的支持。AspectJ 扩展了 Java 语言，提供了一个专门的编译器，在编译时提供横向代码的植入。</p>
+<h2 id="AOP相关术语"><a href="#AOP相关术语" class="headerlink" title="AOP相关术语"></a>AOP相关术语</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joinpoint（连接点）</td>
+<td>指那些被拦截到的点，在 Spring 中，可以被动态代理拦截目标类的方法。</td>
+</tr>
+<tr>
+<td>Pointcut（切入点）</td>
+<td>指要对哪些 Joinpoint 进行拦截，即被拦截的连接点。</td>
+</tr>
+<tr>
+<td>Advice（通知）</td>
+<td>指拦截到 Joinpoint 之后要做的事情，即对切入点增强的内容。</td>
+</tr>
+<tr>
+<td>Target（目标）</td>
+<td>指代理的目标对象。</td>
+</tr>
+<tr>
+<td>Weaving（植入）</td>
+<td>指把增强代码应用到目标上，生成代理对象的过程。</td>
+</tr>
+<tr>
+<td>Proxy（代理）</td>
+<td>指生成的代理对象。</td>
+</tr>
+<tr>
+<td>Aspect（切面）</td>
+<td>切入点和通知的结合。</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
@@ -236,98 +328,6 @@
       </tags>
   </entry>
   <entry>
-    <title>spring aop是什么</title>
-    <url>/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<h2 id="Spring-AOP是什么"><a href="#Spring-AOP是什么" class="headerlink" title="Spring AOP是什么"></a>Spring AOP是什么</h2><p>AOP面向切面编程，是一种编程模式。将业务逻辑的各个部分进行隔离。最流行的AOP框架有两个，分别是Spring AOP和AspectJ。</p>
-<p>Spring AOP使用纯Java实现，不需要专门的编译过程和类加载器，<em>在运行期间通过代理方式向目标类植入增强的代码。</em>（这句话在说啥？？？）</p>
-<p>AspectJ 是一个基于 Java 语言的 AOP 框架，从 Spring 2.0 开始，Spring AOP 引入了对 AspectJ 的支持。AspectJ 扩展了 Java 语言，提供了一个专门的编译器，在编译时提供横向代码的植入。</p>
-<h2 id="AOP相关术语"><a href="#AOP相关术语" class="headerlink" title="AOP相关术语"></a>AOP相关术语</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Joinpoint（连接点）</td>
-<td>指那些被拦截到的点，在 Spring 中，可以被动态代理拦截目标类的方法。</td>
-</tr>
-<tr>
-<td>Pointcut（切入点）</td>
-<td>指要对哪些 Joinpoint 进行拦截，即被拦截的连接点。</td>
-</tr>
-<tr>
-<td>Advice（通知）</td>
-<td>指拦截到 Joinpoint 之后要做的事情，即对切入点增强的内容。</td>
-</tr>
-<tr>
-<td>Target（目标）</td>
-<td>指代理的目标对象。</td>
-</tr>
-<tr>
-<td>Weaving（植入）</td>
-<td>指把增强代码应用到目标上，生成代理对象的过程。</td>
-</tr>
-<tr>
-<td>Proxy（代理）</td>
-<td>指生成的代理对象。</td>
-</tr>
-<tr>
-<td>Aspect（切面）</td>
-<td>切入点和通知的结合。</td>
-</tr>
-</tbody>
-</table>
-</div>
-]]></content>
-      <categories>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java的多线程编程</title>
-    <url>/2023/09/12/java%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="线程的定义"><a href="#线程的定义" class="headerlink" title="线程的定义"></a>线程的定义</h2><p>一个进程包括操作系统分配的内存空间，包含一个或多个线程。线程不能独立存在，必须是进程的一部分。多线程编程可以让程序员充分利用CPU</p>
-<h2 id="一个线程的生命周期"><a href="#一个线程的生命周期" class="headerlink" title="一个线程的生命周期"></a>一个线程的生命周期</h2><h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a><img src="https://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt="img">线程的优先级</h2><p>每个JAVA线程都有一个优先级，有助于操作系统确定线程的调度顺序。</p>
-<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
-<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
-<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
-<h2 id="创建线程的三种方法"><a href="#创建线程的三种方法" class="headerlink" title="创建线程的三种方法"></a>创建线程的三种方法</h2><h3 id="继承Thread类创建线程类"><a href="#继承Thread类创建线程类" class="headerlink" title="继承Thread类创建线程类"></a>继承Thread类创建线程类</h3><ul>
-<li><p>定义Thread类的子类，重写该类的run方法，run方法的方法体代表了线程要完成的任务，因此把run方法称为执行体</p>
-</li>
-<li><p>创建Thread子类的实例，即创建了线程对象</p>
-</li>
-<li><p>调用线程对象的star方法来启动该线程</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadDemo</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> Thread t;</span><br><span class="line">   <span class="keyword">private</span> String threadName;</span><br><span class="line">   </span><br><span class="line">   ThreadDemo( String name) &#123;</span><br><span class="line">      threadName = name;</span><br><span class="line">      System.out.println(<span class="string">&quot;Creating &quot;</span> +  threadName );</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Running &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Thread: &quot;</span> + threadName + <span class="string">&quot;, &quot;</span> + i);</span><br><span class="line">            <span class="comment">// 让线程睡眠一会</span></span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; interrupted.&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">&quot;Thread &quot;</span> +  threadName + <span class="string">&quot; exiting.&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span> <span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Starting &quot;</span> +  threadName );</span><br><span class="line">      <span class="keyword">if</span> (t == <span class="literal">null</span>) &#123;</span><br><span class="line">         t = <span class="keyword">new</span> <span class="title class_">Thread</span> (<span class="built_in">this</span>, threadName);</span><br><span class="line">         t.start ();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestThread</span> &#123;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-1&quot;</span>);</span><br><span class="line">      T1.start();</span><br><span class="line">      </span><br><span class="line">      <span class="type">ThreadDemo</span> <span class="variable">T2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadDemo</span>( <span class="string">&quot;Thread-2&quot;</span>);</span><br><span class="line">      T2.start();</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="通过Runnable接口创建线程类"><a href="#通过Runnable接口创建线程类" class="headerlink" title="通过Runnable接口创建线程类"></a>通过Runnable接口创建线程类</h3></li>
-<li><p>定义Runnable接口的实现类，重写该接口的run方法</p>
-</li>
-<li>创建Runnable实现类的实例，并以此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。</li>
-<li>调用线程对象的start()方法来启动该线程。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line"></span><br><span class="line">public class RunnableThreadTest implements Runnable &#123;</span><br><span class="line">    private int i;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">            if (i == 20) &#123;</span><br><span class="line">                RunnableThreadTest rtt = new RunnableThreadTest();</span><br><span class="line">                new Thread(rtt, &quot;新线程1&quot;).start();</span><br><span class="line">                new Thread(rtt, &quot;新线程2&quot;).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="通过Callable和Future创建线程"><a href="#通过Callable和Future创建线程" class="headerlink" title="通过Callable和Future创建线程"></a>通过Callable和Future创建线程</h3><p> (1)创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Callable</span> &#123;</span><br><span class="line">    V <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。（FutureTask是一个包装器，它通过接受Callable来创建，它同时实现了Future和Runnable接口。）</p>
-<p>（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。</p>
-<p>（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.thread;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CallableThreadTest</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;Integer&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">CallableThreadTest</span> <span class="variable">ctt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CallableThreadTest</span>();</span><br><span class="line">        FutureTask&lt;Integer&gt; ft = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(ctt);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 的循环变量i的值&quot;</span> + i);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">20</span>) &#123;</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Thread</span>(ft, <span class="string">&quot;有返回值的线程&quot;</span>).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;子线程的返回值：&quot;</span> + ft.get());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; &quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JAVA基础</category>
-        <category>多线程编程</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-        <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>个人博客搭建</title>
     <url>/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<p>个人博客搭建参考</p>
@@ -412,28 +412,6 @@
       </tags>
   </entry>
   <entry>
-    <title>密码管理</title>
-    <url>/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="86d8acc2aff26182f46528ae81d73b73b3a5fe98742ffb56adef8e01645e925d">a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>密码</category>
-      </categories>
-      <tags>
-        <tag>密码管理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学习规划</title>
     <url>/2023/09/12/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -457,10 +435,10 @@
       </tags>
   </entry>
   <entry>
-    <title>卡充值流程</title>
-    <url>/2023/09/19/%E5%8D%A1%E5%85%85%E5%80%BC%E6%B5%81%E7%A8%8B/</url>
+    <title>密码管理</title>
+    <url>/2023/09/12/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="20c5b845d0394bc83b43efefc82fa3385f0c8c277e9c0cd07a1b2d9edf66b560">e9f9d1802d784cd7d6d6c65cd7b514274b1daca32fe4aa264c92c9e3259c747de331fdee519a62c3b548bfa670e9edbcc4f08690d75be303eda138236c94d39ccc0965d760d0467041dfddb1d933bd4f1f5497a3ba30ad8bbc0fdfa8c51555d89bdd23602e76e7405b7baad3f777ba94f25bd8f98e57edef42a58122fcd2c2f4a5c0010921ae5c21b603adea5c6bc47eb02e9e79cdfef5a46dedbf5e109cb2e145372bd38054d45bede3da78048c659b00ab1f32873a680b0ab6f32adce46c3a15e3666220a612b88fe05c4a244dc67ad1f570247c0556831bcfaac579b590bf071e23f0e831d6fe1d0f2f626bbb00bcd5afee7c3ecfb5248160cd84d69709d4b2dc9530b895fc5a1f1cc0c22845ec6ed49cb7ae978f461113a5d0c1758a13e83ff58af7bd655e18ad15154223654e456ad90da8a75301b6a7f66da267654cbaa7c0adb6cb9dac4ddaa44494fd9323b431e939f311d901fa3d022ce84daf673a35783c1c7f60e8a1e2b6e671fb1d1f845cb64806290480ef35b1eff9cf040dec9d6f79c96a4657b6147eb5afa2bc9136bbca7eb23ca3fdb22bd93e28ac7acde49c7ad2b8ea23255ed5d15296786c69d9b7227ef0abc1c6974d37e8b634319a43f53fa6d63ee920d127d981bdeef52f09d99a162da95d6baadb38c95cc165f16fe2ffea92d2cf56a53de368c423461e8967f2001ba156ca1ae7ebe5282b55064b0202bc4bce03b6fd748693256007e12812e84f5d70a2a95fd9e86dfb013e9957bdb1d951bba3a79cb08c33893cb2d4985d8cca01cba39d16bf93acd716a19655ea19bc280236656f42a68e1903b09d797105bb2e4775707042071aa8ee553d4d01a8e4bb32f112e6e19536d523590fbe40255a04c31c78fd82baed5a889b427d04c551ef1395bc521135acfe9dc6780be21f874073dd4a0e2eb8a03b7521c4fd7f0c0337f5e38721b574a7ec46d780fb3867e4e8ad287354f1ada67e2d0bd9f85b5582f83ac8671aff3b83d2836aad929a3b0ffb0badac8cdf1352ba172a8784fbab3d4a719197f49ee54fe8f0d1fdcc740e84a8cc64d2fedd6b6e59b52a251dd87adf371f468af0b824263f8b9e88e15dfd682ccd87a4143c7dbdb570a1af35384069cfa2939b541672dc3376f0ab663437a2c1e87a800597e3562ecb71773ed48f13d8bb20fcecb871ae767c2337d55b7dacd2757f7c29426c42749500d7d0b4a4c683a724298f74922db52d8894bcfca6c4d283adb9bcfe54061633d177a37e88d9addfe478a5f8d1f9e2ba9e14a12fb63100e02a3b7de749a9eb07b729f853f2407f8f106ee5c10033b008580d101aa3ac0d5597149bbf23e4051206e9d55a73ad6912f38123986a7669b63b3f42063b4c1723adc1bc6dfd58fbb38c8f943bd55f68b61bf378255572a646ac0c4d7d34416418648474579de9300cad8057e83bceccd4baddbde41d574e1f6114a29d1245ea612eec1eabb4875a7c1ecd7286554ad2ae9a43f16329409834dbc775eecbaa6d12c84104c0628441da4a3ce35871ddc6caa7ff647176cf492e82c90e20efd0d58fccce2225124d18dce31e0e2909b6e9f2eb86133af4fd222b4c0811146a0bfa390412755aa14ab604bd5810b319d2e92108701a27d4f1c05b23a3e70e8573c677d697d3b81e9725842986f5d6ae84c0686ddb195eab6d1d34fd72b65042cce6de9dc26bdc963341ed001af0e7e03799b77de77ea9474b1256f697b66c5de6c11ff8c66d36e8623e163974c6c9fb06487a8d2a07a8ef46d56890c856e25e0a8cfd1008c89b3695957f280a7a13f65aa7d04e58b7ad8518c6afe0733552d8b7eb791a36f001602b41717a90a3387f212da87604bc3317fccac6938cf1ad017646918e54c668cb0bac93a4a4925d6e0c5180b14d8c331d22fe87e7de6444f43d700d6f2b5e665e4b804d9971fb24d60fcfabd54d8c65aa0f20da703ffe1ed752ce8b59dc17e4376545bc0fd2cc3d53f46d12efba2aa7fcb23395fa3e5692510e49f3e5038eac4472f7090f3cd8d25342d5659170ce92177581fb72e3bb023297b34572760e72632923a5815abebd8062c250659994ce039097630c7dde7fa13438a29a5f20351389764c4f62da7d97c6abdf255d3cdcedfe36ba170d2321a4b70d4cfd1551bec09054be158b9668a357ff780b073a5979f0088ba68a802f67d319acb93193f7d53946651fd6ccbdafd88dd0214cae6b7b68850ebca747454411107341e287defc3f7b47a6702458664f8e85aefbf390fb39b24ea34bf764baa73abd85b616ee58140c9d66d44c9c6985161a20eb47bb48cab2df2f66335f543339f9b3551751e983316d9933b77a4b49a016db31eac5535fc96213048e35ce3ebcc6b872d7ab129954b82d6b929276c16eb9bddc579f83f23b65acfe0902e1cd4a924e7abb5a05cb5abb0243d4c2aec686aa964f9d86739d5fe8539f999ea1dcc80c4b0f0e88a083ad31fc057bf50c46a8f966128b6c13ba7570f04e9fd608e29f1bb023cd46b3d65a88e33999f75ee0196913209f29d17a233163a5cce359e797f392740f5e25c143ad6332f2878d88b3e6fc7f8e9a3f78023571d2763ba682ad51022b5513d100a3f02b333e4bd48811f4bb6c3d9f399fb5fb3fc2b8f1257f806ccf7cc35dfdeb2c2d4be54782cfc91be69592a8ebd86fd7bae09ab4292f75328a6003c44cf4a087520712ccad2d563e210416d0db5b64d0176ed73ea94121888d69c3f597bd25dced531534aaa3306fb0a924862a8b4f0f089fd5c632aa3fc347174831e921927733f660bd5c6c15f7bbb9a6c3d497cd24420f6434a63b01f09aa18f223b708aa16bfbfa40d378fb8ac85c488398b41b61a549e919810b376afdf2c538cd8d46c773219f1ef0b1f00deb65800ac35b0d9a05d00c5478899c214acea40c603adc94845d8fc86c97ef4903a630d7c8afa4208eb7f87cabee00ab0c4f23d30a7e1fb66f140b4124d55c70a12bfc723e15b93154d8befa39f3897a1bf8ecf5e6498acbe75b9b5306eac97fc1239cf22d52e3e4ec73a8475ebff97aa0b47e1c330387320557a1a909da3a2f136a339c4ef9382ef54121c509c7fd482c7c722e13dd2ebea431eeb76d87746e4acbb749a9a384c061f631a8150cdcf9ca19e7488c975413fb55afdb16046bdac9e8b272fdc40c5b89e76a035ad8476692c43ad91f34e99a78f9fafd9d9b8298edcbe3fbb236cb216210a793884ba7529dfb411dce21584596970971832f90dd5d6a97d6f0712968a2a4735dac54beba7fe03778f774d634811ddb24be738eb94674f7d282fa2f4259aafdb18b4bc2461da8d0c0d5ffa69254c11fa4e3d6a5131564715828a900b9bddf4d6e06a71948e7f614d137d473529a5545397b97bb2af51f3330db9d5bf4c90eeba161e710722e43c82904e62f76a88dcf04cde05fc6b8e426b87a460ddf520c3f1769f32829810011ed61eb6a49de7b9ead904f9840d9f6fc1caa03de9560138d40d312bf9b41a9d12f09ac9a8821b232c5b1532879b81982992f86fd37207de682c4a6407430f786b95449622c700c4807f81f963ce415744354be87a75686ea2dbcf5ee4f85b62cad64c588376882dcef01912ea6e90a846d02a2bc30f687f926dac95ccd9ec62add1710cfe1f98623289d21ba3200e23b4aff86e2a4d7bdfbba92bf43701c62433a88fed27f66985356f69fb846e305da2b630e3efbbcc835c9f7bdfacd69506b129d03fc38779527234b861f69a9a2c5b33647f0521f2470d863faa998d2e4b68919e2e6c6d4c923bc3cf60e28e7935163383de311ff11e41ce51c5b43804c2d59b9bfb73283e1a106ac551f013ebcd715d8e34446827fda5318c0f68f3421c653d9650acecb520667f0dccb69501f180490a0b567469205419538658dcb85feaab7a474e5d52ba16ad2eda4aee2b1313cd52882835d44cdab2ff9a75a66df6b87409cac5f99cc16721f7055011e29b635065f7bed146bff2db1b446594b328a71f6531b687ed7dd60211511aa023c467665556595ce8c949ee0b72a72c458add86c5e27917f3b471335d54752957622ef304c583276affda9e7c457358474cf854ac1dc5f33a7d499d61c6b5e30c667eb40c5169492bd06b7f5db2a272cbdcc5e9fa25407db7d57b355e14e7943032a2e17aaa92aff4d05cf3763f7b36f5a9a501fa2b81bfdb4d335d9774c96d3bf1ec88a229f39aff553ba6a23eb58e4e75d3ed1a8bd476cc68a887e9ebe07a8819f1003aafec4f856c24cc2619db359614761f89d0cf06f00ebd78d320ffa08a4710cbef5e2523356995c8d61cd15f63eae90684a32be6a82df376efac60d6d5dcfe0bae8753760043c1b4dbb53cb9cd256615be86370c81e3bca79505776dfcd750887bfebb30a3b9a0cb4175f91ae61896508829d25d61b710214db6651062ab147d34f0a44e15d30d47c022b2d42dc7ab4562bea07e7fb3d6e36c57514ec250a3600cb20eed03be0937591eaf6826c769f9854fefe121f651fd4cda999c4e012144120d27ffbe1e0cbbf830704fc6f6d154400e4c77e7812ea814536c0b1b736046af79ec59414a9a8e610820b819cc16575318fa57c5a4028b81b13843c0f14e3b21d0decf5166a2600525692ba8fb555ed7414bc9d0be041decf0d1fae6ad2d3c8e0e1ac7cb19e66b1b4d5987e873b1e377b90ae60acc29077ee0da095a9ceda245dcd7baec2cccd70c2da98898434423cb057702e557df3a4b54ca66ba5edcca661e9f346d57ee6238ee4dae2499fbfb6264a1fa5cf3f0b0a1d05ec78535366d8b12935961645721968a7c57ed9bac51c938834fcf3338e43c4fe02337244fab02f20e03e4dfdb2b613d511864fb47d48640078aac9d39d72d3345c9347fceafb3aa69040f7911ca5bdd4bf25dff0cb18a14179813a6faf104385a7d891a68b79420d21483171c3e95f673ec8415cad4d27123e9a99f783b130fccdf609cfc9e7171327493fc7b225db60ec0d83390009ef4773f4c662026ccc3d65589577eae8ac06fe51652f1b96200f96a243f06b782f4ec9556c1aa484c3021612d3aee4929890377aa1d5f3a88a563637a2ad6acc04b139b1ad690df46656bf9978bf5b323b2abc4437aa203b7440cdd20528ce97887f270e2f200f8359562b49cf64a288f862bc316a2310d3381b61393b575c48d4f150b99baa5d522e06760ff9a99f18a304cc6cc3205e560cfdfe9fcfd37f22428b0047ae5f632464c6ed8e49e36c9a48edeb03f88cc9bbb41afadd39a2eb1263b3bf3a2de6c69f84f35cc740e563a8a6b6708edd7e427ae099f0d593662c7fe69e82ff79d6fb1a3ecf85e78127e8f1c75146aa055c0d015d5d41f6b1ed91e2012c1c8e5a9261d611fe824b4825b759cf975f09a961aa7259c7af2dc8d8a9d3b477c0bba52352d9a486bc7609d6a5f8f6234617db0da392a0dd3f7b03b8f30e7466b6c03bfffb3c0b8ea7f2522b5bf3bf1c7d0079e536b8ff253a3632eb49a942b8c0c545d58f3e6c38288fca3733c3e0bce4a367d8993546b21cec4dc13f45b1f102e567e98e35114a45b4deab3214bf23c42f5db36675a657fbe38f90c188e1bcfab917950a80b36140458f56d7f73cb67db7fd6b9b2e567bfad057831873bcb66ac2dcfd7160c75a87c5506f50ae1c4c15fd5875900f561443e8d77aadfc2a8d970217878dbe958dc87a21ea108f3a713524f78007b53561147325d1b1b41d807030698646157c14d9b8132ae6417baf81e9267b96bab0af4ef3f24e959b9be07a7096087a8534f387c08f9977a650662e1a79aa8fca83866b47fb5da704a7a37ae1e7cfcade63508e66649e2a4a08acf6fe339d3cfff456cd8b990d60c86773ef2d50ebfe59c77e59643b54cac4b743e1a2bd417d5d6d83af9e41221cc522f5b87a9892f9689620fb04a929d3b3e1bcc23280b80eea86fb07aafa0b7c34b07ccf643b0271e5ff39fd8b705a11b07ab1bfca671930551d3debcdfb03ff2d7ee25b2e1735f4aba88c081a0ae9f0d149fbcb9344424013ee6706b33df9d0f254861a700897d4dceb8e0df0a55ce95898c010e94cbd784c4c2b0f154bce088b9fc098fcd7f2a3c69636b36cc7ad2aa3a2b9e4bd06145bcac05aecab7c27dd1a00c634cc27c6e58c238a13dd4c1cba74f6ab1db51fdd02617dd5d5d5e94306010db741c49604868b8daaca660651da9c1b630163964c8c932ee9ad9b6ae808e4929b558e4ff3b483ce9cfa566845234524cccaf6071f3cc143171ef333c3939a1befc592649ffabf107f851f8dc4d9d9fcfb3fc71c6fba1e73fff38eb67e77a21da92631241847cbb0c4eb027eaf1f81073a700f4ecb39090b881a836b316d2b3cc88f63e67c3dd95e743cc4c2d6269b4b71c55f29257962f8be287e994481bf6f968d53d044f06f31751805268943ce8d24b8778316fc5594c4454f4851659d0738dccfe17b100222ba996918a0e0514d166600fcda1ba00eafd1e32139a00b070ffbebb06b81428d448f28fca743df61dfdbba983320cc6e33e0e57a90e5e71e6ebe7f477edc7e7cd13b9c64abc850691593bc967b145f65bc218ca1c38d7cdc00c0790aa1305cd0b0362c796918f86ffaff1436501b9feb188e9f750f7d35f923c97e47cd93d1b28f760bbc79dedb465d4e1e8534eea8adc53dd9c79613df50c51541a9972135f99bc2a58aa0a7916f5ac18da62b8b3a35edb52998231cbec7618bf70a3c2a0dea23280ab80675d183c6e0f53dc28304944c782791c94b91a8bf7c9e96aaff175c7b895ec4be0d58a138791548a48a9ba7dd59f981655b39390d71d4e0de8e5febe1496d758c3c264fd454bb00ce0d915fb941f209e73e36e6cbf5f9dcc2fbaa90e1770d8fc5b74736dbc6f97e1e9a7790c4148a13a35f20b54790f1e17ac262abf37df389fdd65fcba0c19753f9e8f9dbb4cb76e56037e4c4c3db6b6715e317bab5ad298039984bed26b264a680f8788d671ca5be8fb6600a2f0c95a4b369e4840ed7abdc4d9722ed48e40d9fc5d797a77f73e8362136dd5c5035ecd979e80d09a108ed3d0599dee913d1adec5eab0b4358af7bd2313c6973929771d25514e476387dd8b007b00782cd1a384e37bc5d308b264c1608b625cf5dd76e3413d5bd7a81f8ee1edb0e36f5204102df33cd926da761b0e9a5df9c93c69e4c114e83033e14a4256bb54342e91b656f7b2da8abce668aa860d1ea5c5b25c35af8ddbb10dfffda7a0716e506e471cb787079b3d72dad82b2bb60cc29d99ddc330db511293ca3f447ef77900402152e125744c95051c3ed444637b04e5ba9ab65a065331fa635e9c1bbf7f7f8104b7fcade0bc1bf84c333a08882c82d7ca0bf71b504beb6c2b3fe5eedc7613b975f1e8609a4ecd8c948736161ab6b0d1251738472682b4e8a2bf79930496c2f5d9ae0902133e24b2f8173ded5b7c2665305b04a739b6142652889d7b4cd5b5d5412a36d40426fcb3e2ad2a7b53c5e8c530e6c8251b98da46e9710cf0136e03500b96299871c1aa57f5731661833ef299f048eff3bbffe847d87647f82abdc19e90cd64700bb5dcc928909cc83991fb638cf730a9bb1d2367f929029b822dbb52b122c0e57c7a2257c5a1b0e1b7e130aef69a1d35ba08afa9c3995d37a8b7454d14fa121148f0b6183ef9e3517c624b45ae82a518949b41973b1c52bd02a910ad9419a45433ad283a39e490e9fde36537ec2f7a4eca9961326c751d648f9386e575952d72b2af52e931efae7bcb4a9246eb857c47d87cbb88174030199e4e0380ab905455ad12e3c4240aaa2cb736630f9aa745c492eb0da1935a6de7ad76b62c0900461953abedca71a5e0c8808ee01c1a13e9d5723ba42b1761e28532dd953df8f3d4751c37a2c3f0f56332e4683bae017ab55e903e02b19603e8f013d1f91295547701655f766e5fa1522cf731f9231d014e61fcfe120657039a38135389d3c1612179da4316b3e712e12f929af9dee9ca9a70ccbe14dcbc3c8750056a0766ff65fba1a1e731e8002c2c6334a379e5d1e214420b3bd9dcce0de03011bca173f266bebfd1fabd9088949143066da5750841ee0a8a2e75b52e2f0e08a69f710c3c3844614dba9a158e2e2a18d95c1fba238cb54b942c6d8ab704f1b3a344eb84b3221af1c9fe5f82c8ca69ef9acab511db26ac4681a05c9902e7483229fda6f5f80992dcfe864fd37eaaca6ec31522773021862584b36adb6d8bb9ea4490912c217f9da2b05b62c549e029c4e4474bb6bdc5a160c31b02281e823bb1a4f6e28b5fd5583b6b5b53db1bbdc3d7ec8fe5a79ec6fc23502bf9f64837d23232c947b4be7934d35f49879d5853e6c3ac2fedba63f1d1de442f6699bf66e931d25f763811044943df9859d2bd833bc003a45a0eda4f8cc1c6f0c2a5c31478dfac439b3336d152a6ae0d49d992f37bf2cb4cca788c986db9ee6bb5b3924b4c63e1c513e32512301224d76a44e16fc0a4e56b914c73099991a249f59ce85b513e6c1d0c30df63acd7076c04506e4149d9bc228c4d755cb734eed408f9d5082ee3536f7da29969d7fe8dd74481f633909cd430a207e34b0b22736fed0b6825b0c6d57be4112ea6218976bc5c897ac2fbad2084dced5e2c7c7d0b3b8c2165253b6e26c3a78bc3fa42739f76d5230532bb21044308bddc082233450bf1dcdcdb4d373a10b6af9f9273345dcfa5d8db06f7e430b9a5d5b94d3c9c0d4073c8b30641fab57abea81fb58d5bab75ebfff8c0107920757781e1c450904043845f198486215f97c1cdcfb4833b4f903755be6bc38bbfa23fa86ad2783fbac51d70ef6cb3517af156b893c9a092966531e71f5fa41acb269533d3a71bed1be955acc8755d97fc3dc31988ae802301e0556cb9228ad708d3f85b7bae6b445930c61d728917973aedd6490a6de61cf9045c8d4bec4cd8472f849f7545c9cc7f1e81dfef55b61c64b5368e288329a2e427ec004c957cf314b6684cb127b07d8a35e5c07058313643fce1c9b16e95a9b0f3a3d6eacb698392795e2362fe972d6e775dd4b9836d5115d2f7f92e32cb71b489e68065c36915d83658fb5a2cfc93796d3e218fd9858a325831ba6983608b31d69d99347843909defae1b28d8905d099b420032c41a7baf58e80590851b5f92221c7212ed7ecea2ed2cdba574acd54c2ed1fa87731a153457e3c0de0743021a43ce2354c2017ee1281bc138426cd9a1991f946d6c791f3137e499fc75fa7626b51661dc2b76738f2a8d67287cdc4797452cf3851128d680ecdc81a6ec50ab759c28d590ee1c7715a34ab2366a7f36b2857438e66fd37cce90e0f054e51f8a99c46e06143393202876bacc24604d48b71a0b85cec6acf2712f40afcfbdffa514cd8d44220a370a6b2d5f6d19b6e9ab13280c82068bfefeaa2509b93e977f81fa8436ca12e0fb3a8bb5e49f0d1c16c0d497293ed3eaa226b435d332249e6c6682dd6791ca79350c4e6f69fb33ccf03118fce9570a77fd216d75f2c08607f6fea6bbd8239f2026de744633ce8aa371c80dd98cf34f2e5936596d7ab35a082d6c18b68de1cc10fb121abeaceb787e99acf3a000a194d2fb0ae433c1dad6699c4fd568754c473d5939a5d0998dafb796432dffe4303c93d6b7bd56c783ac5e82013e09e1d8e37805d623dd2432d1509c17c5e84f4f1d9d6d4e56bbacf40e6574e564352</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="86d8acc2aff26182f46528ae81d73b73b3a5fe98742ffb56adef8e01645e925d">a354929597e97e0548983d5de94304bfbf661554e09011f0be4dc9775b5ecb373ec91cc5b8cd3067f706d5e1fbf02b54d3fb9d822cd8942bb12d5cea604536c2c21bf231d867ebe60629e7e716a3f04f6419840b9bd7c4078e285b2809d6f900da3b71a7f0de79b2bd7d4bbd5da49828eef669136eb869d89cdae1a2862d7ef3b76e23cd959d769a792a9dcf27d4e08c3e80856f453a02f74cd11ae03e4dfd6c47c154d16c6908c2e2f7725220381c3602cebf4172884a92a375618bb0fa91cfa1c21046c1998c51deb50af8fc1db521059134a30bc4ca3333a93112c9896a64d58525af48b17c9f7db1c91f9b617575</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -472,23 +450,10 @@
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
-        <category>第三方支付</category>
-        <category>代收</category>
+        <category>密码</category>
       </categories>
       <tags>
-        <tag>代收</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作日志</title>
-    <url>/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>2023</category>
-        <category>9月</category>
-      </categories>
-      <tags>
-        <tag>工作日志</tag>
+        <tag>密码管理</tag>
       </tags>
   </entry>
   <entry>
@@ -524,6 +489,41 @@
       </categories>
       <tags>
         <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卡充值流程</title>
+    <url>/2023/09/19/%E5%8D%A1%E5%85%85%E5%80%BC%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="20c5b845d0394bc83b43efefc82fa3385f0c8c277e9c0cd07a1b2d9edf66b560">e9f9d1802d784cd7d6d6c65cd7b514274b1daca32fe4aa264c92c9e3259c747de331fdee519a62c3b548bfa670e9edbcc4f08690d75be303eda138236c94d39ccc0965d760d0467041dfddb1d933bd4f1f5497a3ba30ad8bbc0fdfa8c51555d89bdd23602e76e7405b7baad3f777ba94f25bd8f98e57edef42a58122fcd2c2f4a5c0010921ae5c21b603adea5c6bc47eb02e9e79cdfef5a46dedbf5e109cb2e145372bd38054d45bede3da78048c659b00ab1f32873a680b0ab6f32adce46c3a15e3666220a612b88fe05c4a244dc67ad1f570247c0556831bcfaac579b590bf071e23f0e831d6fe1d0f2f626bbb00bcd5afee7c3ecfb5248160cd84d69709d4b2dc9530b895fc5a1f1cc0c22845ec6ed49cb7ae978f461113a5d0c1758a13e83ff58af7bd655e18ad15154223654e456ad90da8a75301b6a7f66da267654cbaa7c0adb6cb9dac4ddaa44494fd9323b431e939f311d901fa3d022ce84daf673a35783c1c7f60e8a1e2b6e671fb1d1f845cb64806290480ef35b1eff9cf040dec9d6f79c96a4657b6147eb5afa2bc9136bbca7eb23ca3fdb22bd93e28ac7acde49c7ad2b8ea23255ed5d15296786c69d9b7227ef0abc1c6974d37e8b634319a43f53fa6d63ee920d127d981bdeef52f09d99a162da95d6baadb38c95cc165f16fe2ffea92d2cf56a53de368c423461e8967f2001ba156ca1ae7ebe5282b55064b0202bc4bce03b6fd748693256007e12812e84f5d70a2a95fd9e86dfb013e9957bdb1d951bba3a79cb08c33893cb2d4985d8cca01cba39d16bf93acd716a19655ea19bc280236656f42a68e1903b09d797105bb2e4775707042071aa8ee553d4d01a8e4bb32f112e6e19536d523590fbe40255a04c31c78fd82baed5a889b427d04c551ef1395bc521135acfe9dc6780be21f874073dd4a0e2eb8a03b7521c4fd7f0c0337f5e38721b574a7ec46d780fb3867e4e8ad287354f1ada67e2d0bd9f85b5582f83ac8671aff3b83d2836aad929a3b0ffb0badac8cdf1352ba172a8784fbab3d4a719197f49ee54fe8f0d1fdcc740e84a8cc64d2fedd6b6e59b52a251dd87adf371f468af0b824263f8b9e88e15dfd682ccd87a4143c7dbdb570a1af35384069cfa2939b541672dc3376f0ab663437a2c1e87a800597e3562ecb71773ed48f13d8bb20fcecb871ae767c2337d55b7dacd2757f7c29426c42749500d7d0b4a4c683a724298f74922db52d8894bcfca6c4d283adb9bcfe54061633d177a37e88d9addfe478a5f8d1f9e2ba9e14a12fb63100e02a3b7de749a9eb07b729f853f2407f8f106ee5c10033b008580d101aa3ac0d5597149bbf23e4051206e9d55a73ad6912f38123986a7669b63b3f42063b4c1723adc1bc6dfd58fbb38c8f943bd55f68b61bf378255572a646ac0c4d7d34416418648474579de9300cad8057e83bceccd4baddbde41d574e1f6114a29d1245ea612eec1eabb4875a7c1ecd7286554ad2ae9a43f16329409834dbc775eecbaa6d12c84104c0628441da4a3ce35871ddc6caa7ff647176cf492e82c90e20efd0d58fccce2225124d18dce31e0e2909b6e9f2eb86133af4fd222b4c0811146a0bfa390412755aa14ab604bd5810b319d2e92108701a27d4f1c05b23a3e70e8573c677d697d3b81e9725842986f5d6ae84c0686ddb195eab6d1d34fd72b65042cce6de9dc26bdc963341ed001af0e7e03799b77de77ea9474b1256f697b66c5de6c11ff8c66d36e8623e163974c6c9fb06487a8d2a07a8ef46d56890c856e25e0a8cfd1008c89b3695957f280a7a13f65aa7d04e58b7ad8518c6afe0733552d8b7eb791a36f001602b41717a90a3387f212da87604bc3317fccac6938cf1ad017646918e54c668cb0bac93a4a4925d6e0c5180b14d8c331d22fe87e7de6444f43d700d6f2b5e665e4b804d9971fb24d60fcfabd54d8c65aa0f20da703ffe1ed752ce8b59dc17e4376545bc0fd2cc3d53f46d12efba2aa7fcb23395fa3e5692510e49f3e5038eac4472f7090f3cd8d25342d5659170ce92177581fb72e3bb023297b34572760e72632923a5815abebd8062c250659994ce039097630c7dde7fa13438a29a5f20351389764c4f62da7d97c6abdf255d3cdcedfe36ba170d2321a4b70d4cfd1551bec09054be158b9668a357ff780b073a5979f0088ba68a802f67d319acb93193f7d53946651fd6ccbdafd88dd0214cae6b7b68850ebca747454411107341e287defc3f7b47a6702458664f8e85aefbf390fb39b24ea34bf764baa73abd85b616ee58140c9d66d44c9c6985161a20eb47bb48cab2df2f66335f543339f9b3551751e983316d9933b77a4b49a016db31eac5535fc96213048e35ce3ebcc6b872d7ab129954b82d6b929276c16eb9bddc579f83f23b65acfe0902e1cd4a924e7abb5a05cb5abb0243d4c2aec686aa964f9d86739d5fe8539f999ea1dcc80c4b0f0e88a083ad31fc057bf50c46a8f966128b6c13ba7570f04e9fd608e29f1bb023cd46b3d65a88e33999f75ee0196913209f29d17a233163a5cce359e797f392740f5e25c143ad6332f2878d88b3e6fc7f8e9a3f78023571d2763ba682ad51022b5513d100a3f02b333e4bd48811f4bb6c3d9f399fb5fb3fc2b8f1257f806ccf7cc35dfdeb2c2d4be54782cfc91be69592a8ebd86fd7bae09ab4292f75328a6003c44cf4a087520712ccad2d563e210416d0db5b64d0176ed73ea94121888d69c3f597bd25dced531534aaa3306fb0a924862a8b4f0f089fd5c632aa3fc347174831e921927733f660bd5c6c15f7bbb9a6c3d497cd24420f6434a63b01f09aa18f223b708aa16bfbfa40d378fb8ac85c488398b41b61a549e919810b376afdf2c538cd8d46c773219f1ef0b1f00deb65800ac35b0d9a05d00c5478899c214acea40c603adc94845d8fc86c97ef4903a630d7c8afa4208eb7f87cabee00ab0c4f23d30a7e1fb66f140b4124d55c70a12bfc723e15b93154d8befa39f3897a1bf8ecf5e6498acbe75b9b5306eac97fc1239cf22d52e3e4ec73a8475ebff97aa0b47e1c330387320557a1a909da3a2f136a339c4ef9382ef54121c509c7fd482c7c722e13dd2ebea431eeb76d87746e4acbb749a9a384c061f631a8150cdcf9ca19e7488c975413fb55afdb16046bdac9e8b272fdc40c5b89e76a035ad8476692c43ad91f34e99a78f9fafd9d9b8298edcbe3fbb236cb216210a793884ba7529dfb411dce21584596970971832f90dd5d6a97d6f0712968a2a4735dac54beba7fe03778f774d634811ddb24be738eb94674f7d282fa2f4259aafdb18b4bc2461da8d0c0d5ffa69254c11fa4e3d6a5131564715828a900b9bddf4d6e06a71948e7f614d137d473529a5545397b97bb2af51f3330db9d5bf4c90eeba161e710722e43c82904e62f76a88dcf04cde05fc6b8e426b87a460ddf520c3f1769f32829810011ed61eb6a49de7b9ead904f9840d9f6fc1caa03de9560138d40d312bf9b41a9d12f09ac9a8821b232c5b1532879b81982992f86fd37207de682c4a6407430f786b95449622c700c4807f81f963ce415744354be87a75686ea2dbcf5ee4f85b62cad64c588376882dcef01912ea6e90a846d02a2bc30f687f926dac95ccd9ec62add1710cfe1f98623289d21ba3200e23b4aff86e2a4d7bdfbba92bf43701c62433a88fed27f66985356f69fb846e305da2b630e3efbbcc835c9f7bdfacd69506b129d03fc38779527234b861f69a9a2c5b33647f0521f2470d863faa998d2e4b68919e2e6c6d4c923bc3cf60e28e7935163383de311ff11e41ce51c5b43804c2d59b9bfb73283e1a106ac551f013ebcd715d8e34446827fda5318c0f68f3421c653d9650acecb520667f0dccb69501f180490a0b567469205419538658dcb85feaab7a474e5d52ba16ad2eda4aee2b1313cd52882835d44cdab2ff9a75a66df6b87409cac5f99cc16721f7055011e29b635065f7bed146bff2db1b446594b328a71f6531b687ed7dd60211511aa023c467665556595ce8c949ee0b72a72c458add86c5e27917f3b471335d54752957622ef304c583276affda9e7c457358474cf854ac1dc5f33a7d499d61c6b5e30c667eb40c5169492bd06b7f5db2a272cbdcc5e9fa25407db7d57b355e14e7943032a2e17aaa92aff4d05cf3763f7b36f5a9a501fa2b81bfdb4d335d9774c96d3bf1ec88a229f39aff553ba6a23eb58e4e75d3ed1a8bd476cc68a887e9ebe07a8819f1003aafec4f856c24cc2619db359614761f89d0cf06f00ebd78d320ffa08a4710cbef5e2523356995c8d61cd15f63eae90684a32be6a82df376efac60d6d5dcfe0bae8753760043c1b4dbb53cb9cd256615be86370c81e3bca79505776dfcd750887bfebb30a3b9a0cb4175f91ae61896508829d25d61b710214db6651062ab147d34f0a44e15d30d47c022b2d42dc7ab4562bea07e7fb3d6e36c57514ec250a3600cb20eed03be0937591eaf6826c769f9854fefe121f651fd4cda999c4e012144120d27ffbe1e0cbbf830704fc6f6d154400e4c77e7812ea814536c0b1b736046af79ec59414a9a8e610820b819cc16575318fa57c5a4028b81b13843c0f14e3b21d0decf5166a2600525692ba8fb555ed7414bc9d0be041decf0d1fae6ad2d3c8e0e1ac7cb19e66b1b4d5987e873b1e377b90ae60acc29077ee0da095a9ceda245dcd7baec2cccd70c2da98898434423cb057702e557df3a4b54ca66ba5edcca661e9f346d57ee6238ee4dae2499fbfb6264a1fa5cf3f0b0a1d05ec78535366d8b12935961645721968a7c57ed9bac51c938834fcf3338e43c4fe02337244fab02f20e03e4dfdb2b613d511864fb47d48640078aac9d39d72d3345c9347fceafb3aa69040f7911ca5bdd4bf25dff0cb18a14179813a6faf104385a7d891a68b79420d21483171c3e95f673ec8415cad4d27123e9a99f783b130fccdf609cfc9e7171327493fc7b225db60ec0d83390009ef4773f4c662026ccc3d65589577eae8ac06fe51652f1b96200f96a243f06b782f4ec9556c1aa484c3021612d3aee4929890377aa1d5f3a88a563637a2ad6acc04b139b1ad690df46656bf9978bf5b323b2abc4437aa203b7440cdd20528ce97887f270e2f200f8359562b49cf64a288f862bc316a2310d3381b61393b575c48d4f150b99baa5d522e06760ff9a99f18a304cc6cc3205e560cfdfe9fcfd37f22428b0047ae5f632464c6ed8e49e36c9a48edeb03f88cc9bbb41afadd39a2eb1263b3bf3a2de6c69f84f35cc740e563a8a6b6708edd7e427ae099f0d593662c7fe69e82ff79d6fb1a3ecf85e78127e8f1c75146aa055c0d015d5d41f6b1ed91e2012c1c8e5a9261d611fe824b4825b759cf975f09a961aa7259c7af2dc8d8a9d3b477c0bba52352d9a486bc7609d6a5f8f6234617db0da392a0dd3f7b03b8f30e7466b6c03bfffb3c0b8ea7f2522b5bf3bf1c7d0079e536b8ff253a3632eb49a942b8c0c545d58f3e6c38288fca3733c3e0bce4a367d8993546b21cec4dc13f45b1f102e567e98e35114a45b4deab3214bf23c42f5db36675a657fbe38f90c188e1bcfab917950a80b36140458f56d7f73cb67db7fd6b9b2e567bfad057831873bcb66ac2dcfd7160c75a87c5506f50ae1c4c15fd5875900f561443e8d77aadfc2a8d970217878dbe958dc87a21ea108f3a713524f78007b53561147325d1b1b41d807030698646157c14d9b8132ae6417baf81e9267b96bab0af4ef3f24e959b9be07a7096087a8534f387c08f9977a650662e1a79aa8fca83866b47fb5da704a7a37ae1e7cfcade63508e66649e2a4a08acf6fe339d3cfff456cd8b990d60c86773ef2d50ebfe59c77e59643b54cac4b743e1a2bd417d5d6d83af9e41221cc522f5b87a9892f9689620fb04a929d3b3e1bcc23280b80eea86fb07aafa0b7c34b07ccf643b0271e5ff39fd8b705a11b07ab1bfca671930551d3debcdfb03ff2d7ee25b2e1735f4aba88c081a0ae9f0d149fbcb9344424013ee6706b33df9d0f254861a700897d4dceb8e0df0a55ce95898c010e94cbd784c4c2b0f154bce088b9fc098fcd7f2a3c69636b36cc7ad2aa3a2b9e4bd06145bcac05aecab7c27dd1a00c634cc27c6e58c238a13dd4c1cba74f6ab1db51fdd02617dd5d5d5e94306010db741c49604868b8daaca660651da9c1b630163964c8c932ee9ad9b6ae808e4929b558e4ff3b483ce9cfa566845234524cccaf6071f3cc143171ef333c3939a1befc592649ffabf107f851f8dc4d9d9fcfb3fc71c6fba1e73fff38eb67e77a21da92631241847cbb0c4eb027eaf1f81073a700f4ecb39090b881a836b316d2b3cc88f63e67c3dd95e743cc4c2d6269b4b71c55f29257962f8be287e994481bf6f968d53d044f06f31751805268943ce8d24b8778316fc5594c4454f4851659d0738dccfe17b100222ba996918a0e0514d166600fcda1ba00eafd1e32139a00b070ffbebb06b81428d448f28fca743df61dfdbba983320cc6e33e0e57a90e5e71e6ebe7f477edc7e7cd13b9c64abc850691593bc967b145f65bc218ca1c38d7cdc00c0790aa1305cd0b0362c796918f86ffaff1436501b9feb188e9f750f7d35f923c97e47cd93d1b28f760bbc79dedb465d4e1e8534eea8adc53dd9c79613df50c51541a9972135f99bc2a58aa0a7916f5ac18da62b8b3a35edb52998231cbec7618bf70a3c2a0dea23280ab80675d183c6e0f53dc28304944c782791c94b91a8bf7c9e96aaff175c7b895ec4be0d58a138791548a48a9ba7dd59f981655b39390d71d4e0de8e5febe1496d758c3c264fd454bb00ce0d915fb941f209e73e36e6cbf5f9dcc2fbaa90e1770d8fc5b74736dbc6f97e1e9a7790c4148a13a35f20b54790f1e17ac262abf37df389fdd65fcba0c19753f9e8f9dbb4cb76e56037e4c4c3db6b6715e317bab5ad298039984bed26b264a680f8788d671ca5be8fb6600a2f0c95a4b369e4840ed7abdc4d9722ed48e40d9fc5d797a77f73e8362136dd5c5035ecd979e80d09a108ed3d0599dee913d1adec5eab0b4358af7bd2313c6973929771d25514e476387dd8b007b00782cd1a384e37bc5d308b264c1608b625cf5dd76e3413d5bd7a81f8ee1edb0e36f5204102df33cd926da761b0e9a5df9c93c69e4c114e83033e14a4256bb54342e91b656f7b2da8abce668aa860d1ea5c5b25c35af8ddbb10dfffda7a0716e506e471cb787079b3d72dad82b2bb60cc29d99ddc330db511293ca3f447ef77900402152e125744c95051c3ed444637b04e5ba9ab65a065331fa635e9c1bbf7f7f8104b7fcade0bc1bf84c333a08882c82d7ca0bf71b504beb6c2b3fe5eedc7613b975f1e8609a4ecd8c948736161ab6b0d1251738472682b4e8a2bf79930496c2f5d9ae0902133e24b2f8173ded5b7c2665305b04a739b6142652889d7b4cd5b5d5412a36d40426fcb3e2ad2a7b53c5e8c530e6c8251b98da46e9710cf0136e03500b96299871c1aa57f5731661833ef299f048eff3bbffe847d87647f82abdc19e90cd64700bb5dcc928909cc83991fb638cf730a9bb1d2367f929029b822dbb52b122c0e57c7a2257c5a1b0e1b7e130aef69a1d35ba08afa9c3995d37a8b7454d14fa121148f0b6183ef9e3517c624b45ae82a518949b41973b1c52bd02a910ad9419a45433ad283a39e490e9fde36537ec2f7a4eca9961326c751d648f9386e575952d72b2af52e931efae7bcb4a9246eb857c47d87cbb88174030199e4e0380ab905455ad12e3c4240aaa2cb736630f9aa745c492eb0da1935a6de7ad76b62c0900461953abedca71a5e0c8808ee01c1a13e9d5723ba42b1761e28532dd953df8f3d4751c37a2c3f0f56332e4683bae017ab55e903e02b19603e8f013d1f91295547701655f766e5fa1522cf731f9231d014e61fcfe120657039a38135389d3c1612179da4316b3e712e12f929af9dee9ca9a70ccbe14dcbc3c8750056a0766ff65fba1a1e731e8002c2c6334a379e5d1e214420b3bd9dcce0de03011bca173f266bebfd1fabd9088949143066da5750841ee0a8a2e75b52e2f0e08a69f710c3c3844614dba9a158e2e2a18d95c1fba238cb54b942c6d8ab704f1b3a344eb84b3221af1c9fe5f82c8ca69ef9acab511db26ac4681a05c9902e7483229fda6f5f80992dcfe864fd37eaaca6ec31522773021862584b36adb6d8bb9ea4490912c217f9da2b05b62c549e029c4e4474bb6bdc5a160c31b02281e823bb1a4f6e28b5fd5583b6b5b53db1bbdc3d7ec8fe5a79ec6fc23502bf9f64837d23232c947b4be7934d35f49879d5853e6c3ac2fedba63f1d1de442f6699bf66e931d25f763811044943df9859d2bd833bc003a45a0eda4f8cc1c6f0c2a5c31478dfac439b3336d152a6ae0d49d992f37bf2cb4cca788c986db9ee6bb5b3924b4c63e1c513e32512301224d76a44e16fc0a4e56b914c73099991a249f59ce85b513e6c1d0c30df63acd7076c04506e4149d9bc228c4d755cb734eed408f9d5082ee3536f7da29969d7fe8dd74481f633909cd430a207e34b0b22736fed0b6825b0c6d57be4112ea6218976bc5c897ac2fbad2084dced5e2c7c7d0b3b8c2165253b6e26c3a78bc3fa42739f76d5230532bb21044308bddc082233450bf1dcdcdb4d373a10b6af9f9273345dcfa5d8db06f7e430b9a5d5b94d3c9c0d4073c8b30641fab57abea81fb58d5bab75ebfff8c0107920757781e1c450904043845f198486215f97c1cdcfb4833b4f903755be6bc38bbfa23fa86ad2783fbac51d70ef6cb3517af156b893c9a092966531e71f5fa41acb269533d3a71bed1be955acc8755d97fc3dc31988ae802301e0556cb9228ad708d3f85b7bae6b445930c61d728917973aedd6490a6de61cf9045c8d4bec4cd8472f849f7545c9cc7f1e81dfef55b61c64b5368e288329a2e427ec004c957cf314b6684cb127b07d8a35e5c07058313643fce1c9b16e95a9b0f3a3d6eacb698392795e2362fe972d6e775dd4b9836d5115d2f7f92e32cb71b489e68065c36915d83658fb5a2cfc93796d3e218fd9858a325831ba6983608b31d69d99347843909defae1b28d8905d099b420032c41a7baf58e80590851b5f92221c7212ed7ecea2ed2cdba574acd54c2ed1fa87731a153457e3c0de0743021a43ce2354c2017ee1281bc138426cd9a1991f946d6c791f3137e499fc75fa7626b51661dc2b76738f2a8d67287cdc4797452cf3851128d680ecdc81a6ec50ab759c28d590ee1c7715a34ab2366a7f36b2857438e66fd37cce90e0f054e51f8a99c46e06143393202876bacc24604d48b71a0b85cec6acf2712f40afcfbdffa514cd8d44220a370a6b2d5f6d19b6e9ab13280c82068bfefeaa2509b93e977f81fa8436ca12e0fb3a8bb5e49f0d1c16c0d497293ed3eaa226b435d332249e6c6682dd6791ca79350c4e6f69fb33ccf03118fce9570a77fd216d75f2c08607f6fea6bbd8239f2026de744633ce8aa371c80dd98cf34f2e5936596d7ab35a082d6c18b68de1cc10fb121abeaceb787e99acf3a000a194d2fb0ae433c1dad6699c4fd568754c473d5939a5d0998dafb796432dffe4303c93d6b7bd56c783ac5e82013e09e1d8e37805d623dd2432d1509c17c5e84f4f1d9d6d4e56bbacf40e6574e564352</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>第三方支付</category>
+        <category>代收</category>
+      </categories>
+      <tags>
+        <tag>代收</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工作日志</title>
+    <url>/2023/09/07/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>2023</category>
+        <category>9月</category>
+      </categories>
+      <tags>
+        <tag>工作日志</tag>
       </tags>
   </entry>
   <entry>
@@ -573,6 +573,29 @@
       </tags>
   </entry>
   <entry>
+    <title>工作备忘</title>
+    <url>/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="36fa74e2fc34f4d076941b175f02b4f4bd3854b02bb170a45d193a631eb32fa2">a354929597e97e0548983d5de94304bf9b2a8e602fd0acf4bbca888930499cf0675db2630e36fafa598289469cd3b63e907e92e1b964cc44597762c24c257e43ed42707bc44c1484568e81a687216490b28861a2d307d42bbb2342c4e87ac56665a79a6a9d1c5b391722fc2aa2acec80cd536f7868a127cdf0dba0f8b46e896b853d63a6254c33daa796596be89233cca738377107d18547fae30f8b1969c21f80c50d0339213a6d560f2fea17e48609745561a974ee417d28873b055c9a904846566aa5c2f2d743b30c7da3f7eb0faf4c3c2653127296d2b5e7be9674d0686f8807a8360fd9f8495223b3ac412cd6861f2827bc00bdad1038feea2e32b6ddba5b86ba1bcab04736f84c01c6b25bcb6c75bf963dec5d09120eb02c37cf3cfa3671e6b07bd221f20edd3120e042efab49f913c604fa43202e0f72d8184b32bead050360837658969c9084b747d8f37020ff53b14b659c5962845e88855c8014f0c2b6e910d04584959de21b77a4e3d0dbb86d1501546bfe7cf0a64926b4be4617e1f944a6165fedc2e2cd8585598b8fe5feda264075927c85493d3c86b86b6f912e995d796e1a0d01a22bedb9a9982cbd3d9ba6a842e8fc62a85d09c2be60fa405006a70fce8a20e83fb2fbbf3aa866a7bb22e8f8e87927e32c7458a4f12759cad4c758012bc0f1a7fa3e8d3a9db0c3cc60f4a004766558dc0ca039fa16416e2e574af7b7ce10f23dfa6927efe597f87daf9af35da4e197ac781126533ff2c28e4aa0ba9f8228d5313caac71c8b5d6e7702091976f8845cb8433a47a11ce2de8ef5d5d1a57eb4f64049561794de2aa10a6d657982bb7629b9b31f9bf02a87f7bc1706de9bf35a4420205ff380d19d1e17bd605c47ed9939689d4ea4a1c50f5b3afdbd4dcb803f28f226748200357eaab6fdb955aab643af34040a1c09eeeea4e4408f813df73ece469cfcb5eb7456c64656ce8b3eba790560637fb610ab860335fc5105d5ee175602f594cbfb550e2d63e55bf0987e6b8b551b40d4d4ba595d5e25720809316a28afc391791a01ec2376401a4a21d0aa11d81c8d7c6c1dd9b544c8966d8e3016a14163c928dd4f29e578562ad323d80961736a8d4def0b15b766e37fd6cda99a02d4002251dc45e8b1f1abd24c5a46bf7c7a5861bb20192df8a14a6ddd338de17bf3ba6d2ddf28b11a24df06a2f973d7428467fda0c3ebf6fc6bd40d5d65a749d0b356aabfdab2d2e7782c8a03fca3a6f68cad637cc4554c7d8100c821699578edcefdd9d0be5702e4ac44be95ba6111620342aa938d763d2337bcf67c7cb293add2e6711c6fd4c326187b01238ea23f5d9f27d0b5788a480e3250cdbb9fa071a0900ebc0543795333a8180ffd251e38949a7cb26ca501a6340a0f93c77e162368770308273e78880a3fde9dcecd3960124a41237ab0919be53e1baf1b23be6799766aadfd1530ea12002e833418661bf282473428431d5247b9c5e3134bbe5ff4bd9b6e6eb5efb9942943d0adab9e82b0114da3fb39097d419aaa34e9ae9eba407b825da25f7179b7488de2fa6d17288616875cc1e4c4c74f856d70b19916c6bce80160bad57848bfe5bc05815f684c72f59381deaf60ce9e7dc4fd72a0870c259f03c00cffc42130a68ddbba96946e70577d2e3b6c67e07687f5d38e5f7ddaf09ebd40e346873b4e9c2e5274cf8e6e317582067e4491693a7d947a9acaac635628015e131ef2643b60801805f8b6ddb6caba7ad80613c364b84ae8a5bb82e0d0c75da19cf63186ea1e13c8012e4047afa72d553b45d016be21613662197a2ac2137d881ffca6cecaf4ee454d123494dbc97f66d32437b5b79d96d330c9fa0683af6e246ee2f21883493e4c59e11e2da355bdf6aa09a65fb529563810e17ed06a520dcfef503e35cb3c566f3f2acb62fecbe70a41e453f74600221928618ce32ebdd7f3ad3bf0920d9aedfa4a7ac61a2f22c5055d4ededfa84edabcbb8c74c5e71b757ba30fd4a20dd697e19377e2411f7058ddf13cf1946ecf9036ba0c6efd9f1640a70e1c84e77a456e07539946c2f4857a5953dac29e167d2e5d522be97e113a7f127d435c995319a5829ab34ff0ce1ba1f62718cefa2ccdb0930bbc48f7e942df287995b9b82062a9bf98dfee0f57ddbcf3148e5bfa277d7c4645af540e95139a946c4019b21cef9f07f5cc328c10cdee778f0baacede54b1f3eaa0aa85d58ab3713a0c797ece24ee177713566bbc09b4af84daf4e62f5634a9002aa5fc9ceb0bd6ebdbfcb081f771f94f4388c6e4d8f6b9df595bb43e9ec2dcceb63c71c530e311484a4c84517863e8a0bf6b8c54ed5869cd79dbb0bad0977c6be7bc3c6d17437937992a067d8413fc858ad6df6cafe9adb6a55f5b224e115f96f2a446442794bcbca4c017ff3132ab8c8678b248e690441afcae7891c04276b5deddaa7011e33e85de926f04564a3c7945d3847970556ff9b426b2483ee88a5fc6b4c094d5296fe604c591a8170794fd8543f50536990f3114778555dfb61f0ab3ef1f2bdf3ddf3e58af2d4d781fdb6874fab553596757574abb2bbfc8a679eb6b2b63c998236f877dd985d2ac3d1dcf47aa61f9b35fd506ae551a1a6d4324d40d7a1b3dc73ffab79a91ddd01404577211523ac46263a08c90026fdc07f436ecac3f141d293d2bf3a496886439b54a33750be6c362320ff934fac53683d3fe27bad3e1b2711ba23d5153ee65b1de47902f194c275a6015672ac651e66c1481a1c7183cc06eb97df0bcffdb60dbf9b7bd5996de7550ac1539b8b5a857c6512cc7b0932c385ae4c08ea5be65fec871692e43b96d065251fe62b817e3253d63abced59e86fee94a8ebe4e15fc10591e4070f5013a021169fb6189389b745a3cd0203b860cf371f54523a42d494fedf13c69db24e1ffa3a9f0333041751736e715d34f58974b656d08f47145e72d6607650c68e46eadada807e89ea732a15684dc35e679179c1ce1ae1ae67fb20d86decc4a8583d7cf0730d0da1488097a1a655b786eb4426595239b68e3a8dc12479db52e7ca877164764f4cd9b852523b645e0013bc5be1af6a94b55fc7b977747b574a4d5ca3bc4a3ab1c549ef5d526436e7ba53ece65efa87d8f987e8e2296671908215da61048e6f30d711f808cba4f4d3b8c6cf70091e216e0461f2a1f95662de53f940712e97452841c6d347aed9719a661163a68722f83aaa597f85590a901791dd8df3b81fd77d4a334814aebe5ec6d8ae2b1b179811b727dd61c58b2b8ab573c8c2bcbc54cea5ef3cb5462bc79185b082a28cea8c603b531d3e149e5bcf9649633edb9aa40664d5d3bd005be73a022ce8170e780321f1d6e3e90d4168c8e1e3fb539bfac1a4df5d3c8cf4027550fdce9d127e984afb8130d462e40614e8022216033861fa363b569bdd05474d869b9a4bfa0f5c6879afb1947c03adbdadd46adc42ad0a8a498eb8a5ca162dcba48a391885ef25c29122ad695f5dfb64ad97bee787170e1abaae789eb01672e837e0e2fa1b212acfe0fbd6b33635b3afbc24511bf89e9e260b2fcbbfd04d551bbd652bb8cb3aaf6965599bb1053020fc202306afebfd5bd607172e679fe1ba688936b4476a6a736ec08d6144cde365ae3611828b056c5aba6411faf96b457230dda260ce155afa75d766b4c16aee3034b4f8a6f73c07456998f0b37250a35a4c5f9601b7c87d1960f651e560f66f063dc30dd99a5cb829ca476e2f2d5b5d1f26a03e8c1f731bfe490f34979712a3b9e8e8b96cc3310be05420c18f3201210282cd95a9db4221ca8c2598a9dc70ef4a7fde53f5ab4e0be25ad98cb7d6648e792dfb8fb05800b41e5e6e55453cc8c892b4c7342ceaf3309a15dbcde2bd6bc7fce91d427fecbe271b79e47876613b5a715f2f355fe29a0d1208d7849951eb4d45303a4dc99451e12b29b1b070da8e6e97424c81e47f8154af038806424b111dfd7a16cbde81696fc52b0c505c817d965eed4ff27693e7c6168bd2720e23373d266c98ce74dab4a8875fe6e8a1ca086c11c817525769da65373de4516a70eabb46acf7749beadd719b269b26a431063a9b8e43efd7ed9cbb5bfac3a8485be3f877c99505cfb379c35e1946efc4cfb23b3e1ded7d6b25cbeba99454ca4c85f83678e84275611308ba0456e8f5d0bdc90a03a2e2802d8d395b2bb5fa4ab6f14101d9451dacac65f1daa69b285cf39aef22e4ed1eec27020dc391cf852dceb3bba343ea91efa8ab3b663612fb01ffeb4ff926e92e7aa7587ae6a0e526410309e864175137365aebd0223f01e189a9fae947ab1df1b1e0543d28d6a067f81516613b8eebd5b96a8e9a89e1aad2e2eec82471970aa43b6cf2b647de31c758b88d766d09f2491a8bcadddacf631c7b9e2e5753e7707dd639ec9197d7add33a0a5f9fc4d9798f086bc713e0e9d03de304d148350c4357a9ebbd70ff12e562545b1e4a53576df1b7081eb7c45f3012887eda1ef3003907126cf1c69d389c77d722c1f8c1d8f5133a2ba1d245e4b1582fedc33e9577195c00e53edba3b6b01496ba9acdb5bd492444ef0966afe6b275bd52a758a0002f0d83a9d4019a9c2d944baeff8a01b16aadf92536fa93bca51dd5b2ea264587763520edf5ad4ea187561191a28101b732b2c6dd07e47fc07c901518df9cc9749d3a815f12ef7b306bea80b67633f690c807aeb2b13eb3c76b9fe647e2cf51f16f268d7163caa489152b0d41680a8b1b5e27e23aa3227fa4a9e961adeb38633ccb2fb6d26fd94239b4180ccd7d17c5c01559c55ce98f58170efa9a7bc9310de8c773d969974ef1cf36f5514406fe88b14183839123267051f6c1016521d6518885d5380a98988fde93206f4db0ed6c331b78183f350c3906e9a5cef36db172330e0f6031292d5f368864cbd1f4541643a56ffa09e1747ec0cf6489fe4d4ec57027c6c7cdbd3530ac0f98abe1b9dc7bf1282a6ae64f832c172cbe2a7957f249466bc7caa168814eff08df772839ca89c2b1caf7f702b09b1b4022a91b428573197aadadee41111ad325c660ea241455650694ccf2d0ea4e0f01cce0735e608d7b82ed88f491224918695c90779b262fbdea6ed12b1c4cca9551a0d88f8eb1a6c0311679257c0267333448e8cbee0f9f0a30670f45577eb025962ca5f7d4bf9afa7f1051355baa725ee865328a5d269c2122ab301f9b30c6691220f5131b80f2149b24bfc76db607f4f835261cc11d2a4e7e45f1183783094bc77cb6c7e45e793b11ce46fe224db5916428532c3a2351fa93fbeaa9abeed8eaf4824300ce9127df4e6e4d5fd22041cdd4cf68fd14a1491fc8e64c9c26419be84853c376498ebdaf48a51559ce9c87efbfeadf58e31b5adea4ac4f6e9ff590cbe70ccb80dd4c6b05a6506d5c8db4d4c48b710b226d4b6abe6d623da17961a0f5c6f4dccc7041c5071ea6c7643bf131ccd68e1356ecc978b732587c7decc58f5bcfe8660e05285c141ea3381c1a1194dfaec9be4fb8e58743a875f2f462e39872d6bbb368cf9496585c1d2443cf3d65c05e69734cefaad7b7fcd93e45b39be807271418752e47a70e672bca03ec249ad3b311d5d9d92286df2df7a59af6ad025fa16bf2ada401dcd94acae25e8a2c05098382e105894287457ea52b614beecfadea424ef67652d6197265556a3560f8a3e1794051aefc14bfc3d0f6b6d50366eac8d886c430f42cc36dcbc09de05f1191788d718cef8046295db0a1edd4d9e302ceb1e9118d311f3e92dff00586d7dba1609d68d07bda5483cb55ba50a4c3de8bf390410d2c631fbadbec17274964c57553d2dcc66ed0fba2c3e36bd3149f1568ba00720a5ea17aff1b3c26034ef2e0ad4a99c60dc854c5760b3705c6780ed290063496e45b60c3fe58ca1ccbb2f5efe5a1ef66f4d9cd93de30c2e8f544fe925ebe24ee4c319183417b84fb89a28b80e2b27715dbd58aaf6bb29b78c40551a281a2b428365e41af5021aa7e2c5bfc31eed23029168dbb7a7acab364ef8fa38b983d514d01c1f5682a03bf278a71bf7ca7f6e25ed662ffc9d3033d14f324949ff3e7311b5badc872c1e640cc72e9a28cf1a52f91af9e70839293b53a9f3fba9f0ef310bf7acaac8529cf47c4e76c88a0ca6388f9044d7aa867cd5baecc3a468e71857736f41f10926301a80bbaec30f3f72b5949a80c39b2e61e558bf26fc8d063ca3b78aea15e2308bcb46917f9779fb721ce3ffb375ed6861b515b3031c79905e299255906f946583b4ab89898e8bd0342167a22344c052b76ee67a6b5a0e712bb5ee36d8abb33df7777f9595b3c733e66fb02f58a21f35136c60a0743e431d5533044a375c424d62ad195130aae5577590a00bfdc7ab9738018d85731bfc1f2c984ae93d77101fa86c77270358aca2bda671904f1001f230816153718ac26e87dcdf269780f2979fcd651452a5e34fda1065adf02809c717aa7bcce01870e001927e1af6e31ff34f0903bc7be4b47e56ccff070a23d320c877cac4dcfe307847475e1aa473a4d47f13f767dae3a70d3702bb53a4be06424eefb88e9bc5cad1825603bb8ac94e0b861f312c33cb026f04b67915d28e7637c3a0c8caa4366490a02c6ee2d561b81af54e8892e9087642bb3d5826115c2dab3bbdfebfda1f018648bb9e318073147f641d7dc41378eb9f7c54c0fe3e574f4c5da6f4aa095d3cbc7d44c22ec628940985b209e82ce80ffc6cbe0b16427f966194e88aa7d5024fabb83c1252a3820593071dd71a5197633087fc9e30f2f06bf90c5f30916302aeac021e0819af7855be51013b42009927ce7e17ed7a48b3369b315bd12dfc83381bb613e66d0019ea7518c2d4f3d46a88a6b9376e302cdff74e9270af1cb5a7255f4448f75a504f13cac676f821bdcbe2ba387505b166ef79edf88430d9bd8424fbd5c7a2c090b75c76cac4a1b15633bd91e717bb28064e1c8282d346b9c6e90d820cdf8d970f8098a99f1d57b0a6ddcb1680289f54d84c1f0430e91ad6d37c8eba9b685c8dfe52e21f86765ee24ad04fd7ae2cdc27c3906019fac8adb4e1a8834bcbe3d853796a567d25803bb791f76e9eab74da86e97027141c3849f15bd77f9723e6425e3305a6b88ea6879a56144e1af1828471b244ad11d8dbe17cc11b62bb208fecd6f090b32b959ab4b686d8ce46c79c8e2b8fee54e0250dccbcbf7e5808f5b567145df7cb8839c9b39bd2d85c07828d2ce5c09dcbd63e3cbf61604f6c142ac54a883eaae249e2bd330fdf29e114c3681d5e6b87343b6b0b3de6bcf7ee4bde91b490e0624a21ea8388c3733a9cf681ea638f7debdd7486dc358c4748ddb0aa0507f5fd6b764a7b3a9e668e98c616a9789f2af996e1c9208f97597e06b580fd80b8060f858c48d00ca4dc20cde946f3e735454693fd632ab4951874004f858d9df584113a42fc8d3b7b4d49cbb67e0c0abc0b96d27b7b3d90db6ad01bc3e81a07ec01310dbe20d1435507c760f2150112c139e70022154c9ac9ecd06f82760fcaebe27fcaf47281be6ba67ea7015e79023502e1c95e21c1a2770002c6a1fa8a9e4590e19f267bfdf3722d44670e931a736fc7427233aa498095eb420a1b69ae7d672d56e3cbe33175aa2f50db553ee4f1a03dde701bfa77036246eece4425876028d38c105068fb284b96cd789f108f078f9c68b89f91a7162eb0d51106566b3156be08046b57dce79a293903068942077c9a1a41964cc7c4e15d662ddcd9e04178cac7174096d999d60821b3f77cb155f3ca1a3a630fbd61a0a12739a8f4388316f14d365940100cf060d13e7363558af8c8156f05e36f3db78304e6d815a468df37394894053be4a6882da38f4a27eb4598a20c9517cb044849575d52ae70947c3ffed263288169f2121119c3f096a7a3cde668e67e69a1bd21ed29b9dcc472a907c1b9558625715e69ab556c0f6825770b4de64fbd239c4ba0d584f7ee28a88533d8360d41b5e2815e27542066f8be883cc48493afae2db77b872deb238c5dc1123090753104da85f681eec918ca44071208b0e575a76d6c75f2082d8f834ad82fd28501115392e417342f98c5369104b0308e2ff4526cc86b4625f0a40d313bed93de712b5997782be0a92c52df02967f98a965e03912d12340d45c2254c107457aa507f3d3482db058aa4c2792f98c8b192f383d9b73ccce0fb899765cf09910e35056e49c7e0950cf1ad91ba06353b19f2e75b6563ed40afd62827425f722d41efc1bb0dbe9a2c50bf9536bc90e545fbe0e6b92670f6acd9853f757f569371a5b64becffffd1428c133314c3cae883f3369b14d3969b62270be9332c4303a6dd9d5abf79978719ee735e6060616474e0614667bba846a07df2681179ea5d1a1d377d461300d5e85aaf490176b816ff1ff4e319f6dff827ca9cee72070f73796de67876d5b3fc722c940f4cfc6f1eeae0a4da4aa47e5bcc35f1edf256cf4db9453a4b658a0bb50a68fa4a484306731c888acb45cf400</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>2023</category>
+        <category>9月</category>
+      </categories>
+      <tags>
+        <tag>工作备忘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>支付功能</title>
     <url>/2023/09/19/%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -589,6 +612,33 @@
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
         <tag>第三方支付</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>若依框架中@DataScope数据权限过滤</title>
+    <url>/2023/09/15/%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>若依框架本身具有角色、部门、用户业务。</p>
+<p>在项目中，用户必须绑定一个角色，角色又必须将自身绑定到部门，角色绑定了哪些部门，就决定隶属该角色的用户能对哪些部门数据进行增删改。</p>
+<p>一般情况下，假如我们对一张表要进行查询或更新的话，需要在sql语句中，where条件语法后面 加上 dept.id = {currentDeptId} 来进行过滤，</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sys_user</span><br><span class="line"><span class="keyword">where</span> dept_id <span class="operator">=</span> &#123;currentUserDeptId&#125;</span><br></pre></td></tr></table></figure>
+<p>在若依框架中，我们只需要在Service层的方法上加入<code>@DataScope</code>注解，并分别通过deptAlias和userAlias属性，指定出部门表和用户表在sql语句中的别名是什么的话，就不需要我们手动在sql语句后面加上过滤条件了。</p>
+<h2 id="使用数据权限过滤"><a href="#使用数据权限过滤" class="headerlink" title="使用数据权限过滤"></a>使用数据权限过滤</h2><p>1.创建一个实体类，继承BaseEntity</p>
+<p><img src="https://img-blog.csdnimg.cn/34bbaf2df60344aea709c093aa3b744b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>BaseEntity实体类中，有一个类型为map,名称为params的属性</p>
+<p><img src="https://img-blog.csdnimg.cn/dc86000db3184a83838085b345bfb2bb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>2.在对应的mapper.xml文件中，对应sql语句的末尾，我们引用SysDept所继承的BaseEntity父类中的’params’属性。<br>${params.dataScope}</p>
+<p><img src="https://img-blog.csdnimg.cn/f190aaf89d7a4949913e19090f274bcb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>3.在调用Mapper层的方法，加入@DataScope注解，指定sql语句中用户表和部门表的别名</p>
+<p><img src="https://img-blog.csdnimg.cn/82e01ebc81cf45f083bbd3cc1c41001b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>4.接下来我们前端访问controller，debug然后进入到service层的这个方法，我们会惊奇的发现。SysDept所继承的BaseEntity父类的params属性，有了值。而这个值，就是数据过滤相关的sql语句。</p>
+<p><img src="https://img-blog.csdnimg.cn/3eadd1aa0d0f4ca4ba8693db9ec2b199.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>WEB框架</category>
+        <category>若依</category>
+      </categories>
+      <tags>
+        <tag>DataScope</tag>
       </tags>
   </entry>
   <entry>
@@ -644,52 +694,6 @@
       </tags>
   </entry>
   <entry>
-    <title>若依框架中@DataScope数据权限过滤</title>
-    <url>/2023/09/15/%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/</url>
-    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>若依框架本身具有角色、部门、用户业务。</p>
-<p>在项目中，用户必须绑定一个角色，角色又必须将自身绑定到部门，角色绑定了哪些部门，就决定隶属该角色的用户能对哪些部门数据进行增删改。</p>
-<p>一般情况下，假如我们对一张表要进行查询或更新的话，需要在sql语句中，where条件语法后面 加上 dept.id = {currentDeptId} 来进行过滤，</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sys_user</span><br><span class="line"><span class="keyword">where</span> dept_id <span class="operator">=</span> &#123;currentUserDeptId&#125;</span><br></pre></td></tr></table></figure>
-<p>在若依框架中，我们只需要在Service层的方法上加入<code>@DataScope</code>注解，并分别通过deptAlias和userAlias属性，指定出部门表和用户表在sql语句中的别名是什么的话，就不需要我们手动在sql语句后面加上过滤条件了。</p>
-<h2 id="使用数据权限过滤"><a href="#使用数据权限过滤" class="headerlink" title="使用数据权限过滤"></a>使用数据权限过滤</h2><p>1.创建一个实体类，继承BaseEntity</p>
-<p><img src="https://img-blog.csdnimg.cn/34bbaf2df60344aea709c093aa3b744b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>BaseEntity实体类中，有一个类型为map,名称为params的属性</p>
-<p><img src="https://img-blog.csdnimg.cn/dc86000db3184a83838085b345bfb2bb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>2.在对应的mapper.xml文件中，对应sql语句的末尾，我们引用SysDept所继承的BaseEntity父类中的’params’属性。<br>${params.dataScope}</p>
-<p><img src="https://img-blog.csdnimg.cn/f190aaf89d7a4949913e19090f274bcb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>3.在调用Mapper层的方法，加入@DataScope注解，指定sql语句中用户表和部门表的别名</p>
-<p><img src="https://img-blog.csdnimg.cn/82e01ebc81cf45f083bbd3cc1c41001b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>4.接下来我们前端访问controller，debug然后进入到service层的这个方法，我们会惊奇的发现。SysDept所继承的BaseEntity父类的params属性，有了值。而这个值，就是数据过滤相关的sql语句。</p>
-<p><img src="https://img-blog.csdnimg.cn/3eadd1aa0d0f4ca4ba8693db9ec2b199.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZCb44KS6KaL44Gk44GR44Gm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>WEB框架</category>
-        <category>若依</category>
-      </categories>
-      <tags>
-        <tag>DataScope</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书摘抄</title>
-    <url>/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p>
-<p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p>
-<p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p>
-<p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p>
-<p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p>
-<h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p>
-<p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>
-]]></content>
-      <categories>
-        <category>读书</category>
-        <category>摘抄</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>若依框架是什么</title>
     <url>/2023/09/15/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</url>
     <content><![CDATA[<p>背景：接触一个新的不完整的项目，看了两三周代码，没注意到搭建好的项目是个若依框架，而给的代码只有交易部分，完全没有若依框架，决定自己初步了解一下若依框架。</p>
@@ -734,26 +738,55 @@
       </tags>
   </entry>
   <entry>
-    <title>工作备忘</title>
-    <url>/2023/09/12/%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="36fa74e2fc34f4d076941b175f02b4f4bd3854b02bb170a45d193a631eb32fa2">a354929597e97e0548983d5de94304bf9b2a8e602fd0acf4bbca888930499cf0675db2630e36fafa598289469cd3b63e907e92e1b964cc44597762c24c257e43ed42707bc44c1484568e81a687216490b28861a2d307d42bbb2342c4e87ac56665a79a6a9d1c5b391722fc2aa2acec80cd536f7868a127cdf0dba0f8b46e896b853d63a6254c33daa796596be89233cca738377107d18547fae30f8b1969c21f80c50d0339213a6d560f2fea17e48609745561a974ee417d28873b055c9a904846566aa5c2f2d743b30c7da3f7eb0faf4c3c2653127296d2b5e7be9674d0686f8807a8360fd9f8495223b3ac412cd6861f2827bc00bdad1038feea2e32b6ddba5b86ba1bcab04736f84c01c6b25bcb6c75bf963dec5d09120eb02c37cf3cfa3671e6b07bd221f20edd3120e042efab49f913c604fa43202e0f72d8184b32bead050360837658969c9084b747d8f37020ff53b14b659c5962845e88855c8014f0c2b6e910d04584959de21b77a4e3d0dbb86d1501546bfe7cf0a64926b4be4617e1f944a6165fedc2e2cd8585598b8fe5feda264075927c85493d3c86b86b6f912e995d796e1a0d01a22bedb9a9982cbd3d9ba6a842e8fc62a85d09c2be60fa405006a70fce8a20e83fb2fbbf3aa866a7bb22e8f8e87927e32c7458a4f12759cad4c758012bc0f1a7fa3e8d3a9db0c3cc60f4a004766558dc0ca039fa16416e2e574af7b7ce10f23dfa6927efe597f87daf9af35da4e197ac781126533ff2c28e4aa0ba9f8228d5313caac71c8b5d6e7702091976f8845cb8433a47a11ce2de8ef5d5d1a57eb4f64049561794de2aa10a6d657982bb7629b9b31f9bf02a87f7bc1706de9bf35a4420205ff380d19d1e17bd605c47ed9939689d4ea4a1c50f5b3afdbd4dcb803f28f226748200357eaab6fdb955aab643af34040a1c09eeeea4e4408f813df73ece469cfcb5eb7456c64656ce8b3eba790560637fb610ab860335fc5105d5ee175602f594cbfb550e2d63e55bf0987e6b8b551b40d4d4ba595d5e25720809316a28afc391791a01ec2376401a4a21d0aa11d81c8d7c6c1dd9b544c8966d8e3016a14163c928dd4f29e578562ad323d80961736a8d4def0b15b766e37fd6cda99a02d4002251dc45e8b1f1abd24c5a46bf7c7a5861bb20192df8a14a6ddd338de17bf3ba6d2ddf28b11a24df06a2f973d7428467fda0c3ebf6fc6bd40d5d65a749d0b356aabfdab2d2e7782c8a03fca3a6f68cad637cc4554c7d8100c821699578edcefdd9d0be5702e4ac44be95ba6111620342aa938d763d2337bcf67c7cb293add2e6711c6fd4c326187b01238ea23f5d9f27d0b5788a480e3250cdbb9fa071a0900ebc0543795333a8180ffd251e38949a7cb26ca501a6340a0f93c77e162368770308273e78880a3fde9dcecd3960124a41237ab0919be53e1baf1b23be6799766aadfd1530ea12002e833418661bf282473428431d5247b9c5e3134bbe5ff4bd9b6e6eb5efb9942943d0adab9e82b0114da3fb39097d419aaa34e9ae9eba407b825da25f7179b7488de2fa6d17288616875cc1e4c4c74f856d70b19916c6bce80160bad57848bfe5bc05815f684c72f59381deaf60ce9e7dc4fd72a0870c259f03c00cffc42130a68ddbba96946e70577d2e3b6c67e07687f5d38e5f7ddaf09ebd40e346873b4e9c2e5274cf8e6e317582067e4491693a7d947a9acaac635628015e131ef2643b60801805f8b6ddb6caba7ad80613c364b84ae8a5bb82e0d0c75da19cf63186ea1e13c8012e4047afa72d553b45d016be21613662197a2ac2137d881ffca6cecaf4ee454d123494dbc97f66d32437b5b79d96d330c9fa0683af6e246ee2f21883493e4c59e11e2da355bdf6aa09a65fb529563810e17ed06a520dcfef503e35cb3c566f3f2acb62fecbe70a41e453f74600221928618ce32ebdd7f3ad3bf0920d9aedfa4a7ac61a2f22c5055d4ededfa84edabcbb8c74c5e71b757ba30fd4a20dd697e19377e2411f7058ddf13cf1946ecf9036ba0c6efd9f1640a70e1c84e77a456e07539946c2f4857a5953dac29e167d2e5d522be97e113a7f127d435c995319a5829ab34ff0ce1ba1f62718cefa2ccdb0930bbc48f7e942df287995b9b82062a9bf98dfee0f57ddbcf3148e5bfa277d7c4645af540e95139a946c4019b21cef9f07f5cc328c10cdee778f0baacede54b1f3eaa0aa85d58ab3713a0c797ece24ee177713566bbc09b4af84daf4e62f5634a9002aa5fc9ceb0bd6ebdbfcb081f771f94f4388c6e4d8f6b9df595bb43e9ec2dcceb63c71c530e311484a4c84517863e8a0bf6b8c54ed5869cd79dbb0bad0977c6be7bc3c6d17437937992a067d8413fc858ad6df6cafe9adb6a55f5b224e115f96f2a446442794bcbca4c017ff3132ab8c8678b248e690441afcae7891c04276b5deddaa7011e33e85de926f04564a3c7945d3847970556ff9b426b2483ee88a5fc6b4c094d5296fe604c591a8170794fd8543f50536990f3114778555dfb61f0ab3ef1f2bdf3ddf3e58af2d4d781fdb6874fab553596757574abb2bbfc8a679eb6b2b63c998236f877dd985d2ac3d1dcf47aa61f9b35fd506ae551a1a6d4324d40d7a1b3dc73ffab79a91ddd01404577211523ac46263a08c90026fdc07f436ecac3f141d293d2bf3a496886439b54a33750be6c362320ff934fac53683d3fe27bad3e1b2711ba23d5153ee65b1de47902f194c275a6015672ac651e66c1481a1c7183cc06eb97df0bcffdb60dbf9b7bd5996de7550ac1539b8b5a857c6512cc7b0932c385ae4c08ea5be65fec871692e43b96d065251fe62b817e3253d63abced59e86fee94a8ebe4e15fc10591e4070f5013a021169fb6189389b745a3cd0203b860cf371f54523a42d494fedf13c69db24e1ffa3a9f0333041751736e715d34f58974b656d08f47145e72d6607650c68e46eadada807e89ea732a15684dc35e679179c1ce1ae1ae67fb20d86decc4a8583d7cf0730d0da1488097a1a655b786eb4426595239b68e3a8dc12479db52e7ca877164764f4cd9b852523b645e0013bc5be1af6a94b55fc7b977747b574a4d5ca3bc4a3ab1c549ef5d526436e7ba53ece65efa87d8f987e8e2296671908215da61048e6f30d711f808cba4f4d3b8c6cf70091e216e0461f2a1f95662de53f940712e97452841c6d347aed9719a661163a68722f83aaa597f85590a901791dd8df3b81fd77d4a334814aebe5ec6d8ae2b1b179811b727dd61c58b2b8ab573c8c2bcbc54cea5ef3cb5462bc79185b082a28cea8c603b531d3e149e5bcf9649633edb9aa40664d5d3bd005be73a022ce8170e780321f1d6e3e90d4168c8e1e3fb539bfac1a4df5d3c8cf4027550fdce9d127e984afb8130d462e40614e8022216033861fa363b569bdd05474d869b9a4bfa0f5c6879afb1947c03adbdadd46adc42ad0a8a498eb8a5ca162dcba48a391885ef25c29122ad695f5dfb64ad97bee787170e1abaae789eb01672e837e0e2fa1b212acfe0fbd6b33635b3afbc24511bf89e9e260b2fcbbfd04d551bbd652bb8cb3aaf6965599bb1053020fc202306afebfd5bd607172e679fe1ba688936b4476a6a736ec08d6144cde365ae3611828b056c5aba6411faf96b457230dda260ce155afa75d766b4c16aee3034b4f8a6f73c07456998f0b37250a35a4c5f9601b7c87d1960f651e560f66f063dc30dd99a5cb829ca476e2f2d5b5d1f26a03e8c1f731bfe490f34979712a3b9e8e8b96cc3310be05420c18f3201210282cd95a9db4221ca8c2598a9dc70ef4a7fde53f5ab4e0be25ad98cb7d6648e792dfb8fb05800b41e5e6e55453cc8c892b4c7342ceaf3309a15dbcde2bd6bc7fce91d427fecbe271b79e47876613b5a715f2f355fe29a0d1208d7849951eb4d45303a4dc99451e12b29b1b070da8e6e97424c81e47f8154af038806424b111dfd7a16cbde81696fc52b0c505c817d965eed4ff27693e7c6168bd2720e23373d266c98ce74dab4a8875fe6e8a1ca086c11c817525769da65373de4516a70eabb46acf7749beadd719b269b26a431063a9b8e43efd7ed9cbb5bfac3a8485be3f877c99505cfb379c35e1946efc4cfb23b3e1ded7d6b25cbeba99454ca4c85f83678e84275611308ba0456e8f5d0bdc90a03a2e2802d8d395b2bb5fa4ab6f14101d9451dacac65f1daa69b285cf39aef22e4ed1eec27020dc391cf852dceb3bba343ea91efa8ab3b663612fb01ffeb4ff926e92e7aa7587ae6a0e526410309e864175137365aebd0223f01e189a9fae947ab1df1b1e0543d28d6a067f81516613b8eebd5b96a8e9a89e1aad2e2eec82471970aa43b6cf2b647de31c758b88d766d09f2491a8bcadddacf631c7b9e2e5753e7707dd639ec9197d7add33a0a5f9fc4d9798f086bc713e0e9d03de304d148350c4357a9ebbd70ff12e562545b1e4a53576df1b7081eb7c45f3012887eda1ef3003907126cf1c69d389c77d722c1f8c1d8f5133a2ba1d245e4b1582fedc33e9577195c00e53edba3b6b01496ba9acdb5bd492444ef0966afe6b275bd52a758a0002f0d83a9d4019a9c2d944baeff8a01b16aadf92536fa93bca51dd5b2ea264587763520edf5ad4ea187561191a28101b732b2c6dd07e47fc07c901518df9cc9749d3a815f12ef7b306bea80b67633f690c807aeb2b13eb3c76b9fe647e2cf51f16f268d7163caa489152b0d41680a8b1b5e27e23aa3227fa4a9e961adeb38633ccb2fb6d26fd94239b4180ccd7d17c5c01559c55ce98f58170efa9a7bc9310de8c773d969974ef1cf36f5514406fe88b14183839123267051f6c1016521d6518885d5380a98988fde93206f4db0ed6c331b78183f350c3906e9a5cef36db172330e0f6031292d5f368864cbd1f4541643a56ffa09e1747ec0cf6489fe4d4ec57027c6c7cdbd3530ac0f98abe1b9dc7bf1282a6ae64f832c172cbe2a7957f249466bc7caa168814eff08df772839ca89c2b1caf7f702b09b1b4022a91b428573197aadadee41111ad325c660ea241455650694ccf2d0ea4e0f01cce0735e608d7b82ed88f491224918695c90779b262fbdea6ed12b1c4cca9551a0d88f8eb1a6c0311679257c0267333448e8cbee0f9f0a30670f45577eb025962ca5f7d4bf9afa7f1051355baa725ee865328a5d269c2122ab301f9b30c6691220f5131b80f2149b24bfc76db607f4f835261cc11d2a4e7e45f1183783094bc77cb6c7e45e793b11ce46fe224db5916428532c3a2351fa93fbeaa9abeed8eaf4824300ce9127df4e6e4d5fd22041cdd4cf68fd14a1491fc8e64c9c26419be84853c376498ebdaf48a51559ce9c87efbfeadf58e31b5adea4ac4f6e9ff590cbe70ccb80dd4c6b05a6506d5c8db4d4c48b710b226d4b6abe6d623da17961a0f5c6f4dccc7041c5071ea6c7643bf131ccd68e1356ecc978b732587c7decc58f5bcfe8660e05285c141ea3381c1a1194dfaec9be4fb8e58743a875f2f462e39872d6bbb368cf9496585c1d2443cf3d65c05e69734cefaad7b7fcd93e45b39be807271418752e47a70e672bca03ec249ad3b311d5d9d92286df2df7a59af6ad025fa16bf2ada401dcd94acae25e8a2c05098382e105894287457ea52b614beecfadea424ef67652d6197265556a3560f8a3e1794051aefc14bfc3d0f6b6d50366eac8d886c430f42cc36dcbc09de05f1191788d718cef8046295db0a1edd4d9e302ceb1e9118d311f3e92dff00586d7dba1609d68d07bda5483cb55ba50a4c3de8bf390410d2c631fbadbec17274964c57553d2dcc66ed0fba2c3e36bd3149f1568ba00720a5ea17aff1b3c26034ef2e0ad4a99c60dc854c5760b3705c6780ed290063496e45b60c3fe58ca1ccbb2f5efe5a1ef66f4d9cd93de30c2e8f544fe925ebe24ee4c319183417b84fb89a28b80e2b27715dbd58aaf6bb29b78c40551a281a2b428365e41af5021aa7e2c5bfc31eed23029168dbb7a7acab364ef8fa38b983d514d01c1f5682a03bf278a71bf7ca7f6e25ed662ffc9d3033d14f324949ff3e7311b5badc872c1e640cc72e9a28cf1a52f91af9e70839293b53a9f3fba9f0ef310bf7acaac8529cf47c4e76c88a0ca6388f9044d7aa867cd5baecc3a468e71857736f41f10926301a80bbaec30f3f72b5949a80c39b2e61e558bf26fc8d063ca3b78aea15e2308bcb46917f9779fb721ce3ffb375ed6861b515b3031c79905e299255906f946583b4ab89898e8bd0342167a22344c052b76ee67a6b5a0e712bb5ee36d8abb33df7777f9595b3c733e66fb02f58a21f35136c60a0743e431d5533044a375c424d62ad195130aae5577590a00bfdc7ab9738018d85731bfc1f2c984ae93d77101fa86c77270358aca2bda671904f1001f230816153718ac26e87dcdf269780f2979fcd651452a5e34fda1065adf02809c717aa7bcce01870e001927e1af6e31ff34f0903bc7be4b47e56ccff070a23d320c877cac4dcfe307847475e1aa473a4d47f13f767dae3a70d3702bb53a4be06424eefb88e9bc5cad1825603bb8ac94e0b861f312c33cb026f04b67915d28e7637c3a0c8caa4366490a02c6ee2d561b81af54e8892e9087642bb3d5826115c2dab3bbdfebfda1f018648bb9e318073147f641d7dc41378eb9f7c54c0fe3e574f4c5da6f4aa095d3cbc7d44c22ec628940985b209e82ce80ffc6cbe0b16427f966194e88aa7d5024fabb83c1252a3820593071dd71a5197633087fc9e30f2f06bf90c5f30916302aeac021e0819af7855be51013b42009927ce7e17ed7a48b3369b315bd12dfc83381bb613e66d0019ea7518c2d4f3d46a88a6b9376e302cdff74e9270af1cb5a7255f4448f75a504f13cac676f821bdcbe2ba387505b166ef79edf88430d9bd8424fbd5c7a2c090b75c76cac4a1b15633bd91e717bb28064e1c8282d346b9c6e90d820cdf8d970f8098a99f1d57b0a6ddcb1680289f54d84c1f0430e91ad6d37c8eba9b685c8dfe52e21f86765ee24ad04fd7ae2cdc27c3906019fac8adb4e1a8834bcbe3d853796a567d25803bb791f76e9eab74da86e97027141c3849f15bd77f9723e6425e3305a6b88ea6879a56144e1af1828471b244ad11d8dbe17cc11b62bb208fecd6f090b32b959ab4b686d8ce46c79c8e2b8fee54e0250dccbcbf7e5808f5b567145df7cb8839c9b39bd2d85c07828d2ce5c09dcbd63e3cbf61604f6c142ac54a883eaae249e2bd330fdf29e114c3681d5e6b87343b6b0b3de6bcf7ee4bde91b490e0624a21ea8388c3733a9cf681ea638f7debdd7486dc358c4748ddb0aa0507f5fd6b764a7b3a9e668e98c616a9789f2af996e1c9208f97597e06b580fd80b8060f858c48d00ca4dc20cde946f3e735454693fd632ab4951874004f858d9df584113a42fc8d3b7b4d49cbb67e0c0abc0b96d27b7b3d90db6ad01bc3e81a07ec01310dbe20d1435507c760f2150112c139e70022154c9ac9ecd06f82760fcaebe27fcaf47281be6ba67ea7015e79023502e1c95e21c1a2770002c6a1fa8a9e4590e19f267bfdf3722d44670e931a736fc7427233aa498095eb420a1b69ae7d672d56e3cbe33175aa2f50db553ee4f1a03dde701bfa77036246eece4425876028d38c105068fb284b96cd789f108f078f9c68b89f91a7162eb0d51106566b3156be08046b57dce79a293903068942077c9a1a41964cc7c4e15d662ddcd9e04178cac7174096d999d60821b3f77cb155f3ca1a3a630fbd61a0a12739a8f4388316f14d365940100cf060d13e7363558af8c8156f05e36f3db78304e6d815a468df37394894053be4a6882da38f4a27eb4598a20c9517cb044849575d52ae70947c3ffed263288169f2121119c3f096a7a3cde668e67e69a1bd21ed29b9dcc472a907c1b9558625715e69ab556c0f6825770b4de64fbd239c4ba0d584f7ee28a88533d8360d41b5e2815e27542066f8be883cc48493afae2db77b872deb238c5dc1123090753104da85f681eec918ca44071208b0e575a76d6c75f2082d8f834ad82fd28501115392e417342f98c5369104b0308e2ff4526cc86b4625f0a40d313bed93de712b5997782be0a92c52df02967f98a965e03912d12340d45c2254c107457aa507f3d3482db058aa4c2792f98c8b192f383d9b73ccce0fb899765cf09910e35056e49c7e0950cf1ad91ba06353b19f2e75b6563ed40afd62827425f722d41efc1bb0dbe9a2c50bf9536bc90e545fbe0e6b92670f6acd9853f757f569371a5b64becffffd1428c133314c3cae883f3369b14d3969b62270be9332c4303a6dd9d5abf79978719ee735e6060616474e0614667bba846a07df2681179ea5d1a1d377d461300d5e85aaf490176b816ff1ff4e319f6dff827ca9cee72070f73796de67876d5b3fc722c940f4cfc6f1eeae0a4da4aa47e5bcc35f1edf256cf4db9453a4b658a0bb50a68fa4a484306731c888acb45cf400</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <title>读书摘抄</title>
+    <url>/2023/09/12/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="三体"><a href="#三体" class="headerlink" title="三体"></a>三体</h2><p>在中国，任何超脱飞扬的思想都会砰然坠地的，现实的引力太沉重了  </p>
+<p>而那些香客，看上去普遍比游客穷得多，都处于一种麻木的智力抑制状态</p>
+<p>第二天，我还是跟申玉菲走了——总不能在寺庙里一直住下去吧——但没有想到，接下来的几年，我过上了梦想中的生活。申玉菲实现了她的诺言，我拥有了一台小型机和舒适的环境，还多次出国去使用巨型计算机，不是分时使用，而是占据全部的CPU时间。她很有钱，我不知道她哪来这么多钱。后来我们结婚了，没多少爱情和激情，只是为了双方生活的方便而已，我们都有各自的事情要做。对我来说，以后的几年可以用一天来形容，日子在平静中就过去了。在那幢别墅里，我衣来伸手饭来张口，只需专注于三体问题的研究就行了。申玉菲从不干涉我的生活，车库里有我的一辆车，我可以开着它去任何地方，我甚至敢肯定，自己带一个女人回家她都不在乎，她只关注我的研究，我们每天唯一交流的内容就是三体问题，她每天都要了解研究的进展。 </p>
+<p>那天夜里也是这个时候，汪淼就是在这个房间看到申玉菲在玩《三体》——现在，她平躺在房间正中，胸前的两个弹孔还在涌血，第三颗子弹从左眉心穿入，使她的整个脸都糊在血污中，距她不远处，一支手枪泡在血里</p>
+<p>冯·诺伊曼瞪大眼睛看着汪淼，似乎很不理解他的问题，“用什么？当然是用人了！这世界上除了人之外，难道真的还有什么东西会计算吗？” </p>
+<h2 id="面纱"><a href="#面纱" class="headerlink" title="面纱"></a>面纱</h2><p>“你知道我为什么要嫁给你吗？”<br>“因为你不想落在你妹妹多丽丝的后面。”<br>他说对了，非常具有讽刺意味，这反而令她吃了一惊。现在，虽然她原本是惊恐和愤怒的，这句话却激起了她的一丝怜悯之情。他微微一笑。<br>“我对你根本没抱幻想。”他说道，“我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。为了欣赏你所热衷的那些玩意我竭尽全力，为了向你展示我并非不是无知、庸俗、闲言碎语、愚蠢至极，我煞费苦心。我知道智慧将会令你大惊失色，所以处处谨小慎微，务必表现得和你交往的任何男人一样像个傻瓜。我知道你仅仅为了一己之私跟我结婚。我爱你如此之深，这我毫不在意。据我所知，人们在爱上一个人却得不到回报时，往往感到伤心失望，继而变成愤怒和尖刻。我不是那样。我从未奢望你来爱我，我从未设想你会有理由爱我，我也从未认为我自己惹人爱慕。对我来说能被赐予机会爱你就应心怀感激了。每当我想到你跟我在一起是愉悦的，每当我从你的眼睛里看到欢乐，我都狂喜不已。我尽力将我的爱维持在不让你厌烦的限度，否则我清楚那个后果我承受不了。我时刻关注你的神色，但凡你的厌烦显现出一点蛛丝马迹，我便改变方式。一个丈夫的权利，在我看来却是一种恩惠。”</p>
+<p>他挖苦的腔调只会使她的怒火烧得更旺。不过她觉得此刻若按兵不动，将更能占据上风。<br>“我并非学历显赫，也非头脑聪慧。我仅仅是一个再普通不过的年轻女人。自幼至今，陪伴我的人喜欢什么，我也喜欢什么。我热衷于跳舞，爱打网球，喜欢看戏。我还对爱运动的男人情有独钟。一点不错，我早已经对你、还有你那些事厌烦透了。它们对我来说一文不值，我也决无意愿将来让它们值。你拉着我在威尼斯的那些冗长乏味的画廊里转个没完，我宁可那时在三维治好好享受我的高尔夫球。”<br>“如我所料。”<br>“很遗憾我并未成为你期望的那种女人。而我不幸地发现你是那种天生不可亲近的人。对此你恐怕不能责怪我。”<br>“我决无此意。”</p>
+]]></content>
       <categories>
-        <category>2023</category>
-        <category>9月</category>
+        <category>读书</category>
+        <category>摘抄</category>
       </categories>
       <tags>
-        <tag>工作备忘</tag>
+        <tag>摘抄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进行mybatis实战时遇到的一些错误</title>
+    <url>/2023/09/21/%E8%BF%9B%E8%A1%8Cmybatis%E5%AE%9E%E6%88%98%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天在看mybatis-plus的一些知识，我其实学知识一直很难动手实践，因为配置环境超级麻烦，各种报错，解决起来很烦，尤其是不知道怎么办的时候，但我不能总是不动手去做，不实践我永远不可能知道具体怎么做。在这里记录一下解决配置问题的有效方法。</p>
+<h2 id="Plugin‘org-springframework-boot-spring-boot-maven-plugin-‘-not-found的解决方案"><a href="#Plugin‘org-springframework-boot-spring-boot-maven-plugin-‘-not-found的解决方案" class="headerlink" title="Plugin‘org.springframework.boot:spring-boot-maven-plugin:‘ not found的解决方案"></a>Plugin‘org.springframework.boot:spring-boot-maven-plugin:‘ not found的解决方案</h2><p>解决方法来自<a href="https://www.cnblogs.com/Cheney822/p/16487932.html，只是为了记录搬运到本博客">https://www.cnblogs.com/Cheney822/p/16487932.html，只是为了记录搬运到本博客</a></p>
+<h3 id="方法一：清理IDEA的缓存"><a href="#方法一：清理IDEA的缓存" class="headerlink" title="方法一：清理IDEA的缓存"></a>方法一：清理IDEA的缓存</h3><blockquote>
+<p>File -&gt; Invalidate Caches</p>
+</blockquote>
+<h3 id="方法二：添加版本号"><a href="#方法二：添加版本号" class="headerlink" title="方法二：添加版本号"></a>方法二：添加版本号</h3><p>先看自己当前的版本号</p>
+<ul>
+<li>首先打开<code>pom.xml</code>文件进行查看</li>
+<li>Ctrl+F搜索<code>spring-boot-starter-parent</code></li>
+<li>找到<code>&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</code>这一行。</li>
+<li>下面一行就是版本号。</li>
+</ul>
+<p>然后将版本号放到报错一行的下面</p>
+<h1 id="类文件具有错误的版本-61-0-应为-52-0-请删除该文件或确保该文件位于正确的类路径子目录中。"><a href="#类文件具有错误的版本-61-0-应为-52-0-请删除该文件或确保该文件位于正确的类路径子目录中。" class="headerlink" title="类文件具有错误的版本 61.0, 应为 52.0 请删除该文件或确保该文件位于正确的类路径子目录中。"></a>类文件具有错误的版本 61.0, 应为 52.0 请删除该文件或确保该文件位于正确的类路径子目录中。</h1><p>原因：boot3.0.0版本要求jdk17以上，自己的版本是1.8</p>
+<p>方法：</p>
+<p>改Project Structure的JDK版本 </p>
+<h1 id="Mysql-80-解决忘记密码无法跳过错误-mysqld-—console-—skip-grant-tables-—shared-memory-代码无效的问题"><a href="#Mysql-80-解决忘记密码无法跳过错误-mysqld-—console-—skip-grant-tables-—shared-memory-代码无效的问题" class="headerlink" title="Mysql 80 解决忘记密码无法跳过错误 mysqld —console —skip-grant-tables —shared-memory 代码无效的问题"></a>Mysql 80 解决忘记密码无法跳过错误 mysqld —console —skip-grant-tables —shared-memory 代码无效的问题</h1><p>参考这个方法解决<a href="https://blog.csdn.net/wangzhepaohui/article/details/109685612">https://blog.csdn.net/wangzhepaohui/article/details/109685612</a></p>
+<h1 id="Unsupported-class-file-major-version-61"><a href="#Unsupported-class-file-major-version-61" class="headerlink" title="Unsupported class file major version 61"></a>Unsupported class file major version 61</h1><p>类文件主版本61对应的Java SDK 17</p>
+<p>下载的项目中的springboot不支持JAVA SDK17</p>
+<p>配置环境经典的错误就是版本不兼容</p>
+<h1 id="Maven项目pom-xml-project标签爆红解决方法"><a href="#Maven项目pom-xml-project标签爆红解决方法" class="headerlink" title="Maven项目pom.xml project标签爆红解决方法"></a>Maven项目pom.xml project标签爆红解决方法</h1><blockquote>
+<p>‘parent.relativePath’ of POM com.hrp:springboot_jpa:1.0-SNAPSHOT (F:\IdeaCode\java-web\springboot_jpa\pom.xml) points at com.hrp:java-web instead of org.springframework.boot:spring-boot-starter-parent, please verify your project structure</p>
+</blockquote>
+<p>这个问题是说在project标签下的parent.relativePath标签指向的路径出现了错误，所以导致报错。</p>
+<p>解决方法：在parent标签下，添加<strong><code>&lt;relativePath/&gt;</code></strong>即可</p>
+]]></content>
+      <tags>
+        <tag>编译器报错</tag>
       </tags>
   </entry>
 </search>
