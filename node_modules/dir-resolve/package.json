@@ -1,0 +1,25 @@
+{
+  "name": "dir-resolve",
+  "version": "1.0.2",
+  "description": "Extension for require.resolve which will resolve directories as well as files",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mwinche/dir-resolve.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "0.15.1",
+    "eslint": "2.11.1"
+  },
+  "scripts": {
+    "test": "ava tests/"
+  },
+  "keywords": [
+    "require",
+    "resolve",
+    "directory"
+  ],
+  "author": "Matt Winchester",
+  "license": "MIT"
+}
