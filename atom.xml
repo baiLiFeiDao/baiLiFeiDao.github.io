@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-26T07:20:04.366Z</updated>
+  <updated>2023-10-30T01:04:10.233Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《电锯惊魂10》观后感</title>
+    <link href="http://example.com/2023/10/29/%E3%80%8A%E7%94%B5%E9%94%AF%E6%83%8A%E9%AD%8210%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    <id>http://example.com/2023/10/29/%E3%80%8A%E7%94%B5%E9%94%AF%E6%83%8A%E9%AD%8210%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/</id>
+    <published>2023-10-29T07:18:14.000Z</published>
+    <updated>2023-10-30T01:04:10.233Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="电影背景"><a href="#电影背景" class="headerlink" title="电影背景"></a>电影背景</h2><p>这部电影的时间线在第一部电影的三周后，约翰患有晚期脑癌，为了生的希望，前往墨西哥接收高危的实验性手术，本以为奇迹般地治好了癌症，结果发现这是一场诈骗。</p><h2 id="电影中的一些对照"><a href="#电影中的一些对照" class="headerlink" title="电影中的一些对照"></a>电影中的一些对照</h2><ul><li>Diego来到墨西哥的时候，介绍了阿兹特克雨神特拉洛克雕像，后面Diego试炼失败时，有这个雕像的出现</li><li>Gabriela手术前给约翰送龙舌兰，祝他好运。对应约翰后面想送 Gabriela龙舌兰，回到这个基地，发现一切都是骗局</li><li>约翰之前有问过卡洛斯在西班牙语中的“pull”是Jalar，在最后血刑的时候，约翰说的是no jalar</li></ul><p>这是这些对照，这些细节，让这个电影更加精彩</p><h2 id="约翰的人物形象"><a href="#约翰的人物形象" class="headerlink" title="约翰的人物形象"></a>约翰的人物形象</h2><p>电锯惊魂10在电锯惊魂1的基础上，丰富了约翰的形象。电锯惊魂1中，能明显地感受到约翰是一个很聪明的人，机关、技巧、以及对人性的把控都很厉害，但是</p><p>约翰是一个拥有人格魅力的人，他坚信自己在做的是帮助人们克服内心的障碍，帮助他们在生活中做出积极的改变，他所做的一起都是为了帮助人们走上正确的道路（虽然他并没有这个权力，这正是使他成为反派的原因）。</p><p>约翰作为一个土木工程师和建筑师，他无疑是很优秀的。电影中的机关能很好地提现这一点。</p><p>todo：此处补充一些机关细节</p><p>即使约翰脑癌晚期，他还是可以看到护士的善意，称赞她是一个很好的人。</p><p>约翰虽然做的审判会让别人失去生命，会让别人很痛苦，但我们明显可以看到，他并没有漠视生命，相反，他认为生命十分可贵，即使他自己要失去生命，他也不会让无辜的卡洛斯死去。</p><p>作为约翰的爱徒，阿曼达</p><h2 id="值得思考的对话"><a href="#值得思考的对话" class="headerlink" title="值得思考的对话"></a>值得思考的对话</h2><blockquote><p>有时候我们会被引诱做出违背我们本性的事。毒品很恶毒，但它更诱人作恶。</p><p>每个人都有自由意志，Gabriela也有她的自由意志</p></blockquote><p>Amanda之前也是一个海洛因成瘾者，因此她对吸毒的Gabrila会更在意一些，认为是毒品引诱Gabrila作恶。这是Amanda和John之间的对话。</p><p>我们也会被很多“毒品”引诱做出违背我们本性的事，但我们不能将错误都推到外界的因素，我们有自己的意志，要对自己做出的事情负责。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;电影背景&quot;&gt;&lt;a href=&quot;#电影背景&quot; class=&quot;headerlink&quot; title=&quot;电影背景&quot;&gt;&lt;/a&gt;电影背景&lt;/h2&gt;&lt;p&gt;这部电影的时间线在第一部电影的三周后，约翰患有晚期脑癌，为了生的希望，前往墨西哥接收高危的实验性手术，本以为奇迹般地治好了癌</summary>
+      
+    
+    
+    
+    
+    <category term="影评" scheme="http://example.com/tags/%E5%BD%B1%E8%AF%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深入理解git合并</title>
     <link href="http://example.com/2023/10/26/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%90%88%E5%B9%B6/"/>
     <id>http://example.com/2023/10/26/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%90%88%E5%B9%B6/</id>
     <published>2023-10-26T07:04:48.000Z</published>
-    <updated>2023-10-26T07:20:04.366Z</updated>
+    <updated>2023-10-26T10:32:10.745Z</updated>
     
     <content type="html"><![CDATA[<p>本文是针对<a href="https://waynerv.com/posts/git-merge-intro/">深入理解 git 合并操作</a>所做的笔记</p><h2 id="认识合并"><a href="#认识合并" class="headerlink" title="认识合并"></a>认识合并</h2><p>在版本控制系统中，合并是将一组文件中所发生的不同更改进行整合的基础操作。</p><p>合并一般由Git根据算法自动执行，如果发生了冲突，比如对同一文件的同一处内容执行了不同的更改，则需要我们手动合并。</p><h3 id="递归三路合并算法"><a href="#递归三路合并算法" class="headerlink" title="递归三路合并算法"></a>递归三路合并算法</h3><p>三路合并算法是找到被合并文件C、F的共同祖先A，然后分别对 A、C、F 提交的文件快照进行对比</p><p>Git 将逐「行」对三个文件的内容进行比较，</p><ul><li>如果三个文件中有两个文件该行的内容一致，则丢弃 A 文件中该行的内容，保留与 A 文件中不同的内容放到结果文件中。</li><li>如果三个文件内容都一致，说明什么都没有发生</li><li>如果三个文件内容都不一致，说明发生了冲突，需要手动合并选择需要保留的内容。</li></ul><p>三路合并算法的基础技术是找到被合并文件的共同祖先文件。在遇到十字交叉合并时，不存在独一无二最小共同祖先。</p><p>Git采取了递归三路合并，对没有共同祖先的一对文件递归创建虚拟祖先。这一方法还可以用于有向无环图。</p><h2 id="Git的不同合并策略"><a href="#Git的不同合并策略" class="headerlink" title="Git的不同合并策略"></a>Git的不同合并策略</h2><p>我们在使用 Git 时，通常会基于主分支拉出若干条功能分支进行开发，开发完毕后再将功能分支合入主分支。有以下不同的分支合并策略：</p><ul><li>通过 <code>merge</code>显式合并</li><li>通过 <code>rebase</code> 或 <code>fast-forward</code> 隐式合并</li><li><code>squash</code> 后隐式合并</li></ul><h3 id="通过merge显式合并"><a href="#通过merge显式合并" class="headerlink" title="通过merge显式合并"></a>通过merge显式合并</h3><p>当我们将功能分支合入主分支时，Git 会对两个分支进行递归三路合并，并以合并结果创建一个新的 Merge 提交。</p>]]></content>
     
@@ -440,29 +462,6 @@
     
     
     <category term="微服务" scheme="http://example.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人博客搭建</title>
-    <link href="http://example.com/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    <id>http://example.com/2023/09/18/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</id>
-    <published>2023-09-18T05:50:21.000Z</published>
-    <updated>2023-09-23T18:50:31.698Z</updated>
-    
-    <content type="html"><![CDATA[<p>个人博客搭建参考</p><p><a href="https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html">https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html</a></p><p><a href="https://yunist.cn/hexo/Hexo_blog_build/">https://yunist.cn/hexo/Hexo_blog_build/</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;个人博客搭建参考&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html&quot;&gt;https://www.cnblogs.com/ldu-xingjiahui/p/12594024.html&lt;/</summary>
-      
-    
-    
-    
-    
-    <category term="个人博客搭建" scheme="http://example.com/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
