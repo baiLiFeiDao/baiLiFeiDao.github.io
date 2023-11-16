@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-14T06:35:50.134Z</updated>
+  <updated>2023-11-16T08:46:55.270Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8/"/>
     <id>http://example.com/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8/</id>
     <published>2023-11-10T07:36:07.000Z</published>
-    <updated>2023-11-14T06:35:50.134Z</updated>
+    <updated>2023-11-16T08:46:55.270Z</updated>
     
     
       
@@ -35,6 +35,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="多线程" scheme="http://example.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
@@ -45,12 +47,14 @@
     <link href="http://example.com/2023/11/06/%E6%94%B9%E5%96%84%E6%83%85%E7%BB%AA/"/>
     <id>http://example.com/2023/11/06/%E6%94%B9%E5%96%84%E6%83%85%E7%BB%AA/</id>
     <published>2023-11-06T00:54:57.000Z</published>
-    <updated>2023-11-16T08:12:07.187Z</updated>
+    <updated>2023-11-16T08:46:57.691Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
     
     
     <category term="心理" scheme="http://example.com/tags/%E5%BF%83%E7%90%86/"/>
@@ -62,12 +66,14 @@
     <link href="http://example.com/2023/11/02/11%E6%9C%88%E6%97%A5%E5%BF%97/"/>
     <id>http://example.com/2023/11/02/11%E6%9C%88%E6%97%A5%E5%BF%97/</id>
     <published>2023-11-02T00:52:32.000Z</published>
-    <updated>2023-11-16T08:15:01.797Z</updated>
+    <updated>2023-11-16T08:48:41.835Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
     
     
     <category term="日志" scheme="http://example.com/tags/%E6%97%A5%E5%BF%97/"/>
@@ -79,7 +85,7 @@
     <link href="http://example.com/2023/10/29/%E3%80%8A%E7%94%B5%E9%94%AF%E6%83%8A%E9%AD%8210%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     <id>http://example.com/2023/10/29/%E3%80%8A%E7%94%B5%E9%94%AF%E6%83%8A%E9%AD%8210%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/</id>
     <published>2023-10-29T07:18:14.000Z</published>
-    <updated>2023-10-30T01:04:10.233Z</updated>
+    <updated>2023-11-16T08:46:47.758Z</updated>
     
     
       
@@ -92,6 +98,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="影评" scheme="http://example.com/tags/%E5%BD%B1%E8%AF%84/"/>
     
@@ -102,7 +110,7 @@
     <link href="http://example.com/2023/10/26/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%90%88%E5%B9%B6/"/>
     <id>http://example.com/2023/10/26/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%90%88%E5%B9%B6/</id>
     <published>2023-10-26T07:04:48.000Z</published>
-    <updated>2023-10-26T10:32:10.745Z</updated>
+    <updated>2023-11-16T08:47:50.425Z</updated>
     
     
       
@@ -116,6 +124,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="git" scheme="http://example.com/tags/git/"/>
     
@@ -126,7 +136,7 @@
     <link href="http://example.com/2023/10/24/quartz/"/>
     <id>http://example.com/2023/10/24/quartz/</id>
     <published>2023-10-24T01:24:13.000Z</published>
-    <updated>2023-10-24T02:13:18.130Z</updated>
+    <updated>2023-11-16T08:48:30.043Z</updated>
     
     
       
@@ -142,6 +152,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="任务调度" scheme="http://example.com/tags/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/"/>
     
@@ -152,7 +164,7 @@
     <link href="http://example.com/2023/10/12/HTML-CSS-JavaScript/"/>
     <id>http://example.com/2023/10/12/HTML-CSS-JavaScript/</id>
     <published>2023-10-12T08:03:13.000Z</published>
-    <updated>2023-10-18T02:17:02.518Z</updated>
+    <updated>2023-11-16T08:48:19.915Z</updated>
     
     
       
@@ -165,6 +177,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="HTML+CSS+JavaScript" scheme="http://example.com/tags/HTML-CSS-JavaScript/"/>
     
@@ -175,7 +189,7 @@
     <link href="http://example.com/2023/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://example.com/2023/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
     <published>2023-10-12T02:12:24.000Z</published>
-    <updated>2023-10-12T08:02:16.660Z</updated>
+    <updated>2023-11-16T08:47:47.534Z</updated>
     
     
       
@@ -188,6 +202,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="设计模式" scheme="http://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -198,7 +214,7 @@
     <link href="http://example.com/2023/10/10/%E5%A5%87%E5%A6%99%E5%86%92%E9%99%A9/"/>
     <id>http://example.com/2023/10/10/%E5%A5%87%E5%A6%99%E5%86%92%E9%99%A9/</id>
     <published>2023-10-10T05:44:18.000Z</published>
-    <updated>2023-10-10T06:16:24.170Z</updated>
+    <updated>2023-11-16T08:47:34.855Z</updated>
     
     
       
@@ -213,6 +229,8 @@
       
     
     
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
     
     
     <category term="奇妙冒险" scheme="http://example.com/tags/%E5%A5%87%E5%A6%99%E5%86%92%E9%99%A9/"/>
@@ -252,7 +270,7 @@
     <link href="http://example.com/2023/09/28/%E5%85%B3%E4%BA%8E%E3%80%8A%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%A2%A6%E5%B9%BB%E5%B2%9B%E3%80%8B%E7%9A%84%E6%84%9F%E5%8F%97/"/>
     <id>http://example.com/2023/09/28/%E5%85%B3%E4%BA%8E%E3%80%8A%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%A2%A6%E5%B9%BB%E5%B2%9B%E3%80%8B%E7%9A%84%E6%84%9F%E5%8F%97/</id>
     <published>2023-09-28T06:11:08.000Z</published>
-    <updated>2023-09-28T06:26:15.733Z</updated>
+    <updated>2023-11-16T08:47:19.717Z</updated>
     
     
       
@@ -265,6 +283,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="动漫" scheme="http://example.com/tags/%E5%8A%A8%E6%BC%AB/"/>
     
@@ -275,7 +295,7 @@
     <link href="http://example.com/2023/09/28/%E5%AD%A6%E4%B9%A0%E6%94%BE%E4%B8%8B%E4%BC%98%E8%B6%8A%E6%84%9F/"/>
     <id>http://example.com/2023/09/28/%E5%AD%A6%E4%B9%A0%E6%94%BE%E4%B8%8B%E4%BC%98%E8%B6%8A%E6%84%9F/</id>
     <published>2023-09-28T05:35:06.000Z</published>
-    <updated>2023-09-28T05:54:08.699Z</updated>
+    <updated>2023-11-16T08:48:04.213Z</updated>
     
     
       
@@ -288,6 +308,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="心理" scheme="http://example.com/tags/%E5%BF%83%E7%90%86/"/>
     
@@ -298,7 +320,7 @@
     <link href="http://example.com/2023/09/26/springboot-vue/"/>
     <id>http://example.com/2023/09/26/springboot-vue/</id>
     <published>2023-09-26T02:25:50.000Z</published>
-    <updated>2023-10-07T06:22:12.350Z</updated>
+    <updated>2023-11-16T08:48:39.678Z</updated>
     
     
       
@@ -313,6 +335,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="springboot+vue" scheme="http://example.com/tags/springboot-vue/"/>
     
@@ -323,7 +347,7 @@
     <link href="http://example.com/2023/09/25/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0/"/>
     <id>http://example.com/2023/09/25/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0/</id>
     <published>2023-09-25T06:35:48.000Z</published>
-    <updated>2023-09-25T15:21:19.740Z</updated>
+    <updated>2023-11-16T08:47:42.938Z</updated>
     
     
       
@@ -336,6 +360,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="若依" scheme="http://example.com/tags/%E8%8B%A5%E4%BE%9D/"/>
     
@@ -346,7 +372,7 @@
     <link href="http://example.com/2023/09/23/%E6%96%BD%E5%9B%BE%E8%8C%A8%E7%9A%84%E7%96%97%E6%84%88%E4%B9%8B%E9%81%93/"/>
     <id>http://example.com/2023/09/23/%E6%96%BD%E5%9B%BE%E8%8C%A8%E7%9A%84%E7%96%97%E6%84%88%E4%B9%8B%E9%81%93/</id>
     <published>2023-09-23T07:42:45.000Z</published>
-    <updated>2023-09-23T18:37:01.298Z</updated>
+    <updated>2023-11-16T08:47:52.964Z</updated>
     
     
       
@@ -359,6 +385,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="心理" scheme="http://example.com/tags/%E5%BF%83%E7%90%86/"/>
     
@@ -369,12 +397,14 @@
     <link href="http://example.com/2023/09/22/%E9%92%88%E5%AF%B9fsb%E7%9A%84%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4%E6%96%87%E6%A1%A3/"/>
     <id>http://example.com/2023/09/22/%E9%92%88%E5%AF%B9fsb%E7%9A%84%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4%E6%96%87%E6%A1%A3/</id>
     <published>2023-09-22T09:01:13.000Z</published>
-    <updated>2023-11-16T08:12:50.045Z</updated>
+    <updated>2023-11-16T08:48:11.697Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
     
     
     <category term="权限过滤" scheme="http://example.com/tags/%E6%9D%83%E9%99%90%E8%BF%87%E6%BB%A4/"/>
@@ -386,7 +416,7 @@
     <link href="http://example.com/2023/09/22/%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8Cvue%E9%A1%B9%E7%9B%AE/"/>
     <id>http://example.com/2023/09/22/%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8Cvue%E9%A1%B9%E7%9B%AE/</id>
     <published>2023-09-22T07:43:18.000Z</published>
-    <updated>2023-09-22T07:49:18.641Z</updated>
+    <updated>2023-11-16T08:47:37.383Z</updated>
     
     
       
@@ -400,6 +430,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="vue" scheme="http://example.com/tags/vue/"/>
     
@@ -410,7 +442,7 @@
     <link href="http://example.com/2023/09/21/%E8%BF%9B%E8%A1%8Cmybatis%E5%AE%9E%E6%88%98%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF/"/>
     <id>http://example.com/2023/09/21/%E8%BF%9B%E8%A1%8Cmybatis%E5%AE%9E%E6%88%98%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF/</id>
     <published>2023-09-21T02:07:41.000Z</published>
-    <updated>2023-09-21T05:49:43.582Z</updated>
+    <updated>2023-11-16T08:47:26.804Z</updated>
     
     
       
@@ -423,6 +455,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="编译器报错" scheme="http://example.com/tags/%E7%BC%96%E8%AF%91%E5%99%A8%E6%8A%A5%E9%94%99/"/>
     
@@ -433,7 +467,7 @@
     <link href="http://example.com/2023/09/20/mybatis-plus%E5%85%A5%E9%97%A8/"/>
     <id>http://example.com/2023/09/20/mybatis-plus%E5%85%A5%E9%97%A8/</id>
     <published>2023-09-20T06:34:35.000Z</published>
-    <updated>2023-09-20T07:09:24.400Z</updated>
+    <updated>2023-11-16T08:48:27.631Z</updated>
     
     
       
@@ -447,6 +481,8 @@
     
     
     
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
+    
     
     <category term="mybatis-plus" scheme="http://example.com/tags/mybatis-plus/"/>
     
@@ -457,7 +493,7 @@
     <link href="http://example.com/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>http://example.com/2023/09/19/spring-aop%E6%98%AF%E4%BB%80%E4%B9%88/</id>
     <published>2023-09-19T07:21:07.000Z</published>
-    <updated>2023-09-23T18:50:31.771Z</updated>
+    <updated>2023-11-16T08:48:34.990Z</updated>
     
     
       
@@ -469,6 +505,8 @@
       
     
     
+    
+    <category term="2023" scheme="http://example.com/categories/2023/"/>
     
     
     <category term="spring" scheme="http://example.com/tags/spring/"/>
